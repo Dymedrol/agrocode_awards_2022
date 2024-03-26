@@ -1,2 +1,3 @@
-# agrocode_awards_2022
-agrocode awards 2022 site
+# agroawards2022
+
+Сайт проекта: https://awards.agro-code.ru/

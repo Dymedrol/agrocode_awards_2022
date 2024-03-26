@@ -1,0 +1,52 @@
+{
+  "name": "agrocode_awards_2022",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode production --env.production",
+    "start": "webpack --mode development --watch --progress"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.10.4",
+    "axios": "^0.27.2",
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^5.0.4",
+    "css-loader": "^3.2.0",
+    "less": "^3.9.0",
+    "less-loader": "^5.0.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "postcss-loader": "^3.0.0",
+    "style-loader": "^1.0.0",
+    "terser-webpack-plugin": "^2.3.6",
+    "webpack": "^4.39.1",
+    "webpack-cli": "^3.3.9"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.8.7",
+    "@sentry/browser": "^6.19.6",
+    "@sentry/tracing": "^6.19.6",
+    "blueimp-tmpl": "^3.17.0",
+    "es6-promise": "^4.2.8",
+    "inputmask": "^5.0.3",
+    "snifferjs": "^3.3.0"
+  },
+  "author": "",
+  "license": "ISC"
+}

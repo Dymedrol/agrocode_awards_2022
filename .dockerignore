@@ -1,0 +1,9 @@
+tmp/
+**/node_modules
+*.pyc
+.git
+var/
+**/__pycache__
+venv/
+**/db.sqlite3
+.DB_Store

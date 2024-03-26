@@ -1,0 +1,38 @@
+[
+  {
+    "model": "home.stage",
+    "pk": 1,
+    "fields": {
+      "stage": "1",
+      "start_date": null,
+      "stop_date": "2022-10-25"
+    }
+  },
+  {
+    "model": "home.stage",
+    "pk": 2,
+    "fields": {
+      "stage": "2",
+      "start_date": "2022-10-26",
+      "stop_date": "2022-11-07"
+    }
+  },
+  {
+    "model": "home.stage",
+    "pk": 3,
+    "fields": {
+      "stage": "3",
+      "start_date": null,
+      "stop_date": "2022-11-08"
+    }
+  },
+  {
+    "model": "home.stage",
+    "pk": 4,
+    "fields": {
+      "stage": "4",
+      "start_date": null,
+      "stop_date": "2022-11-18"
+    }
+  }
+]

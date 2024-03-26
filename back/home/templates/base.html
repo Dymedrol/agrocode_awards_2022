@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% load static %}
+
+        <title>AgroCode Awards 2022 — главная агротех-премия страны.</title>
+        <meta name="description" content="AgroCode Awards 2022 — всероссийская агротех- премия. Присуждается в нескольких номинациях за разработку самых эффективных и прикладных решений в области AgroTech.">
+
+        <link rel="icon" type="image/png" sizes="32x32" href="{% static 'build/img/favicon-32x32.png' %}">
+
+        <meta property="og:title" content="AgroCode Awards 2022 — главная агротех-премия страны.">
+        <meta property="og:description" content="AgroCode Awards 2022 — всероссийская агротех- премия. Присуждается в нескольких номинациях за разработку самых эффективных и прикладных решений в области AgroTech.">
+        <meta property="og:image" content="{% static 'build/img/og-snipper.png' %}">
+
+        <!-- Twitter Card -->
+        <meta name="twitter:title" content="AgroCode Awards 2022 — главная агротех-премия страны.">
+        <meta name="twitter:description" content="AgroCode Awards 2022 — всероссийская агротех- премия. Присуждается в нескольких номинациях за разработку самых эффективных и прикладных решений в области AgroTech.">
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta property="twitter:image" content="{% static 'build/img/og-snipper.png' %}">
+        <meta property="vk:image" content="{% static 'build/img/og-snipper.png' %}"/>
+        <meta name="twitter:card" content="summary_large_image"/>
+
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <link rel="stylesheet" href="{% static 'build/css/owl.carousel.min.css' %}">
+        <link rel="stylesheet" href="{% static 'build/css/style.css' %}">
+
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript" >
+           (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+           m[i].l=1*new Date();
+           for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+           k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+           (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+           ym(90927981, "init", {
+                clickmap:true,
+                trackLinks:true,
+                accurateTrackBounce:true
+           });
+        </script>
+        <noscript><div><img src="https://mc.yandex.ru/watch/90927981" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        <!-- /Yandex.Metrika counter -->
+
+    </head>
+    <body {% if is_form %}class="body-form"{% endif %}>
+
+        <div class="agro-mobile-menu" id="mobile-menu">
+            <div class="agro-mobile-menu-header">
+                <a href="https://agro-code.ru/ " class="agro-mobile-menu-header-link">
+                    <img src="{% static 'build/img/agrocodehub-logo.svg' %}" alt="" class="agro-mobile-menu-header-logo">
+                </a>
+                <img src="{% static 'build/img/mobile-menu-close.svg' %}" alt="" class="agro-mobile-menu-header-close" id="mobile-menu-close">
+            </div>
+            <div class="agro-mobile-menu-inner">
+                <a href="{% url 'home' %}#about" class="agro-mobile-menu-item">
+                    <img src="{% static 'build/img/menu-about.svg' %}" alt="О премии">
+                    <p class="agro-mobile-menu-item__text">О премии</p>
+                </a>
+                <a href="{% url 'home' %}#nominations" class="agro-mobile-menu-item">
+                    <img src="{% static 'build/img/menu-nomination.svg' %}" alt="Номинации">
+                    <p class="agro-mobile-menu-item__text">Номинации</p>
+                </a>
+                <a href="{% url 'home' %}#criteria" class="agro-mobile-menu-item">
+                    <img src="{% static 'build/img/menu-kriterii.svg' %}" alt="Критерии">
+                    <p class="agro-mobile-menu-item__text">Критерии</p>
+                </a>
+                {% if juries %}
+                    <a href="{% url 'home' %}#jury" class="agro-mobile-menu-item">
+                        <img src="{% static 'build/img/menu-jury.svg' %}" alt="Жюри">
+                        <p class="agro-mobile-menu-item__text">Жюри</p>
+                    </a>
+                {% endif %}
+                <a href="{% url 'home' %}#faq" class="agro-mobile-menu-item">
+                    <img src="{% static 'build/img/menu-faq.svg' %}" alt="faq">
+                    <p class="agro-mobile-menu-item__text">FAQ</p>
+                </a>
+                <a href="https://t.me/agrocodehub" class="agro-mobile-menu-item agro-mobile-menu-item_tg">
+                    <img src="{% static 'build/img/menu-tg.svg' %}" alt="Telegram чат">
+                    <p class="agro-mobile-menu-item__text">Telegram<br>чат</p>
+                </a>
+            </div>
+            <p class="agro-mobile-menu-stage">
+                {% if current_stage %}
+                    Текущий этап: {{ current_stage|lower }}
+                {% endif %}
+            </p>
+            {% if not is_form %}
+                <a href="{% url 'apply_form' %}" class="agro-mobile-menu-btn {% if is_stop_date %}visually-hidden-2{% endif %}">Подать заявку</a>
+            {% endif %}
+        </div>
+
+        <div class="agro-wrapper">
+            <aside class="agro-aside">
+                <nav>
+                    <a href="{% url 'home' %}#about" class="agro-aside-item">
+                        <img src="{% static 'build/img/menu-about.svg' %}" alt="О премии">
+                        <p class="agro-aside-item__text">О премии</p>
+                    </a>
+                    <a href="{% url 'home' %}#nominations" class="agro-aside-item">
+                        <img src="{% static 'build/img/menu-nomination.svg' %}" alt="Номинации">
+                        <p class="agro-aside-item__text">Номинации</p>
+                    </a>
+                    <a href="{% url 'home' %}#criteria" class="agro-aside-item">
+                        <img src="{% static 'build/img/menu-kriterii.svg' %}" alt="Критерии">
+                        <p class="agro-aside-item__text">Критерии</p>
+                    </a>
+                    {% if juries %}
+                        <a href="{% url 'home' %}#jury" class="agro-aside-item">
+                            <img src="{% static 'build/img/menu-jury.svg' %}" alt="Жюри">
+                            <p class="agro-aside-item__text">Жюри</p>
+                        </a>
+                    {% endif %}
+
+                    <a href="{% url 'home' %}#faq" class="agro-aside-item">
+                        <img src="{% static 'build/img/menu-faq.svg' %}" alt="faq">
+                        <p class="agro-aside-item__text">FAQ</p>
+                    </a>
+                    <a href="/#organizer" class="agro-aside-item hidden">
+                    </a>
+                    <a href="https://t.me/agrocodehub" class="agro-aside-item agro-aside-item_tg">
+                        <img src="{% static 'build/img/menu-tg.svg' %}" alt="Telegram чат">
+                        <p class="agro-aside-item__text">Telegram<br>чат</p>
+                    </a>
+                </nav>
+            </aside>
+            <main class="agro-main">
+                <header class="agro-header {% if nominees or winners %}short-list{% endif %}" id="agro-header">
+                    <a href="https://agro-code.ru/ " class="agro-header-logo-link"><img src="{% static 'build/img/agrocodehub-logo.svg' %}" alt="" class="agro-header-logo"></a>
+                    <div class="agro-header-controls">
+                        <p class="agro-header-controls-stage">
+                            {% if current_stage %}
+                                Текущий этап: {{ current_stage|lower }}
+                            {% endif %}
+                        </p>
+                        {% if not is_form %}
+                            <a href="{% url 'apply_form' %}" class="agro-header-controls-submit" {% if is_stop_date %}style="display: none;"{% endif %}>Подать заявку</a>
+                        {% endif %}
+                        <div class="agro-header-burger" id="burger-wrapper">
+                            <img src="{% static 'build/img/burger.svg' %}" alt="" class="agro-header-burger-pic" id="burger">
+                        </div>
+                    </div>
+                </header>
+
+                {% block content %}
+                {% endblock %}
+
+                <footer class="agro-footer" id="contacts">
+                    <div class="agro-footer-header">
+                        <h2 class="agro-footer-title">Контакты</h2>
+                    </div>
+                    <div class="agro-footer-wrapper">
+                        <div class="agro-footer-contacts">
+                            <a href="mailto:hello@agro-code.ru" class="agro-footer-contacts__mailto" target="_blank">hello@agro-code.ru</a>
+                            <a href="https://t.me/agrocodehub" class="agro-footer-contacts__tg">Вступить в чат <img src="{% static 'build/img/footer-tg.svg' %}" alt=""></a>
+                        </div>
+                        <div class="agro-footer-sponsors">
+                            <div class="agro-footer-sponsors-item">
+                                <a href="https://www.rshb.ru/" target="_blank"><img src="{% static 'build/img/footer-ros.svg' %}" alt="Генеральный спонсор" class= "agro-footer-sponsors-item__ros-pic"></a>
+                                <p class="agro-footer-sponsors-item__text">Генеральный спонсор</p>
+                            </div>
+
+                            <div class="agro-footer-sponsors-item">
+                                <a href="https://spinon.company/ru/" target="_blank"><img src="{% static 'build/img/footer-spinon.svg' %}" alt="Оператор" class="agro-footer-sponsors-item__spinon-pic"></a>
+                                <p class="agro-footer-sponsors-item__text">Оператор</p>
+                            </div>
+                        </div>
+                        <div class="agro-footer-links">
+                            <a href="{{ documents.regulation_on_participation.url }}" class="agro-footer-links__link" target="_blank">Положение об участии</a>
+                            <a href="{{ documents.privacy_policy.url }}" class="agro-footer-links__link" target="_blank">Политика конфиденциальности</a>
+                        </div>
+                    </div>
+                </footer>
+            </main>
+        </div>
+
+        {% block js %}
+            <script
+              src="https://code.jquery.com/jquery-3.6.0.min.js"
+              integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+              crossorigin="anonymous"></script>
+            <script src="https://code.jquery.com/jquery-migrate-3.4.0.min.js" integrity="sha256-mBCu5+bVfYzOqpYyK4jm30ZxAZRomuErKEFJFIyrwvM=" crossorigin="anonymous"></script>
+            <script src="{% static 'build/js/plugins/owl.carousel.min.js' %}"></script>
+            <script src="{% static 'build/js/plugins/lazyload.min.js' %}"></script>
+            <script src="{% static 'build/js/plugins/particles.min.js' %}"></script>
+            <script src="{% static 'build/bundle.js' %}"></script>
+        {% endblock %}
+    </body>
+</html>
+
+

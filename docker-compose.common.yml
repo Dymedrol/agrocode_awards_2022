@@ -1,0 +1,24 @@
+version: '2.4'
+
+services:
+  mysql:
+    image: mysql:5.7.22
+    command: [ 'mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci' ]
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+      MYSQL_ROOT_PASSWORD: 'root'
+      MYSQL_DATABASE: django_db
+    healthcheck:
+      test: [ "CMD",  'mysql',  '-u', 'root',  '-proot', '-ve', 'show tables from django_db' ]
+      interval: 2s
+      timeout: 2s
+      retries: 60
+
+  django:
+    build:
+      context: .
+    working_dir: /mnt/back
+    command: python manage.py start
+    tty: true
+    volumes:
+      - .:/mnt

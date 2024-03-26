@@ -1,0 +1,881 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <section class="agro-form">
+
+        <div class="agro-form-header">
+            <div class="agro-form-header-breadcrumbs"><a href="{% url 'home' %}">Главная</a> / Подать заявку </div>
+            <div class="agro-form-header-bottom">
+                <h1 class="agro-form-header-bottom-title">Форма заявки</h1>
+                <div class="agro-form-header-bottom-stage"><span id="form-stage">1</span> / 3</div>
+            </div>
+            <div class="agro-form-header-bottom-progress">
+                <div class="agro-form-header-bottom-progress-bar"></div>
+            </div>
+        </div>
+
+        <form action="" autocomplete="off" id="apply-form-1">
+            <div class="agro-form-stage-1">
+                <h2 class="agro-form-title">Заполните контактные данные</h2>
+
+                <div class="agro-form-input-wrapper">
+                    <p class="agro-form-input-error"> </p>
+                    <input type="text" class="agro-form-input" placeholder="Имя*" autoComplete='none' name="name">
+                    <label for="" class="agro-form-input-label">Имя*</label>
+                </div>
+                <div class="agro-form-input-wrapper">
+                    <p class="agro-form-input-error"> </p>
+                    <input type="text" class="agro-form-input" placeholder="Фамилия*" autoComplete='none' name="surname">
+                    <label for="" class="agro-form-input-label">Фамилия*</label>
+                </div>
+                <div class="agro-form-input-wrapper">
+                    <p class="agro-form-input-error"> </p>
+                    <input type="text" class="agro-form-input" placeholder="+7(999)999-99-99*" autoComplete='none' name="phone">
+                    <label for="" class="agro-form-input-label">+7(999)999-99-99*</label>
+                </div>
+                <div class="agro-form-input-wrapper">
+                    <p class="agro-form-input-error"> </p>
+                    <input type="text" class="agro-form-input" placeholder="E-mail*" autoComplete='none' name="email">
+                    <label for="" class="agro-form-input-label">E-mail*</label>
+                </div>
+                <div class="agro-form-dummy1"></div>
+                <div class="agro-form-input-wrapper agro-form-input-wrapper-checkbox">
+                    <p class="agro-form-input-error"> </p>
+                    <label class="agro-form-input-label-checkbox">
+                        <input type="checkbox" class="agro-form-input-checkbox visually-hidden" name="agree_processing">
+                        <svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.74154 0.5L3.90116 4.60863L1.85413 2.60986L0.5 3.77086L3.80708 7L10 1.74814L8.74154 0.5Z" fill="white"/>
+                        </svg>
+                    </label>
+                    <p class="agro-form-input-text-checkbox">Я согласен с <a href="{{ documents.privacy_policy.url }}" target="_blank">правилами обработки</a> персональных данных</p>
+                </div>
+                <div class="agro-form-input-wrapper agro-form-input-wrapper-checkbox">
+                    <p class="agro-form-input-error"> </p>
+                    <label class="agro-form-input-label-checkbox">
+                        <input type="checkbox" class="agro-form-input-checkbox visually-hidden" name="agree_rules">
+                        <svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.74154 0.5L3.90116 4.60863L1.85413 2.60986L0.5 3.77086L3.80708 7L10 1.74814L8.74154 0.5Z" fill="white"/>
+                        </svg>
+                    </label>
+                    <p class="agro-form-input-text-checkbox">Согласен с <a href="{{ documents.regulation_on_participation.url }}" target="_blank">правилами проведения</a> премии</p>
+                </div>
+            </div>
+        </form>
+
+        <form action="" id="apply-form-2">
+            <div class="agro-form-stage-2">
+                <h2 class="agro-form-title agro-form-title-stage-2">Выберите номинацию</h2>
+                <p class="agro-form-subtitle agro-form-subtitle-stage-2">Если вы хотите подать заявку в несколько номинаций, то на каждую номинацию необходимо заполнить отдельную заявку</p>
+
+                <div class="agro-form-stage-2-inner">
+
+                    <label class="agro-form-stage-2-item">
+                        <input type="radio" class="agro-form-stage-2-item-input visually-hidden" name="nomination" value="agro_digital">
+                        <div class="agro-form-stage-2-item-checkbox"></div>
+                        <div class="agro-form-stage-2-item-header">
+                            <img src="{% static 'build/img/nomination-digital.svg' %}" alt="" class="agro-form-stage-2-item-header-pic">
+                            <p class="agro-form-stage-2-item-header-title">Цифровизация года</p>
+                        </div>
+                        <p class="agro-form-stage-2-item-text">Кейсы цифровизации процессов в сельском хозяйстве</p>
+                    </label>
+
+                    <label class="agro-form-stage-2-item">
+                        <input type="radio" class="agro-form-stage-2-item-input visually-hidden" name="nomination" value="future_food">
+                        <div class="agro-form-stage-2-item-checkbox"></div>
+                        <div class="agro-form-stage-2-item-header">
+                            <img src="{% static 'build/img/nomination-future-food.svg' %}" alt="" class="agro-form-stage-2-item-header-pic">
+                            <p class="agro-form-stage-2-item-header-title">Еда будущего</p>
+                        </div>
+                        <p class="agro-form-stage-2-item-text">Кейс серийного производства инновационных (альтернативных) продуктов питания</p>
+                    </label>
+
+                    <label class="agro-form-stage-2-item">
+                        <input type="radio" class="agro-form-stage-2-item-input visually-hidden" name="nomination" value="made_in_russia">
+                        <div class="agro-form-stage-2-item-checkbox"></div>
+                        <div class="agro-form-stage-2-item-header">
+                            <img src="{% static 'build/img/nomination-made-in.svg' %}" alt="" class="agro-form-stage-2-item-header-pic">
+                            <p class="agro-form-stage-2-item-header-title">Своя технология</p>
+                        </div>
+                        <p class="agro-form-stage-2-item-text">Кейс импортозамещения в сельском хозяйстве</p>
+                    </label>
+
+                    <label class="agro-form-stage-2-item">
+                        <input type="radio" class="agro-form-stage-2-item-input visually-hidden" name="nomination" value="agro_hero">
+                        <div class="agro-form-stage-2-item-checkbox"></div>
+                        <div class="agro-form-stage-2-item-header">
+                            <img src="{% static 'build/img/nomination-hero.svg' %}" alt="" class="agro-form-stage-2-item-header-pic">
+                            <p class="agro-form-stage-2-item-header-title">Лидер года</p>
+                        </div>
+                        <p class="agro-form-stage-2-item-text">Человек года в российском AgroTech-сегменте</p>
+                    </label>
+
+                   <label class="agro-form-stage-2-item">
+                        <input type="radio" class="agro-form-stage-2-item-input visually-hidden" name="nomination" value="agro_launch">
+                        <div class="agro-form-stage-2-item-checkbox"></div>
+                        <div class="agro-form-stage-2-item-header">
+                            <img src="{% static 'build/img/nomination-launch.svg' %}" alt="" class="agro-form-stage-2-item-header-pic">
+                            <p class="agro-form-stage-2-item-header-title">Запуск года</p>
+                        </div>
+                        <p class="agro-form-stage-2-item-text">Прорывная технология</p>
+                    </label>
+
+                   <label class="agro-form-stage-2-item">
+                        <input type="radio" class="agro-form-stage-2-item-input visually-hidden" name="nomination" value="agro_idea">
+                        <div class="agro-form-stage-2-item-checkbox"></div>
+                        <div class="agro-form-stage-2-item-header">
+                            <img src="{% static 'build/img/nomination-idea.svg' %}" alt="" class="agro-form-stage-2-item-header-pic">
+                            <p class="agro-form-stage-2-item-header-title">Идея года</p>
+                        </div>
+                        <p class="agro-form-stage-2-item-text">Специальная номинация для исследователей и ученых</p>
+                    </label>
+
+                </div>
+            </div>
+        </form>
+
+        <form action="" id="apply-form-3">
+        </form>
+
+        <div class="agro-form-nav">
+            <button class="agro-form-nav-btn" id="form-btn-prew" disabled>Назад</button>
+            <button class="agro-form-nav-btn agro-form-nav-btn_active" id="form-btn-next">Далее</button>
+        </div>
+
+        <template id="agro_machinery-template">
+            <div class="agro-form-stage-3">
+                <h2 class="agro-form-title agro-form-title-stage-3">Расскажите о кейсе</h2>
+                <p class="agro-form-subtitle agro-form-subtitle-stage-3">Вы выбрали номинацию: Agro Machinery</p>
+
+                <div class="agro-form-input-wrapper agro-form-input-wrapper-stage-3 wrapper-f3">
+                    <p class="agro-form-input-error"> </p>
+                    <input type="text" class="agro-form-input" placeholder="Название кейса*" autoComplete='none' name="case_name">
+                    <label for="" class="agro-form-input-label">Название кейса*</label>
+                </div>
+
+                <div class="agro-form-input-wrapper agro-form-input-wrapper-stage-3 wrapper-f3">
+                    <p class="agro-form-input-error"> </p>
+                    <input type="text" class="agro-form-input" placeholder="Компания, которая реализовала кейс*" autoComplete='none' name="company">
+                    <label for="" class="agro-form-input-label">Компания, которая реализовала кейс*</label>
+                </div>
+
+                <div class="agro-form-textarea-wrapper wrapper-f3 agro-form-textarea-wrapper-with-label">
+                    <p class="agro-form-input-error"> </p>
+                    <textarea id="" placeholder="Описание компании*" class="agro-form-textarea" name="company_about"></textarea>
+                    <label for="" class="agro-form-input-label">Описание компании*</label>
+                </div>
+
+                <div class="agro-form-input-wrapper agro-form-input-wrapper-stage-3 wrapper-f3 agro-form-wrapper-half-screen">
+                    <p class="agro-form-input-error"> </p>
+                    <input type="text" class="agro-form-input" placeholder="Сайт компании*" autoComplete='none' name="company_url">
+                    <label for="" class="agro-form-input-label">Сайт компании*</label>
+                </div>
+
+                <div class="agro-form-select-wrapper custom-select wrapper-f3 agro-form-wrapper-half-screen">
+                    <p class="agro-form-input-error"> </p>
+                    <select id="" name="release_year">
+                        <option value="">Год реализации кейса*</option>
+                        <option value="before_2018">ранее 2018</option>
+                        <option value="2019">2019</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                    </select>
+                </div>
+
+                <p class="agro-form-white-text">Исходные данные*</p>
+                <div class="agro-form-textarea-wrapper wrapper-f3">
+                    <p class="agro-form-input-error"> </p>
+                    <textarea name="initial_description" id="" placeholder="Опишите специфику процесса и его проблему, которая была до внедрения технологии" class="agro-form-textarea"></textarea>
+                </div>
+
+                <p class="agro-form-white-text">Описание кейса*</p>
+                <div class="agro-form-textarea-wrapper wrapper-f3">
+                    <p class="agro-form-input-error"> </p>
+                    <textarea name="about_case" id="" placeholder="Опишите, как вы решили проблему и какие инструменты использовали (общий принцип работы)" class="agro-form-textarea"></textarea>
+                </div>
+
+                <p class="agro-form-white-text">Результат внедрения*</p>
+                <div class="agro-form-textarea-wrapper wrapper-f3">
+                    <p class="agro-form-input-error"> </p>
+                    <textarea name="about_result" id="" placeholder="Опишите результаты и показатели до и после внедрения технологии (если есть)" class="agro-form-textarea"></textarea>
+                </div>
+
+                <p class="agro-form-white-text">Использование технологий*</p>
+                <div class="agro-form-textarea-wrapper wrapper-f3">
+                    <p class="agro-form-input-error"> </p>
+                    <textarea name="about_technology" id="" placeholder="Опишите технологии, которые вы использовали" class="agro-form-textarea"></textarea>
+                </div>
+
+
+                <p class="agro-form-white-text">Уникальность*</p>
+                <div class="agro-form-textarea-wrapper wrapper-f3">
+                    <p class="agro-form-input-error"> </p>
+                    <textarea name="about_uniq" id="" placeholder="В чем вы видите уникальность вашего кейса?" class="agro-form-textarea"></textarea>
+                </div>
+
+                <p class="agro-form-white-text">Партнер по реализации кейса</p>
+                <div class="agro-form-textarea-wrapper wrapper-f3">
+                    <p class="agro-form-input-error"> </p>
+                    <textarea name="about_partners" id="" placeholder="Если вы реализовывали кейс вместе с партнером, подрядчиком или заказчиком, то опишите в этом разделе ваши роли в проекте" class="agro-form-textarea"></textarea>
+                </div>
+
+                <p class="agro-form-white-text">Дополнительные материалы</p>
+                <div class="agro-form-textarea-wrapper wrapper-f3">
+                    <p class="agro-form-input-error"> </p>
+                    <textarea name="extra_materials" id="" placeholder="Здесь вы можете приложить ссылку на презентацию, видео или дополнительные материалы, которые помогут жюри оценить проект" class="agro-form-textarea"></textarea>
+                </div>
+            </div>
+        </template>
+
+        <template id="agro_digital-template">
+            <div class="agro-form-stage-3">
+                <h2 class="agro-form-title agro-form-title-stage-3">Расскажите о кейсе</h2>
+                <p class="agro-form-subtitle agro-form-subtitle-stage-3">Вы выбрали номинацию: Цифровизация года</p>
+
+                <div class="agro-form-input-wrapper agro-form-input-wrapper-stage-3 wrapper-f3">
+                    <p class="agro-form-input-error"> </p>
+                    <input type="text" class="agro-form-input" placeholder="Название кейса*" autoComplete='none' name="case_name">
+                    <label for="" class="agro-form-input-label">Название кейса*</label>
+                </div>
+
+                <div class="agro-form-input-wrapper agro-form-input-wrapper-stage-3 wrapper-f3">
+                    <p class="agro-form-input-error"> </p>
+                    <input type="text" class="agro-form-input" placeholder="Компания, которая реализовала кейс*" autoComplete='none' name="company">
+                    <label for="" class="agro-form-input-label">Компания, которая реализовала кейс*</label>
+                </div>
+
+                <div class="agro-form-textarea-wrapper wrapper-f3 agro-form-textarea-wrapper-with-label">
+                    <p class="agro-form-input-error"> </p>
+                    <textarea id="" placeholder="Описание компании*" class="agro-form-textarea" name="company_about"></textarea>
+                    <label for="" class="agro-form-input-label">Описание компании*</label>
+                </div>
+
+                <div class="agro-form-input-wrapper agro-form-input-wrapper-stage-3 wrapper-f3 agro-form-wrapper-half-screen">
+                    <p class="agro-form-input-error"> </p>
+                    <input type="text" class="agro-form-input" placeholder="Сайт компании*" autoComplete='none' name="company_url">
+                    <label for="" class="agro-form-input-label">Сайт компании*</label>
+                </div>
+
+                <div class="agro-form-select-wrapper custom-select wrapper-f3 agro-form-wrapper-half-screen">
+                    <p class="agro-form-input-error"> </p>
+                    <select id="" name="release_year">
+                        <option value="">Год реализации кейса*</option>
+                        <option value="before_2018">ранее 2018</option>
+                        <option value="2019">2019</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                    </select>
+                </div>
+
+                <p class="agro-form-white-text">Исходные данные*</p>
+                <div class="agro-form-textarea-wrapper wrapper-f3">
+                    <p class="agro-form-input-error"> </p>
+                    <textarea name="initial_description" id="" placeholder="Опишите специфику процесса и его проблему, которая была до внедрения технологии" class="agro-form-textarea"></textarea>
+                </div>
+
+                <p class="agro-form-white-text">Описание кейса*</p>
+                <div class="agro-form-textarea-wrapper wrapper-f3">
+                    <p class="agro-form-input-error"> </p>
+                    <textarea name="about_case" id="" placeholder="Опишите, как вы решили проблему и какие инструменты использовали (общий принцип работы)" class="agro-form-textarea"></textarea>
+                </div>
+
+                <p class="agro-form-white-text">Результат внедрения*</p>
+                <div class="agro-form-textarea-wrapper wrapper-f3">
+                    <p class="agro-form-input-error"> </p>
+                    <textarea name="about_result" id="" placeholder="Опишите результаты и показатели до и после внедрения технологии (если есть)" class="agro-form-textarea"></textarea>
+                </div>
+
+                <p class="agro-form-white-text">Использование технологий*</p>
+                <div class="agro-form-textarea-wrapper wrapper-f3">
+                    <p class="agro-form-input-error"> </p>
+                    <textarea name="about_technology" id="" placeholder="Опишите технологии, которые вы использовали" class="agro-form-textarea"></textarea>
+                </div>
+
+
+                <p class="agro-form-white-text">Уникальность*</p>
+                <div class="agro-form-textarea-wrapper wrapper-f3">
+                    <p class="agro-form-input-error"> </p>
+                    <textarea name="about_uniq" id="" placeholder="В чем вы видите уникальность вашего кейса?" class="agro-form-textarea"></textarea>
+                </div>
+
+                <p class="agro-form-white-text">Партнер по реализации кейса</p>
+                <div class="agro-form-textarea-wrapper wrapper-f3">
+                    <p class="agro-form-input-error"> </p>
+                    <textarea name="about_partners" id="" placeholder="Если вы реализовывали кейс вместе с партнером, подрядчиком или заказчиком, то опишите в этом разделе ваши роли в проекте" class="agro-form-textarea"></textarea>
+                </div>
+
+                <p class="agro-form-white-text">Дополнительные материалы</p>
+                <div class="agro-form-textarea-wrapper wrapper-f3">
+                    <p class="agro-form-input-error"> </p>
+                    <textarea name="extra_materials" id="" placeholder="Здесь вы можете приложить ссылку на презентацию, видео или дополнительные материалы, которые помогут жюри оценить проект" class="agro-form-textarea"></textarea>
+                </div>
+            </div>
+        </template>
+
+        <template id="future_food-template">
+            <div class="agro-form-stage-3">
+                <h2 class="agro-form-title agro-form-title-stage-3">Расскажите о кейсе</h2>
+                <p class="agro-form-subtitle agro-form-subtitle-stage-3">Вы выбрали номинацию: Еда будущего</p>
+
+                <div class="agro-form-input-wrapper agro-form-input-wrapper-stage-3 wrapper-f3">
+                    <p class="agro-form-input-error"> </p>
+                    <input type="text" class="agro-form-input" placeholder="Название кейса*" autoComplete='none' name="case_name">
+                    <label for="" class="agro-form-input-label">Название кейса*</label>
+                </div>
+
+                <div class="agro-form-input-wrapper agro-form-input-wrapper-stage-3 wrapper-f3">
+                    <p class="agro-form-input-error"> </p>
+                    <input type="text" class="agro-form-input" placeholder="Компания, которая реализовала кейс*" autoComplete='none' name="company">
+                    <label for="" class="agro-form-input-label">Компания, которая реализовала кейс*</label>
+                </div>
+
+                <div class="agro-form-textarea-wrapper wrapper-f3 agro-form-textarea-wrapper-with-label">
+                    <p class="agro-form-input-error"> </p>
+                    <textarea id="" placeholder="Описание компании*" class="agro-form-textarea" name="company_about"></textarea>
+                    <label for="" class="agro-form-input-label">Описание компании*</label>
+                </div>
+
+                <div class="agro-form-input-wrapper agro-form-input-wrapper-stage-3 wrapper-f3 agro-form-wrapper-half-screen">
+                    <p class="agro-form-input-error"> </p>
+                    <input type="text" class="agro-form-input" placeholder="Сайт компании*" autoComplete='none' name="company_url">
+                    <label for="" class="agro-form-input-label">Сайт компании*</label>
+                </div>
+
+                <div class="agro-form-select-wrapper custom-select wrapper-f3 agro-form-wrapper-half-screen">
+                    <p class="agro-form-input-error"> </p>
+                    <select id="" name="release_year">
+                        <option value="">Год реализации кейса*</option>
+                        <option value="before_2018">ранее 2018</option>
+                        <option value="2019">2019</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                    </select>
+                </div>
+
+                <p class="agro-form-white-text">Описание продукции*</p>
+                <div class="agro-form-textarea-wrapper wrapper-f3">
+                    <p class="agro-form-input-error"> </p>
+                    <textarea name="about_product" id="" placeholder="Опишите продукт, его компоненты и характеристики" class="agro-form-textarea"></textarea>
+                </div>
+
+                <p class="agro-form-white-text">Процесс производства*</p>
+                <div class="agro-form-textarea-wrapper wrapper-f3">
+                    <p class="agro-form-input-error"> </p>
+                    <textarea name="about_process" id="" placeholder="Опишите процесс производства продукта" class="agro-form-textarea"></textarea>
+                </div>
+
+                <p class="agro-form-white-text">Уникальность и новизна*</p>
+                <div class="agro-form-textarea-wrapper wrapper-f3">
+                    <p class="agro-form-input-error"> </p>
+                    <textarea name="about_uniq" id="" placeholder="В чем уникальность и новизна вашего продукта или подхода к его производству?" class="agro-form-textarea"></textarea>
+                </div>
+
+                <p class="agro-form-white-text">Объемы производства*</p>
+                <div class="agro-form-textarea-wrapper wrapper-f3">
+                    <p class="agro-form-input-error"> </p>
+                    <textarea name="production_volumes" id="" placeholder="Опишите, в каком объеме выпускается продукт" class="agro-form-textarea"></textarea>
+                </div>
+
+                <p class="agro-form-white-text">Рынок сбыта*</p>
+                <div class="agro-form-textarea-wrapper wrapper-f3">
+                    <p class="agro-form-input-error"> </p>
+                    <textarea name="sales_market" id="" placeholder="Кому и как вы продаете продукт?" class="agro-form-textarea"></textarea>
+                </div>
+
+                <p class="agro-form-white-text">Дополнительные материалы</p>
+                <div class="agro-form-textarea-wrapper wrapper-f3">
+                    <p class="agro-form-input-error"> </p>
+                    <textarea name="extra_materials" id="" placeholder="Здесь вы можете приложить ссылку на презентацию, видео или дополнительные материалы, которые помогут жюри оценить проект" class="agro-form-textarea"></textarea>
+                </div>
+
+            </div>
+        </template>
+
+        <template id="made_in_russia-template">
+            <div class="agro-form-stage-3">
+                <h2 class="agro-form-title agro-form-title-stage-3">Расскажите о кейсе</h2>
+                <p class="agro-form-subtitle agro-form-subtitle-stage-3">Вы выбрали номинацию: Своя технология</p>
+
+                <div class="agro-form-input-wrapper agro-form-input-wrapper-stage-3 wrapper-f3">
+                    <p class="agro-form-input-error"> </p>
+                    <input type="text" class="agro-form-input" placeholder="Название кейса*" autoComplete='none' name="case_name">
+                    <label for="" class="agro-form-input-label">Название кейса*</label>
+                </div>
+
+                <div class="agro-form-input-wrapper agro-form-input-wrapper-stage-3 wrapper-f3">
+                    <p class="agro-form-input-error"> </p>
+                    <input type="text" class="agro-form-input" placeholder="Компания, которая реализовала кейс*" autoComplete='none' name="company">
+                    <label for="" class="agro-form-input-label">Компания, которая реализовала кейс*</label>
+                </div>
+
+                <div class="agro-form-textarea-wrapper wrapper-f3 agro-form-textarea-wrapper-with-label" agro-form-textarea-wrapper-with-label>
+                    <p class="agro-form-input-error"> </p>
+                    <textarea id="" placeholder="Описание компании*" class="agro-form-textarea" name="company_about"></textarea>
+                    <label for="" class="agro-form-input-label">Описание компании*</label>
+                </div>
+
+                <div class="agro-form-input-wrapper agro-form-input-wrapper-stage-3 wrapper-f3 agro-form-wrapper-33-screen">
+                    <p class="agro-form-input-error"> </p>
+                    <input type="text" class="agro-form-input" placeholder="Сайт компании*" autoComplete='none' name="company_url">
+                    <label for="" class="agro-form-input-label">Сайт компании*</label>
+                </div>
+
+                <div class="agro-form-select-wrapper custom-select wrapper-f3 agro-form-wrapper-33-screen">
+                    <p class="agro-form-input-error"> </p>
+                    <select id="" name="release_year">
+                        <option value="">Год реализации кейса*</option>
+                        <option value="before_2018">ранее 2018</option>
+                        <option value="2019">2019</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                    </select>
+                </div>
+
+                <div class="agro-form-select-wrapper custom-select wrapper-f3 agro-form-wrapper-33-screen agro-form-wrapper-100-tablet">
+                    <p class="agro-form-input-error"> </p>
+                    <select id="" name="release_month">
+                        <option value="">Месяц запуска кейса*</option>
+                        <option value="1">01</option>
+                        <option value="2">02</option>
+                        <option value="3">03</option>
+                        <option value="4">04</option>
+                        <option value="5">05</option>
+                        <option value="6">06</option>
+                        <option value="7">07</option>
+                        <option value="8">08</option>
+                        <option value="9">09</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                </div>
+
+                <p class="agro-form-white-text">Исходные данные*</p>
+                <div class="agro-form-textarea-wrapper wrapper-f3">
+                    <p class="agro-form-input-error"> </p>
+                    <textarea name="initial_description" id="" placeholder="Опишите процесс и технологию, которые использовались ранее (до замещения)" class="agro-form-textarea"></textarea>
+                </div>
+
+                <p class="agro-form-white-text">Описание технологии*</p>
+                <div class="agro-form-textarea-wrapper wrapper-f3">
+                    <p class="agro-form-input-error"> </p>
+                    <textarea name="about_technology" id="" placeholder="Опишите решение, которое было внедрено взамен импортного, и какие технологии в нем применяются" class="agro-form-textarea"></textarea>
+                </div>
+
+                <p class="agro-form-white-text">Процесс перехода</p>
+                <div class="agro-form-textarea-wrapper wrapper-f3">
+                    <p class="agro-form-input-error"> </p>
+                    <textarea name="transition_process" id="" placeholder="Опишите, как проходил процесс перехода на новое решение" class="agro-form-textarea"></textarea>
+                </div>
+
+                <p class="agro-form-white-text">Результат внедрения*</p>
+                <div class="agro-form-textarea-wrapper wrapper-f3">
+                    <p class="agro-form-input-error"> </p>
+                    <textarea name="about_result" id="" placeholder="Опишите как изменились результаты после внедрения российской технологии (улучшились, ухудшились или остались без изменения)" class="agro-form-textarea"></textarea>
+                </div>
+
+                <p class="agro-form-white-text">Партнер по реализации кейса</p>
+                <div class="agro-form-textarea-wrapper wrapper-f3">
+                    <p class="agro-form-input-error"> </p>
+                    <textarea name="about_partners" id="" placeholder="Если вы реализовывали кейс вместе с партнером, подрядчиком или заказчиком, то опишите в этом разделе ваши роли в проекте" class="agro-form-textarea"></textarea>
+                </div>
+
+                <p class="agro-form-white-text">Дополнительные материалы</p>
+                <div class="agro-form-textarea-wrapper wrapper-f3">
+                    <p class="agro-form-input-error"> </p>
+                    <textarea name="extra_materials" id="" placeholder="Здесь вы можете приложить ссылку на презентацию, видео или дополнительные материалы, которые помогут жюри оценить проект" class="agro-form-textarea"></textarea>
+                </div>
+
+            </div>
+        </template>
+
+        <template id="agro_hero-template">
+            <div class="agro-form-stage-3">
+                <h2 class="agro-form-title agro-form-title-stage-3">Расскажите о кейсе</h2>
+                <p class="agro-form-subtitle agro-form-subtitle-stage-3">Вы выбрали номинацию: Лидер года</p>
+
+                <div class="agro-form-input-wrapper agro-form-input-wrapper-stage-3 wrapper-f3">
+                    <p class="agro-form-input-error"> </p>
+                    <input type="text" class="agro-form-input" placeholder="Имя и фамилия номинанта*" autoComplete='none' name="nominate_fio">
+                    <label for="" class="agro-form-input-label">Имя и фамилия номинанта*</label>
+                </div>
+
+                <div class="agro-form-input-wrapper agro-form-input-wrapper-stage-3 wrapper-f3">
+                    <p class="agro-form-input-error"> </p>
+                    <input type="text" class="agro-form-input" placeholder="Компания (основное место работы)*" autoComplete='none' name="company">
+                    <label for="" class="agro-form-input-label">Компания (основное место работы)*</label>
+                </div>
+
+                <div class="agro-form-textarea-wrapper wrapper-f3 agro-form-textarea-wrapper-with-label">
+                    <p class="agro-form-input-error"> </p>
+                    <textarea id="" placeholder="Описание компании*" class="agro-form-textarea" name="company_about"></textarea>
+                    <label for="" class="agro-form-input-label">Компания (основное место работы)*</label>
+                </div>
+
+                <div class="agro-form-input-wrapper agro-form-input-wrapper-stage-3 wrapper-f3 agro-form-wrapper-half-screen">
+                    <p class="agro-form-input-error"> </p>
+                    <input type="text" class="agro-form-input" placeholder="Сайт компании*" autoComplete='none' name="company_url">
+                    <label for="" class="agro-form-input-label">Сайт компании*</label>
+                </div>
+
+                <div class="agro-form-input-wrapper agro-form-input-wrapper-stage-3 wrapper-f3 agro-form-wrapper-half-screen">
+                    <p class="agro-form-input-error"> </p>
+                    <input type="text" class="agro-form-input" placeholder="Должность*" autoComplete='none' name="role">
+                    <label for="" class="agro-form-input-label">Должность*</label>
+                </div>
+
+                <p class="agro-form-white-text">Другие роли</p>
+                <div class="agro-form-textarea-wrapper wrapper-f3">
+                    <p class="agro-form-input-error"> </p>
+                    <textarea name="other_role" id="" placeholder="Научная, общественная или политическая деятельность, участие в других компаниях и др." class="agro-form-textarea"></textarea>
+                </div>
+
+                <div class="agro-form-textarea-wrapper wrapper-f3 agro-form-textarea-wrapper-with-label">
+                    <p class="agro-form-input-error"> </p>
+                    <textarea id="" placeholder="Экспертиза и биография номинанта*" class="agro-form-textarea" name="nomination_bio"></textarea>
+                    <label for="" class="agro-form-input-label">Экспертиза и биография номинанта*</label>
+                </div>
+
+                <p class="agro-form-white-text">Ссылки на интервью и публикации в СМИ</p>
+
+                <div class="agro-form-input-wrapper agro-form-input-wrapper-stage-3 wrapper-f3 agro-form-wrapper-half-screen">
+                    <p class="agro-form-input-error"> </p>
+                    <input type="text" class="agro-form-input" placeholder="Ссылка" autoComplete='none' name="media_urls">
+                    <label for="" class="agro-form-input-label">Ссылка</label>
+                </div>
+
+                <div class="agro-form-input-wrapper agro-form-input-wrapper-stage-3 wrapper-f3 agro-form-wrapper-half-screen">
+                    <p class="agro-form-input-error"> </p>
+                    <input type="text" class="agro-form-input" placeholder="Ссылка" autoComplete='none' name="media_urls">
+                    <label for="" class="agro-form-input-label">Ссылка</label>
+                </div>
+
+                <div class="agro-form-input-wrapper agro-form-input-wrapper-stage-3 wrapper-f3 agro-form-wrapper-half-screen">
+                    <p class="agro-form-input-error"> </p>
+                    <input type="text" class="agro-form-input" placeholder="Ссылка" autoComplete='none' name="media_urls">
+                    <label for="" class="agro-form-input-label">Ссылка</label>
+                </div>
+
+                <div class="agro-form-input-wrapper agro-form-input-wrapper-stage-3 wrapper-f3 agro-form-wrapper-half-screen">
+                    <p class="agro-form-input-error"> </p>
+                    <input type="text" class="agro-form-input" placeholder="Ссылка" autoComplete='none' name="media_urls">
+                    <label for="" class="agro-form-input-label">Ссылка</label>
+                </div>
+
+                <div class="agro-form-input-wrapper agro-form-input-wrapper-stage-3 wrapper-f3 agro-form-wrapper-half-screen">
+                    <p class="agro-form-input-error"> </p>
+                    <input type="text" class="agro-form-input" placeholder="Ссылка" autoComplete='none' name="media_urls">
+                    <label for="" class="agro-form-input-label">Ссылка</label>
+                </div>
+
+                <div class="agro-form-input-wrapper agro-form-input-wrapper-stage-3 wrapper-f3 agro-form-wrapper-half-screen">
+                    <p class="agro-form-input-error"> </p>
+                    <input type="text" class="agro-form-input" placeholder="Ссылка" autoComplete='none' name="media_urls">
+                    <label for="" class="agro-form-input-label">Ссылка</label>
+                </div>
+
+                <div class="agro-form-input-wrapper agro-form-input-wrapper-stage-3 wrapper-f3 agro-form-wrapper-half-screen">
+                    <p class="agro-form-input-error"> </p>
+                    <input type="text" class="agro-form-input" placeholder="Ссылка" autoComplete='none' name="media_urls">
+                    <label for="" class="agro-form-input-label">Ссылка</label>
+                </div>
+
+                <div class="agro-form-input-wrapper agro-form-input-wrapper-stage-3 wrapper-f3 agro-form-wrapper-half-screen">
+                    <p class="agro-form-input-error"> </p>
+                    <input type="text" class="agro-form-input" placeholder="Ссылка" autoComplete='none' name="media_urls">
+                    <label for="" class="agro-form-input-label">Ссылка</label>
+                </div>
+
+                <div class="agro-form-input-wrapper agro-form-input-wrapper-stage-3 wrapper-f3 agro-form-wrapper-half-screen">
+                    <p class="agro-form-input-error"> </p>
+                    <input type="text" class="agro-form-input" placeholder="Ссылка" autoComplete='none' name="media_urls">
+                    <label for="" class="agro-form-input-label">Ссылка</label>
+                </div>
+
+                <div class="agro-form-input-wrapper agro-form-input-wrapper-stage-3 wrapper-f3 agro-form-wrapper-half-screen">
+                    <p class="agro-form-input-error"> </p>
+                    <input type="text" class="agro-form-input" placeholder="Ссылка" autoComplete='none' name="media_urls">
+                    <label for="" class="agro-form-input-label">Ссылка</label>
+                </div>
+
+                <p class="agro-form-white-text">Достижения в области AgroTech*</p>
+                <div class="agro-form-textarea-wrapper wrapper-f3">
+                    <p class="agro-form-input-error"> </p>
+                    <textarea name="achievements" id="" placeholder="Почему номинант достоин стать “человеком года в российском AgroTech-сегменте”?" class="agro-form-textarea"></textarea>
+                </div>
+
+
+            </div>
+        </template>
+
+        <template id="agro_launch-template">
+            <div class="agro-form-stage-3">
+                <h2 class="agro-form-title agro-form-title-stage-3">Расскажите о кейсе</h2>
+                <p class="agro-form-subtitle agro-form-subtitle-stage-3">Вы выбрали номинацию: Запуск года</p>
+
+                <div class="agro-form-input-wrapper agro-form-input-wrapper-stage-3 wrapper-f3 agro-form-wrapper-half-screen">
+                    <p class="agro-form-input-error"> </p>
+                    <input type="text" class="agro-form-input" placeholder="Название проекта / стартапа*" autoComplete='none' name="project_name">
+                    <label for="" class="agro-form-input-label">Название проекта / стартапа*</label>
+                </div>
+
+                <div class="agro-form-input-wrapper agro-form-input-wrapper-stage-3 wrapper-f3 agro-form-wrapper-half-screen">
+                    <p class="agro-form-input-error"> </p>
+                    <input type="text" class="agro-form-input" placeholder="Сайт проекта*" autoComplete='none' name="project_url">
+                    <label for="" class="agro-form-input-label">Сайт проекта*</label>
+                </div>
+
+                <div class="agro-form-textarea-wrapper wrapper-f3 agro-form-textarea-wrapper-with-label">
+                    <p class="agro-form-input-error"> </p>
+                    <textarea id="" placeholder="Описание компании*" class="agro-form-textarea" name="company_about"></textarea>
+                    <label for="" class="agro-form-input-label">Описание компании*</label>
+                </div>
+
+                <div class="agro-form-select-wrapper custom-select wrapper-f3 agro-form-wrapper-33-screen">
+                    <p class="agro-form-input-error"> </p>
+                    <select id="" name="release_year">
+                        <option value="">Год запуска кейса*</option>
+                        <option value="before_2018">ранее 2018</option>
+                        <option value="2020">2019</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                    </select>
+                </div>
+
+                <div class="agro-form-select-wrapper custom-select wrapper-f3 agro-form-wrapper-33-screen">
+                    <p class="agro-form-input-error"> </p>
+                    <select id="" name="release_month">
+                        <option value="">Месяц запуска кейса*</option>
+                        <option value="1">01</option>
+                        <option value="2">02</option>
+                        <option value="3">03</option>
+                        <option value="4">04</option>
+                        <option value="5">05</option>
+                        <option value="6">06</option>
+                        <option value="7">07</option>
+                        <option value="8">08</option>
+                        <option value="9">09</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                </div>
+
+                <div class="agro-form-select-wrapper custom-select wrapper-f3 agro-form-wrapper-33-screen agro-form-wrapper-100-tablet custom-select-stages" >
+                    <p class="agro-form-input-error"> </p>
+                    <select id="" name="project_stage">
+                        <option value="">Стадия развития*</option>
+                        <option value="1">MVP (работающий прототип без продаж)</option>
+                        <option value="2">Работающая технология с подтвержденным спросом (есть пилоты или первые клиенты)</option>
+                        <option value="3">Работающий бизнес (есть клиенты, операционная безубыточность)</option>
+                        <option value="4">Зрелая компания с прибылью</option>
+                    </select>
+                </div>
+
+                <div class="agro-form-textarea-wrapper wrapper-f3 agro-form-textarea-wrapper-with-label">
+                    <p class="agro-form-input-error"> </p>
+                    <textarea id="" placeholder="Сфера применения*" class="agro-form-textarea" name="project_sphere"></textarea>
+                    <label for="" class="agro-form-input-label">Сфера применения*</label>
+                </div>
+
+                <p class="agro-form-white-text">Описание проекта*</p>
+                <div class="agro-form-textarea-wrapper wrapper-f3">
+                    <p class="agro-form-input-error"> </p>
+                    <textarea name="project_about" id="" placeholder="Опишите суть проекта и какую проблему он решает" class="agro-form-textarea"></textarea>
+                </div>
+
+                <p class="agro-form-white-text">Использование технологий*</p>
+                <div class="agro-form-textarea-wrapper wrapper-f3">
+                    <p class="agro-form-input-error"> </p>
+                    <textarea name="about_technology" id="" placeholder="Опишите технологии, которые вы используете" class="agro-form-textarea"></textarea>
+                </div>
+
+                <p class="agro-form-white-text">Результаты и показатели*</p>
+                <div class="agro-form-textarea-wrapper wrapper-f3">
+                    <p class="agro-form-input-error"> </p>
+                    <textarea name="about_result" id="" placeholder="Каких результатов уже удалось достичь? (Продажи, внедрение и т.д.)" class="agro-form-textarea"></textarea>
+                </div>
+
+                <p class="agro-form-white-text">Уникальность*</p>
+                <div class="agro-form-textarea-wrapper wrapper-f3">
+                    <p class="agro-form-input-error"> </p>
+                    <textarea name="about_uniq" id="" placeholder="Чем уникален ваш проект, чем он отличается от конкурентов и почему достоин стать победителем в номинации?" class="agro-form-textarea"></textarea>
+                </div>
+
+                <div class="agro-form-input-wrapper agro-form-input-wrapper-stage-3 wrapper-f3">
+                    <p class="agro-form-input-error"> </p>
+                    <input type="text" class="agro-form-input" placeholder="Основатель проекта*" autoComplete='none' name="founder">
+                    <label for="" class="agro-form-input-label">Основатель проекта*</label>
+                </div>
+
+                <p class="agro-form-white-text">Команда проекта*</p>
+                <div class="agro-form-textarea-wrapper wrapper-f3">
+                    <p class="agro-form-input-error"> </p>
+                    <textarea name="team" id="" placeholder="Из кого состоит основная команда проекта?" class="agro-form-textarea"></textarea>
+                </div>
+
+                <div class="agro-form-textarea-wrapper wrapper-f3 agro-form-textarea-wrapper-with-label">
+                    <p class="agro-form-input-error"> </p>
+                    <textarea id="" placeholder="Дополнительная информация" class="agro-form-textarea" name="extra_info"></textarea>
+                    <label for="" class="agro-form-input-label">Дополнительная информация</label>
+                </div>
+
+                <p class="agro-form-white-text">Дополнительные материалы</p>
+                <div class="agro-form-textarea-wrapper wrapper-f3">
+                    <p class="agro-form-input-error"> </p>
+                    <textarea name="extra_materials" id="" placeholder="Здесь вы можете приложить ссылку на презентацию, видео или дополнительные материалы, которые помогут жюри оценить проект" class="agro-form-textarea"></textarea>
+                </div>
+
+            </div>
+        </template>
+
+        <template id="agro_idea-template">
+            <div class="agro-form-stage-3">
+                <h2 class="agro-form-title agro-form-title-stage-3">Расскажите о кейсе</h2>
+                <p class="agro-form-subtitle agro-form-subtitle-stage-3">Вы выбрали номинацию: Идея года</p>
+
+                <div class="agro-form-input-wrapper agro-form-input-wrapper-stage-3 wrapper-f3 agro-form-wrapper-half-screen">
+                    <p class="agro-form-input-error"> </p>
+                    <input type="text" class="agro-form-input" placeholder="Название проекта*" autoComplete='none' name="project_name">
+                    <label for="" class="agro-form-input-label">Название проекта*</label>
+                </div>
+
+                <div class="agro-form-input-wrapper agro-form-input-wrapper-stage-3 wrapper-f3 agro-form-wrapper-half-screen">
+                    <p class="agro-form-input-error"> </p>
+                    <input type="text" class="agro-form-input" placeholder="Примерная дата реализации или публикации*" autoComplete='none' name="project_date">
+                    <label for="" class="agro-form-input-label">Примерная дата реализации или публикации*</label>
+                </div>
+
+                <p class="agro-form-white-text">Автор*</p>
+                <div class="agro-form-textarea-wrapper wrapper-f3">
+                    <p class="agro-form-input-error"> </p>
+                    <textarea name="project_author" id="" placeholder="Укажите автора, коллектив авторов или компанию" class="agro-form-textarea"></textarea>
+                </div>
+
+                <div class="agro-form-textarea-wrapper wrapper-f3 agro-form-textarea-wrapper-with-label ">
+                    <p class="agro-form-input-error"> </p>
+                    <textarea id="" placeholder="Описание проекта*" class="agro-form-textarea" name="project_about"></textarea>
+                    <label for="" class="agro-form-input-label">Описание проекта*</label>
+                </div>
+
+                <div class="agro-form-textarea-wrapper wrapper-f3 agro-form-textarea-wrapper-with-label">
+                    <p class="agro-form-input-error"> </p>
+                    <textarea id="" placeholder="Сфера применения*" class="agro-form-textarea" name="project_sphere"></textarea>
+                    <label for="" class="agro-form-input-label">Сфера применения*</label>
+                </div>
+
+                <div class="agro-form-textarea-wrapper wrapper-f3 agro-form-textarea-wrapper-with-label">
+                    <p class="agro-form-input-error"> </p>
+                    <textarea id="" placeholder="Научная новизна и уникальность*" class="agro-form-textarea" name="about_uniq"></textarea>
+                    <label for="" class="agro-form-input-label">Научная новизна и уникальность*</label>
+                </div>
+
+                <div class="agro-form-textarea-wrapper wrapper-f3 agro-form-textarea-wrapper-with-label">
+                    <p class="agro-form-input-error"> </p>
+                    <textarea id="" placeholder="Наличие и описание работающего прототипа*" class="agro-form-textarea" name="project_prototype"></textarea>
+                    <label for="" class="agro-form-input-label">Наличие и описание работающего прототипа*</label>
+                </div>
+
+                <p class="agro-form-white-text">Использование технологий*</p>
+                <div class="agro-form-textarea-wrapper wrapper-f3">
+                    <p class="agro-form-input-error"> </p>
+                    <textarea name="about_technology" id="" placeholder=" Опишите технологии, которые используются в проекте" class="agro-form-textarea"></textarea>
+                </div>
+
+                <p class="agro-form-white-text">Ссылки на публикации вашего проекта в открытом доступе (научные издания, сайты, конференции)</p>
+
+                <div class="agro-form-input-wrapper agro-form-input-wrapper-stage-3 wrapper-f3 agro-form-wrapper-half-screen">
+                    <p class="agro-form-input-error"> </p>
+                    <input type="text" class="agro-form-input" placeholder="Ссылка" autoComplete='none' name="media_urls">
+                    <label for="" class="agro-form-input-label">Ссылка</label>
+                </div>
+
+                <div class="agro-form-input-wrapper agro-form-input-wrapper-stage-3 wrapper-f3 agro-form-wrapper-half-screen">
+                    <p class="agro-form-input-error"> </p>
+                    <input type="text" class="agro-form-input" placeholder="Ссылка" autoComplete='none' name="media_urls">
+                    <label for="" class="agro-form-input-label">Ссылка</label>
+                </div>
+
+                <div class="agro-form-input-wrapper agro-form-input-wrapper-stage-3 wrapper-f3 agro-form-wrapper-half-screen">
+                    <p class="agro-form-input-error"> </p>
+                    <input type="text" class="agro-form-input" placeholder="Ссылка" autoComplete='none' name="media_urls">
+                    <label for="" class="agro-form-input-label">Ссылка</label>
+                </div>
+
+                <div class="agro-form-input-wrapper agro-form-input-wrapper-stage-3 wrapper-f3 agro-form-wrapper-half-screen">
+                    <p class="agro-form-input-error"> </p>
+                    <input type="text" class="agro-form-input" placeholder="Ссылка" autoComplete='none' name="media_urls">
+                    <label for="" class="agro-form-input-label">Ссылка</label>
+                </div>
+
+                <div class="agro-form-input-wrapper agro-form-input-wrapper-stage-3 wrapper-f3 agro-form-wrapper-half-screen">
+                    <p class="agro-form-input-error"> </p>
+                    <input type="text" class="agro-form-input" placeholder="Ссылка" autoComplete='none' name="media_urls">
+                    <label for="" class="agro-form-input-label">Ссылка</label>
+                </div>
+
+                <div class="agro-form-input-wrapper agro-form-input-wrapper-stage-3 wrapper-f3 agro-form-wrapper-half-screen">
+                    <p class="agro-form-input-error"> </p>
+                    <input type="text" class="agro-form-input" placeholder="Ссылка" autoComplete='none' name="media_urls">
+                    <label for="" class="agro-form-input-label">Ссылка</label>
+                </div>
+
+                <div class="agro-form-input-wrapper agro-form-input-wrapper-stage-3 wrapper-f3 agro-form-wrapper-half-screen">
+                    <p class="agro-form-input-error"> </p>
+                    <input type="text" class="agro-form-input" placeholder="Ссылка" autoComplete='none' name="media_urls">
+                    <label for="" class="agro-form-input-label">Ссылка</label>
+                </div>
+
+                <div class="agro-form-input-wrapper agro-form-input-wrapper-stage-3 wrapper-f3 agro-form-wrapper-half-screen">
+                    <p class="agro-form-input-error"> </p>
+                    <input type="text" class="agro-form-input" placeholder="Ссылка" autoComplete='none' name="media_urls">
+                    <label for="" class="agro-form-input-label">Ссылка</label>
+                </div>
+
+                <div class="agro-form-input-wrapper agro-form-input-wrapper-stage-3 wrapper-f3 agro-form-wrapper-half-screen">
+                    <p class="agro-form-input-error"> </p>
+                    <input type="text" class="agro-form-input" placeholder="Ссылка" autoComplete='none' name="media_urls">
+                    <label for="" class="agro-form-input-label">Ссылка</label>
+                </div>
+
+                <div class="agro-form-input-wrapper agro-form-input-wrapper-stage-3 wrapper-f3 agro-form-wrapper-half-screen">
+                    <p class="agro-form-input-error"> </p>
+                    <input type="text" class="agro-form-input" placeholder="Ссылка" autoComplete='none' name="media_urls">
+                    <label for="" class="agro-form-input-label">Ссылка</label>
+                </div>
+
+                <div class="agro-form-textarea-wrapper wrapper-f3 agro-form-textarea-wrapper-with-label">
+                    <p class="agro-form-input-error"> </p>
+                    <textarea id="" placeholder="Дополнительная информация" class="agro-form-textarea" name="extra_info"></textarea>
+                    <label for="" class="agro-form-input-label">Дополнительная информация</label>
+                </div>
+
+                <p class="agro-form-white-text">Дополнительные материалы</p>
+                <div class="agro-form-textarea-wrapper wrapper-f3">
+                    <p class="agro-form-input-error"> </p>
+                    <textarea name="extra_materials" id="" placeholder="Здесь вы можете приложить ссылку на презентацию, видео  или дополнительные материалы, которые помогут жюри оценить проект" class="agro-form-textarea"></textarea>
+                </div>
+
+            </div>
+        </template>
+
+        <div class="form-success-popup-shadow" id="popup-success">
+            <div class="form-success-popup">
+                    <a href="{% url 'home' %}"><img src="{% static 'build/img/timer-popup-close.svg' %}" alt="" class="form-success-popup__close"></a>
+                    <p class="form-success-popup__title">Спасибо!</p>
+                    <p class="form-success-popup__text">Ваша заявка успешно отправлена.<br>Результаты отбора мы сообщим вам 8 декабря 2022.<br><br> Если у вас есть вопросы пишите на <a href="mailto:hello@agro-code.ru" target="_blank">hello@agro-code.ru</a></p>
+                    <a href="https://t.me/agrocodehub" class="form-success-popup-telegram" target="_blank">Вступить в чат <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M27.8023 5.33331L4.19727 15.3792L9.75906 17.6329L21.081 10.8728L21.9998 12.2703L11.0575 18.8038L12.9229 25.2512L16.5294 21.5722L23.4653 26.6667L27.8023 5.33331Z" fill="#4CED5B"/></svg></a>
+                    <div class="form-success-popup-submit-wrapper">
+                        <a href="{% url 'home' %}" class="form-success-popup-submit">Вернуться на главную</a>
+                    </div>
+            </div>
+        </div>
+
+
+    </section>
+{% endblock %}

@@ -1,0 +1,511 @@
+.agro-short-list {
+    background-color: rgba(4, 139, 58, 0.5);
+
+    position: relative;
+    padding: 74px 0 80px 0;
+    margin-bottom: 74px;
+
+    @media @tablet {
+        padding: 65px 0 80px 0;
+        margin-bottom: 94px;
+    }
+
+    @media @laptop {
+        padding: 93px 0 80px 0;
+        margin-bottom: 65px;
+    }
+
+    @media @desktop {
+        padding: 133px 0 94px 0;
+        margin-bottom: 133px;
+    }
+
+    @media @wide {
+        padding: 133px 0 94px 0;
+        margin-bottom: 133px;
+    }
+}
+
+.agro-short-list-header {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-bottom: 57px;
+    padding: 0 24px 0 24px;
+
+    @media @tablet {
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 58px;
+        padding: 0 90px 0 90px;
+    }
+
+    @media @laptop {
+        margin-bottom: 40px;
+        padding: 0 124px 0 79px;
+    }
+
+    @media @desktop {
+        margin-bottom: 59px;
+        padding: 0 183px 0 107px;
+    }
+
+    @media @wide {
+        margin-bottom: 89px;
+        padding: 0 261px 0 151px;
+    }
+
+}
+
+.agro-short-list-header-title {
+    font-family: 'TT Firs Neue';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 33px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: #FFFFFF;
+
+    margin-bottom: 58px;
+
+    @media @tablet {
+        font-size: 36px;
+        line-height: 40px;
+        margin-bottom: 0;
+    }
+
+    @media @laptop {
+        font-size: 36px;
+        line-height: 40px;
+    }
+
+    @media @desktop {
+        font-size: 48px;
+        line-height: 53px;
+    }
+
+    @media @wide {
+        font-size: 70px;
+        line-height: 77px;
+    }
+}
+
+.agro-short-list-header-nav {
+    display: none;
+
+    @media @tablet {
+        display: flex;
+        justify-content: space-between;
+        width: 184px;
+        margin-bottom: 48px;
+    }
+
+    @media @laptop {
+        display: none;
+    }
+}
+
+.agro-short-list-nominations {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @media @tablet {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    @media @laptop {
+        width: 404px;
+        margin-left: 20px;
+        justify-content: flex-start;
+    }
+
+    @media @desktop {
+        width: 541px;
+        margin-left: 32px;
+        justify-content: flex-start;
+    }
+
+    @media @wide {
+        width: 770px;
+        margin-left: 32px;
+        justify-content: flex-start;
+    }
+}
+
+.agro-short-list-nominations-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(50% - 1px);
+    height: 45px;
+    background: rgba(209, 193, 255, 0.1);
+    border-radius: 4px;
+    margin-bottom: 2px;
+
+    cursor: pointer;
+
+    @media @tablet {
+        width: calc(24.5% - 1px);
+        margin-left: 3px;
+        margin-bottom: 3px;
+        height: 38px;
+    }
+
+    @media @laptop {
+        height: 38px;
+    }
+
+    @media @desktop {
+        height: 54px;
+    }
+
+    @media @wide {
+        height: 75px;
+    }
+
+    &:hover {
+        & p {
+            opacity: 1;
+        }
+    }
+}
+
+.agro-short-list-nominations-item > p {
+    font-family: 'Anonymous Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 13px;
+    text-align: center;
+    letter-spacing: 0.1em;
+
+    color: #FFFFFF;
+
+    opacity: 0.5;
+
+
+    @media @tablet {
+        font-size: 11px;
+        line-height: 11px;
+        text-align: left;
+    }
+
+    @media @laptop {
+        font-size: 11px;
+        line-height: 11px;
+        max-width: 77px;
+    }
+
+    @media @desktop {
+        font-size: 14px;
+        line-height: 14px;
+        max-width: 95px;
+    }
+
+    @media @wide {
+        font-size: 18px;
+        line-height: 18px;
+        max-width: 121px;
+    }
+}
+
+.agro-short-list-nominations-item_active {
+    background: #4CED5B;
+
+    & > p {
+        color: #000;
+        opacity: 1;
+    }
+
+
+}
+
+.agro-short-list-slider-wrapper {
+    position: relative;
+}
+
+.agro-short-list-slider-inner {
+    display: none !important;
+
+    & .center {
+        & .agro-short-list-slider-item {
+            opacity: 1;
+            transition-property: opacity;
+            transition-duration: .6s;
+        }
+    }
+}
+
+.agro-short-list-slider-inner.open {
+    display: block !important;
+}
+
+.agro-short-list-slider-nav-prev {
+    display: none;
+    z-index: 5;
+    cursor: pointer;
+
+    @media @laptop {
+        top: 160px;
+        left: 47px;
+        position: absolute;
+        display: block;
+    }
+
+    @media @desktop {
+        top: 192px;
+        left: 115px;
+    }
+
+    @media @wide {
+        top: 246px;
+        left: 151px;
+    }
+
+    & svg {
+
+        @media @laptop {
+            width: 80px;
+            height: 80px;
+
+        }
+
+        @media @desktop {
+            width: 100px;
+            height: 100px;
+        }
+
+        @media @wide {
+            width: 139px;
+            height: 139px;
+        }
+    }
+}
+
+.agro-short-list-slider-nav-next {
+    display: none;
+    z-index: 5;
+    cursor: pointer;
+
+    @media @laptop {
+        top: 160px;
+        right: 92px;
+        position: absolute;
+        display: block;
+    }
+
+    @media @desktop {
+        top: 192px;
+        right: 185px;
+    }
+
+    @media @wide {
+        top: 246px;
+        right: 260px;
+    }
+
+    & svg {
+
+        @media @laptop {
+            width: 80px;
+            height: 80px;
+
+        }
+
+        @media @desktop {
+            width: 100px;
+            height: 100px;
+        }
+
+        @media @wide {
+            width: 139px;
+            height: 139px;
+        }
+    }
+}
+
+.agro-short-list-slider-item {
+    position: relative;
+    width: 80vw;
+    min-height: 452px;
+    border: 2px solid #FFFFFF;
+    border-radius: 4px;
+    padding: 40px 20px 88px;
+    opacity: .1;
+    transition-property: opacity;
+    transition-duration: .6s;
+    margin-right: 24px;
+
+    @media @tablet {
+        width: 382px;
+        min-height: 409px;
+        padding: 45px 20px 112px;
+        margin-right: 40px;
+    }
+
+    @media @laptop {
+        width: 546px;
+        min-height: 399px;
+        padding: 45px 42px 112px;
+        margin-right: 53px;
+    }
+
+    @media @desktop {
+        width: 640px;
+        min-height: 484px;
+        padding: 60px 33px 129px 62px;
+        margin-right: 67px;
+    }
+
+    @media @wide {
+        width: 956px;
+        height: 629px;
+        padding: 77px 72px 183px 62px;
+        margin-right: 98px;
+    }
+}
+
+.agro-short-list-slider-item-title {
+    font-family: 'TT Firs Neue';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    color: #FFFFFF;
+
+    margin-bottom: 16px;
+
+    @media @tablet {
+        font-size: 24px;
+        line-height: 28px;
+        margin-bottom: 16px;
+    }
+
+    @media @laptop {
+        font-size: 24px;
+        line-height: 28px;
+        margin-bottom: 16px;
+    }
+
+    @media @desktop {
+        font-size: 30px;
+        line-height: 34px;
+        margin-bottom: 24px;
+    }
+
+    @media @wide {
+        font-size: 40px;
+        line-height: 46px;
+        margin-bottom: 24px;
+    }
+}
+
+.agro-short-list-slider-item-subtitle {
+    font-family: 'Anonymous Pro';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 15px;
+    letter-spacing: 0.1em;
+    color: #4CED5B;
+
+    margin-bottom: 16px;
+
+    @media @tablet {
+        font-size: 13px;
+        line-height: 15px;
+        margin-bottom: 16px;
+    }
+
+    @media @laptop {
+        font-size: 13px;
+        line-height: 15px;
+        margin-bottom: 16px;
+    }
+
+    @media @desktop {
+        font-size: 16px;
+        line-height: 18px;
+        margin-bottom: 24px;
+    }
+
+    @media @wide {
+        font-size: 24px;
+        line-height: 28px;
+        margin-bottom: 24px;
+    }
+}
+
+.agro-short-list-slider-item-text {
+    font-family: 'Anonymous Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 15px;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+
+    @media @tablet {
+        font-size: 13px;
+        line-height: 15px;
+    }
+
+    @media @laptop {
+        font-size: 13px;
+        line-height: 15px;
+    }
+
+    @media @desktop {
+        font-size: 16px;
+        line-height: 18px;
+    }
+
+    @media @wide {
+        font-size: 24px;
+        line-height: 28px;
+    }
+}
+
+.agro-short-list-slider-item-count {
+    width: fit-content;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 30px;
+    margin: auto;
+    font-family: 'Anonymous Pro';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 15px;
+    letter-spacing: 0.1em;
+    color: #676871;
+
+    & span {
+        color: #FFFFFF;
+    }
+
+    @media @tablet {
+        font-size: 13px;
+        line-height: 15px;
+    }
+
+    @media @laptop {
+        font-size: 13px;
+        line-height: 15px;
+    }
+
+    @media @desktop {
+        font-size: 16px;
+        line-height: 18px;
+    }
+
+    @media @wide {
+        font-size: 24px;
+        line-height: 28px;
+    }
+}

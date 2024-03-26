@@ -1,0 +1,5040 @@
+#about {
+    position: absolute;
+    top: -100px;
+    @media @tablet {
+        top: -50px;
+    }
+
+    @media @laptop {
+        top: 0;
+    }
+
+    @media @desktop {
+        top: 100px;
+    }
+
+
+    @media @wide {
+        top: 0;
+    }
+}
+
+#nominations {
+    position: absolute;
+    top: -50px;
+    @media @tablet {
+        top: -80px;
+    }
+
+    @media @laptop {
+        top: -120px;    }
+
+    @media @desktop {
+        top: -120px;
+    }
+
+
+    @media @wide {
+        top: -150px;
+    }
+}
+
+#criteria {
+    position: absolute;
+    top: -50px;
+    @media @tablet {
+      top: -80px;
+    }
+
+    @media @laptop {
+        top: -120px;
+    }
+
+    @media @desktop {
+        top: -120px;
+    }
+
+
+    @media @wide {
+        top: -150px;
+    }
+}
+
+#jury {
+    position: absolute;
+    top: 0;
+    @media @tablet {
+        top: -100px;
+    }
+
+    @media @laptop {
+        top: -100px;
+    }
+
+    @media @desktop {
+        top: -100px;
+    }
+
+
+    @media @wide {
+        top: 0;
+    }
+}
+
+#faq {
+    position: absolute;
+    top: -50px;
+
+    @media @tablet {
+        top: -100px;
+    }
+
+    @media @laptop {
+        top: -150px;
+    }
+
+    @media @desktop {
+        top: -150px;
+    }
+
+
+    @media @wide {
+        top: -200px;
+    }
+}
+
+.agro-indicator {
+    display: none;
+    width: fit-content;
+    height: fit-content;
+    z-index: 1;
+    @media @laptop {
+        display: block;
+        position: fixed;
+        top: 0;
+        right: 74px;
+        bottom: 0;
+        margin: auto;
+    }
+
+    @media @desktop {
+        top: 106px;
+    }
+
+
+    @media @wide {
+        top: 137px;
+    }
+}
+
+.agro-indicator-item {
+    position: relative;
+    width: 8px;
+    height: 8px;
+    margin-bottom: 20px;
+    background: #FFFFFF;
+    opacity: 0.3;
+    border-radius: 2px;
+}
+
+.agro-indicator-item_active {
+    position: relative;
+    transform: scale(1.5);
+    background: #4CED5B;
+    opacity: 1;
+
+    &:after {
+        position: absolute;
+        display: block;
+        content: '';
+        top: 0;
+        left: 0;
+        width: 74px;
+        height: 100%;
+        background: linear-gradient(90deg, rgba(76, 237, 91, 0.4) 0%, rgba(242, 250, 243, 0) 77.12%);
+        border-radius: 2px;
+    }
+}
+
+
+
+.agro-mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+
+    padding: 19px 20px 0 24px;
+
+    z-index: 99;
+
+    @media @tablet {
+        padding: 36px 35px 0 35px;
+    }
+}
+
+.agro-mobile-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 4px;
+
+    margin-bottom: 22px;
+
+    @media @tablet {
+        padding-right: 22px;
+        margin-bottom: 102px;
+    }
+}
+
+.agro-mobile-menu-header-link {
+    display: block;
+}
+
+.agro-mobile-menu-header-logo {
+    width: 156px;
+    line-height: 40px;
+}
+
+.agro-mobile-menu-header-close {
+    display: block;
+    cursor: pointer;
+}
+
+.agro-mobile-menu-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 212px;
+    margin: 0 auto 7px;
+
+    @media @tablet {
+        width: 372px;
+    }
+}
+
+.agro-mobile-menu-item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 94px;
+    padding-top: 19px;
+    padding-bottom: 11px;
+    margin-bottom: 17px;
+    opacity: .5;
+
+    @media @tablet {
+        width: 134px;
+        margin-bottom: 92px;
+    }
+}
+
+.agro-mobile-menu-item_active {
+    opacity: 1;
+    background: linear-gradient(0deg, #4CED5B 0%, rgba(116, 67, 255, 0) 64.22%);
+    border-radius: 4px;
+}
+
+.agro-mobile-menu-item img {
+    height: 32px;
+    width: auto;
+    margin-bottom: 14px;
+
+    @media @tablet {
+        height: 48px;
+        margin-bottom: 18px;
+    }
+}
+
+.agro-mobile-menu-item__text {
+    font-family: 'Anonymous Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 15px;
+    text-align: center;
+    letter-spacing: 0.1em;
+
+    color: #FFFFFF;
+
+    @media @tablet {
+        font-size: 19px;
+        line-height: 22px;
+    }
+}
+
+.agro-mobile-menu-stage {
+    font-family: 'Anonymous Pro';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 17px;
+    text-align: center;
+    letter-spacing: 0.1em;
+
+    color: #4CED5B;
+    margin-bottom: 25px;
+
+    @media @tablet {
+        margin-bottom: 53px;
+    }
+}
+
+.agro-mobile-menu-btn {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 26px;
+    background: #4CED5B;
+    border-radius: 4px;
+
+    font-family: 'Anonymous Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 32px;
+    text-align: center;
+    letter-spacing: 0.1em;
+
+    color: #000;
+
+    @media @tablet {
+        padding: 0 38px;
+        font-size: 16px;
+        line-height: 44px;
+    }
+
+    // &:after {
+    //     display: block;
+    //     position: absolute;
+    //     content: '';
+    //     width: 100%;
+    //     height: 100%;
+    //     bottom: -28px;
+    //     left: 0;
+    //     background: linear-gradient(rgba(116, 67, 255, 0.4) 19.55%, rgba(116, 67, 255, 0.296753) 30.18%, rgba(116, 67, 255, 0) 77.12%);
+    //     border-radius: 2px;
+    // }
+
+}
+
+.agro-main {
+    width: 100%;
+    position: relative;
+
+    @media @laptop {
+        padding-top: 69px;
+    }
+
+    @media @desktop {
+        padding-top: 98px;
+    }
+    @media @wide {
+        padding-top: 136px;
+    }
+}
+
+
+.agro-aside {
+    display: none;
+
+    @media @laptop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: block;
+        padding-top: 8px;
+        width: 120px;
+        height: 100vh;
+        border-right: 2px solid #fff;
+    }
+
+    @media @desktop {
+        width: 141px;
+        padding-top: 19px;
+    }
+
+    @media @wide {
+        padding-top: 40px;
+        width: 160px;
+    }
+}
+
+.agro-aside-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    opacity: .5;
+
+    @media @laptop {
+        width: 94px;
+        padding: 17px 0 12px;
+    }
+    @media @desktop {
+        width: 117px;
+        padding: 29px 0 6px;
+    }
+
+    @media @wide {
+        width: 134px;
+        padding: 35px 0 14px;
+    }
+
+}
+
+.agro-aside-item_tg {
+    opacity: 1;
+    margin-top: -11px;
+
+    @media @wide {
+        margin-bottom: 29px;
+    }
+}
+
+.agro-aside-item_active {
+    opacity: 1;
+
+    &:after {
+        display: block;
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(0deg, #4CED5B 0%, rgba(116, 67, 255, 0) 64.22%);
+        border-radius: 4px;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+}
+
+.agro-aside-item img {
+    @media @laptop {
+        width: 32px;
+        height: 32px;
+        margin-bottom: 14px;
+    }
+    @media @desktop {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 18px;
+    }
+
+    @media @wide {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+.agro-aside-item__text {
+    font-family: 'Anonymous Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 15px;
+    text-align: center;
+    letter-spacing: 0.1em;
+    color: #FFFFFF;
+
+    @media @desktop {
+        font-size: 16px;
+        line-height: 18px;
+    }
+
+    @media @wide {
+        font-size: 19px;
+        line-height: 22px;
+    }
+}
+
+.agro-wrapper {
+    display: flex;
+
+    @media @laptop {
+        padding-left: 120px;
+    }
+
+    @media @desktop {
+        padding-left: 141px;
+    }
+
+    @media @wide {
+        padding-left: 160px;
+    }
+}
+
+.agro-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 39px;
+    padding: 19px 29px 0 24px;
+    position: relative;
+
+    @media @tablet {
+        padding: 20px 40px 0 35px;
+        margin-bottom: 0;
+    }
+
+    @media @laptop {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: calc((100vw - (100vw - 100%)) - 120px);
+        padding: 23px 76px 0 73px;
+        z-index: 89;
+    }
+
+    @media @desktop {
+        padding: 22px 93px 0 97px;
+        width: calc((100vw - (100vw - 100%)) - 141px);
+    }
+
+    @media @wide {
+        padding: 42px 122px 0 143px;
+        width: calc((100vw - (100vw - 100%)) - 160px);
+    }
+
+    // &.short-list {
+    //     position: absolute;
+    //     width: 100%;
+    // }
+}
+
+.agro-header.agro-header_with-back:after {
+    @media @laptop {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 150%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        background: linear-gradient(180deg, #020312 12.69%, rgba(2, 3, 18, 0.318766) 53.99%, rgba(2, 3, 18, 0.1) 78.98%, rgba(2, 3, 18, 0) 100%);
+    }
+}
+
+.agro-header-logo-link {
+    font-size: 0;
+    display: flex;
+    align-items: center;
+}
+
+.agro-header-logo {
+    width: 117px;
+
+    @media @tablet {
+        width: 97px;
+    }
+
+    @media @laptop {
+        width: 133px;
+    }
+
+    @media @desktop {
+        width: 173px
+    }
+
+    @media @wide {
+
+    }
+
+}
+
+.agro-header-controls {
+    display: flex;
+    flex-direction: row;
+
+    @media @tablet {
+        width: 436px;
+        padding-top: 5px;
+        align-items: center;
+    }
+
+    @media @laptop {
+        width: auto;
+    }
+
+    @media @wide {
+        padding-top: 8px;
+    }
+}
+
+.agro-header-controls-stage {
+    display: none;
+
+    @media @tablet {
+        display: block;
+        width: 170px;
+        font-family: 'Anonymous Pro';
+        font-style: italic;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 17px;
+        letter-spacing: 0.1em;
+        color: #00FF18;
+    }
+
+    @media @laptop {
+        width: 264px;
+    }
+
+    @media @desktop {
+        width: 562px;
+        text-align: right;
+        font-size: 20px;
+        line-height: 20px;
+    }
+
+    @media @wide {
+        width: 780px;
+        text-align: right;
+        font-size: 27px;
+        line-height: 26px;
+    }
+}
+
+.agro-header-controls-submit {
+    position: relative;
+    display: none;
+    height: 32px;
+    padding: 0 25.5px;
+    background: #4CED5B;
+    border-radius: 4px;
+
+    font-family: 'Anonymous Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 32px;
+    text-align: center;
+    letter-spacing: 0.1em;
+    color: #000;
+
+    &:hover {
+        background: linear-gradient(89.96deg, rgba(76, 237, 91, 0.5) 0.04%, #2B6030 117.55%), #4CED5B;
+    }
+
+    &:before {
+        display: block;
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 167%;
+        background: linear-gradient(180deg, rgba(76, 237, 91, 0.4) 19.55%, rgba(76, 237, 91, 0.296753) 30.18%, rgba(76, 237, 91, 0) 77.12%);
+        border-radius: 2px;
+
+        left: 0;
+        bottom: -42px;
+        z-index: -1;
+        pointer-events: none;
+    }
+
+    @media @tablet {
+        display: block;
+        margin-left: 34px;
+    }
+
+    @media @laptop {
+        height: 36px;
+        padding: 0 31.5px;
+        line-height: 36px;
+        margin-left: 33px;
+    }
+
+    @media @desktop {
+        height: 44px;
+        padding: 0 38px;
+        line-height: 36px;
+        margin-left: 35px;
+
+        font-size: 16px;
+        line-height: 44px;
+
+        &:before {
+            bottom: -72px;
+        }
+    }
+
+    @media @wide {
+        height: 55px;
+        padding: 0 47px;
+        line-height: 55px;
+        margin-left: 93px;
+
+        font-size: 20px;
+
+
+    }
+}
+
+.agro-header-burger {
+    position: fixed;
+    display: flex;
+    flex-direction: row-reverse;
+    top: 0;
+    left: 0;
+    z-index: 8;
+    width: 100%;
+    height: 90px;
+    pointer-events: none;
+
+    @media @tablet {
+    }
+
+    @media @laptop {
+        display: none;
+    }
+
+    & img {
+        position: absolute;
+        top: 24px;
+        right: 24px;
+        pointer-events: auto;
+
+        @media @tablet {
+            top: 40px;
+            right: 40px;
+        }
+    }
+}
+
+.agro-header-burger.agro-header-burger_with-back:after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 140%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: linear-gradient(180deg, #020312 12.69%, rgba(2, 3, 18, 0.318766) 53.99%, rgba(2, 3, 18, 0.1) 78.98%, rgba(2, 3, 18, 0) 100%);
+    pointer-events: none;
+}
+
+.agro-intro {
+    position: relative;
+    padding: 50px 24px 101px 24px;
+
+    @media @tablet {
+        padding: 81px 90px 103px 90px;
+    }
+
+    @media @laptop {
+        padding: 90px 90px 72px 79px;
+    }
+
+    @media @desktop {
+        padding-top: 104px;
+        padding-left: 105px;
+        padding-bottom: 87px;
+    }
+
+    @media @wide {
+        padding-top: 144px;
+        padding-left: 152px;
+    }
+}
+
+.agro-intro-back {
+        position: absolute;
+        z-index: -1;
+        background: url(../../img/intro-back.svg);
+        display: inline-block;
+        right: 66px;
+        bottom: 75px;
+        transform: rotate(78deg) scale(1, 1);
+        width: 500px;
+        height: 500px;
+
+    @media @tablet {
+        display: inline-block;
+        right: -230px;
+        bottom: 0;
+        transform: rotate(5deg);
+        width: 820px;
+        height: 820px;
+    }
+
+    @media @laptop {
+        right: -48px;
+        bottom: 80px;
+        transform: rotate(5deg);
+        width: 546px;
+        height: 546px;
+    }
+
+    @media @desktop {
+        right: -48px;
+        bottom: 80px;
+        transform: rotate(5deg);
+        width: 665px;
+        height: 665px;
+    }
+
+    @media @wide {
+        right: -48px;
+        bottom: 80px;
+        transform: rotate(5deg);
+        width: 875px;
+        height: 875px;
+    }
+
+}
+
+@keyframes glow{
+  from {
+    box-shadow: 0px 0px 2px 2px #b4b6b4;
+  }
+  to {
+    box-shadow: 0px 0px 3px 3px #fff;
+  }
+}
+
+.agro-intro-back-star {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #4CED5B;
+    box-shadow: 0px 0px 2px 2px #fff;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+.agro-intro-back-star1 {
+    position: absolute;
+    top: 31%;
+    left: 20%;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0px 0px 2px 2px #fff;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+.agro-intro-back-star2 {
+    position: absolute;
+    top: 36%;
+    left: 33%;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0px 0px 2px 2px #fff;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+.agro-intro-back-star3 {
+    position: absolute;
+    top: 46%;
+    left: 41%;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0px 0px 2px 2px #fff;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+.agro-intro-back-star4 {
+    position: absolute;
+    top: 25%;
+    left: 51%;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0px 0px 2px 2px #fff;
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+.agro-intro-back-star5 {
+    position: absolute;
+    top: 32%;
+    left: 50%;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0px 0px 2px 2px #fff;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+.agro-intro-back-star6 {
+    position: absolute;
+    top: 45%;
+    left: 55%;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0px 0px 2px 2px #fff;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+.agro-intro-back-star7 {
+    position: absolute;
+    top: 61%;
+    left: 55%;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0px 0px 2px 2px #fff;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+.agro-intro-back-star8 {
+    position: absolute;
+    top: 61%;
+    left: 28%;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0px 0px 2px 2px #fff;
+    animation: glow 3s ease-in-out infinite alternate;
+}
+
+.agro-intro-back-star9 {
+    position: absolute;
+    top: 56%;
+    left: 43%;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0px 0px 2px 2px #fff;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+.agro-intro-back-inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    // background-color: red;
+    // opacity: 0.2;
+    clip-path: polygon(38% 7%, 42% 13%, 55% 34%, 59% 43%, 61% 56%, 51% 49%, 42% 46%, 33% 44%, 7% 24%, 51% 45%)
+}
+
+.agro-intro-back-inner2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    // background-color: red;
+    // opacity: 0.2;
+    clip-path: polygon(12% 77%, 18% 73%, 38% 62%, 62% 61%, 72% 69%, 46% 57%, 34% 56%)
+}
+
+.agro-intro-back-mobile {
+    position: absolute;
+    left: 0;
+    top: -100px;
+    z-index: -1;
+
+    @media @tablet {
+        display: none;
+    }
+}
+
+.agro-intro__title {
+    font-family: 'TT Firs Neue';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 46px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+
+    color: #FFFFFF;
+
+    margin-bottom: 41px;
+
+    @media @tablet {
+        font-size: 60px;
+        line-height: 66px;
+        margin-bottom: 20px;
+    }
+
+    @media @laptop {
+        font-size: 60px;
+        line-height: 66px;
+        margin-bottom: 18px;
+    }
+
+    @media @desktop {
+        font-size: 82px;
+        line-height: 90px;
+        margin-bottom: 26px;
+    }
+
+    @media @wide {
+        font-size: 119px;
+        line-height: 131px;
+        margin-bottom: 32px;
+    }
+}
+
+.agro-intro-sponsor__text-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    @media @tablet {
+        flex-direction: row;
+    }
+}
+
+.agro-intro__text {
+    width: 129px;
+    font-family: 'Anonymous Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 17px;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+    margin-bottom: 23px;
+
+
+    @media @tablet {
+        font-size: 16px;
+        line-height: 18px;
+        width: auto;
+        margin-bottom: 46px;
+    }
+
+    @media @laptop {
+        font-size: 16px;
+        line-height: 18px;
+        margin-bottom: 106px;
+    }
+
+    @media @desktop {
+        font-size: 22px;
+        line-height: 25px;
+        margin-bottom: 122px;
+    }
+
+    @media @wide {
+        font-size: 32px;
+        line-height: 37px;
+        margin-bottom: 145px;
+    }
+}
+
+.agro-intro__text-btn {
+    position: relative;
+    padding: 0 20px;
+    background: #4CED5B;
+    border-radius: 4px;
+    margin-bottom: 45px;
+
+    font-family: 'Anonymous Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 32px;
+    text-align: center;
+    letter-spacing: 0.1em;
+    color: #000;
+
+    @media @tablet {
+        display: none;
+    }
+
+    &:after {
+        position: absolute;
+        display: block;
+        content: '';
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, rgba(76, 237, 91, 0.4) 19.55%, rgba(76, 237, 91, 0.296753) 30.18%, rgba(76, 237, 91, 0) 77.12%);
+        border-radius: 2px;
+        bottom: -28px;
+        left: 0;
+    }
+}
+
+.agro-intro-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    @media @laptop {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+.agro-intro-sponsor {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+
+    @media @tablet {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+        margin-bottom: 153px;
+    }
+
+    @media @laptop {
+        margin-bottom: 0;
+    }
+}
+
+.agro-intro-sponsor__text {
+    font-family: 'Anonymous Pro';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 11px;
+    letter-spacing: 0.1em;
+    color: #FFFFFF;
+
+    @media @tablet {
+        font-size: 13px;
+        line-height: 15px;
+        width: 100%;
+        order: 3;
+    }
+
+    @media @laptop {
+        font-size: 13px;
+        line-height: 15px;
+    }
+
+    @media @desktop {
+        font-size: 16px;
+        line-height: 18px;
+    }
+
+    @media @wide {
+        font-size: 24px;
+        line-height: 28px;
+    }
+}
+
+.agro-intro-sponsor__logo {
+    display: block;
+    width: 128px;
+
+    @media @tablet {
+        width: 244px;
+        margin-bottom: 24px;
+    }
+
+    @media @laptop {
+        width: 244px;
+    }
+
+    @media @desktop {
+        width: 283px;
+        margin-bottom: 31px;
+    }
+
+    @media @wide {
+        width: 400px;
+    }
+}
+
+.agro-intro-sponsor__bar {
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    margin-top: 12px;
+
+    @media @tablet {
+        width: 172px;
+        margin-bottom: 20px;
+        margin-top: 0;
+    }
+}
+
+.agro-intro-info {
+    display: flex;
+    justify-content: space-between;
+
+    @media @tablet {
+        justify-content: flex-start;
+    }
+
+    @media @laptop {
+        margin-left: 78px;
+        padding-top: 10px;
+    }
+
+    @media @desktop {
+        margin-left: 144px;
+    }
+
+    @media @wide {
+        margin-left: 239px;
+    }
+}
+
+.agro-intro-info-space {
+    display: inline-block;
+}
+
+.agro-intro-info-space__title {
+    position: relative;
+    font-family: 'Anonymous Pro';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 17px;
+    letter-spacing: 0.1em;
+    color: #4CED5B;
+    margin-bottom: 13px;
+
+    &:after {
+        display: block;
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 60%;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        margin: auto;
+        background: linear-gradient(90deg, rgba(0, 240, 255, 0.322) 0.11%, rgba(0, 240, 255, 0) 77.14%);
+        filter: blur(1px);
+        border-radius: 2px;
+    }
+
+
+    @media @tablet {
+        margin-bottom: 30px;
+    }
+
+    @media @desktop {
+        font-size: 20px;
+        line-height: 23px;
+        margin-bottom: 30px;
+    }
+
+    @media @wide {
+        font-size: 27px;
+        line-height: 31px;
+        margin-bottom: 36px;
+    }
+}
+
+.agro-intro-info-space__text {
+    font-family: 'TT Firs Neue';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+
+    @media @tablet {
+        font-size: 24px;
+        line-height: 28px;
+    }
+
+    @media @laptop {
+        font-size: 24px;
+        line-height: 28px;
+    }
+
+    @media @desktop {
+        font-size: 30px;
+        line-height: 34px;
+    }
+
+    @media @wide {
+        font-size: 40px;
+        line-height: 46px;
+    }
+}
+
+.agro-intro-info-date {
+    display: inline-block;
+    padding-right: 14px;
+
+    @media @tablet {
+        margin-left: 45px;
+    }
+
+    @media @laptop {
+        margin-left: 45px;
+    }
+
+    @media @desktop {
+        margin-left: 76px;
+    }
+
+    @media @wide {
+        margin-left: 128px;
+    }
+}
+
+.agro-intro-info-date__title {
+    position: relative;
+    font-family: 'Anonymous Pro';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 17px;
+    letter-spacing: 0.1em;
+    color: #00FF18;
+    margin-bottom: 13px;
+
+    &:after {
+        display: block;
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 60%;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        margin: auto;
+        background: linear-gradient(89.96deg, rgba(0, 255, 24, 0.5) 0.04%, rgba(214, 226, 226, 0) 64.8%);
+        filter: blur(1px);
+        border-radius: 2px;
+    }
+
+    @media @tablet {
+        margin-bottom: 30px;
+    }
+
+    @media @desktop {
+        font-size: 20px;
+        line-height: 23px;
+        margin-bottom: 30px;
+    }
+
+    @media @wide {
+        font-size: 27px;
+        line-height: 31px;
+        margin-bottom: 36px;
+    }
+}
+
+.agro-intro-info-date__text {
+    font-family: 'TT Firs Neue';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+
+    @media @tablet {
+        font-size: 24px;
+        line-height: 28px;
+    }
+
+    @media @laptop {
+        font-size: 24px;
+        line-height: 28px;
+    }
+
+    @media @desktop {
+        font-size: 30px;
+        line-height: 34px;
+    }
+
+    @media @wide {
+        font-size: 40px;
+        line-height: 46px;
+    }
+}
+
+.agro-about {
+    position: relative;
+    padding: 0 24px 0 24px;
+
+    @media @tablet {
+        padding: 0 90px 0 90px;
+    }
+
+    @media @laptop {
+        padding: 0 75px 0 0;
+    }
+
+    @media @desktop {
+        padding: 0 91px  0 0;
+    }
+
+    @media @wide {
+        padding: 0 121px 0 0;
+    }
+}
+
+.agro-about-inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    border: 2px solid #FFFFFF;
+    border-radius: 4px;
+    padding: 76px 16px 61px;
+    background-image: url(../../img/about-back.png);
+    background-position: top center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+    margin-bottom: 75px;
+
+
+    @media @tablet {
+        padding: 136px 87px 76px 51px;
+        margin-bottom: 94px;
+    }
+
+    @media @laptop {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 269px 21px 76px 78px;
+        margin-bottom: 94px;
+
+        background-image: none;
+        border: 0;
+
+        &:before {
+            display: block;
+            position: absolute;
+            content: '';
+            width: 320px;
+            height: 2px;
+            background: #fff;
+            bottom: 80px;
+            left: -0;
+            z-index: -1;
+        }
+
+
+        &:after {
+            display: block;
+            position: absolute;
+            content: '';
+            width: 100vw;
+            height: 62%;
+            background-image: url(../../img/about-back.png);
+            background-size: cover;
+            top: 0;
+            left: -120px;
+            z-index: -1;
+
+        }
+
+    }
+
+    @media @desktop {
+        padding: 373px 19px 111px 106px;
+        margin-bottom: 133px;
+
+        &:before {
+            width: 430px;
+            bottom: 118px;
+        }
+
+        &:after {
+            display: block;
+            position: absolute;
+            content: '';
+            width: 100vw;
+            height: 62%;
+            background-image: url(../../img/about-back.png);
+            background-size: cover;
+            top: 0;
+            left: -141px;
+            z-index: -1;
+
+        }
+    }
+
+    @media @wide {
+        padding: 622px 49px 182px 157px;
+        margin-bottom: 205px;
+
+        &:before {
+            width: 610px;
+            bottom: 185px;
+        }
+
+        &:after {
+            display: block;
+            position: absolute;
+            content: '';
+            width: 100vw;
+            height: 62%;
+            background-image: url(../../img/about-back.png);
+            background-size: cover;
+            top: 0;
+            left: -159px;
+            z-index: -1;
+        }
+    }
+}
+
+.agro-about__title {
+
+}
+
+.agro-about__title-about {
+    font-family: 'Anonymous Pro';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 17px;
+    letter-spacing: 0.1em;
+    color: #4CED5B;
+
+    margin-bottom: 14px;
+
+    @media @tablet {
+        font-size: 15px;
+        line-height: 17px;
+        margin-bottom: 30px;
+    }
+
+    @media @laptop {
+        font-size: 15px;
+        line-height: 17px;
+        margin-bottom: 30px;
+    }
+
+    @media @desktop {
+        font-size: 20px;
+        line-height: 23px;
+        margin-bottom: 28px;
+    }
+
+    @media @wide {
+        font-size: 27px;
+        line-height: 31px;
+        margin-bottom: 41px;
+    }
+}
+
+.agro-about__title-name {
+    font-family: 'TT Firs Neue';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 33px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+
+    margin-bottom: 31px;
+
+
+    @media @tablet {
+        font-size: 36px;
+        line-height: 40px;
+        margin-bottom: 29px;
+    }
+
+    @media @laptop {
+        font-size: 36px;
+        line-height: 40px;
+        margin-bottom: 0;
+    }
+
+    @media @desktop {
+        font-size: 48px;
+        line-height: 53px;
+    }
+
+    @media @wide {
+        font-size: 70px;
+        line-height: 77px;
+    }
+}
+
+.agro-about__text {
+    font-family: 'Anonymous Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 15px;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+
+    @media @tablet {
+        font-size: 15px;
+        line-height: 17px;
+    }
+
+    @media @laptop {
+        width: 401px;
+        padding-top: 45px;
+        font-size: 15px;
+        line-height: 17px;
+    }
+
+    @media @desktop {
+        width: 540px;
+        padding-top: 53px;
+        font-size: 20px;
+        line-height: 23px;
+    }
+
+    @media @wide {
+        width: 720px;
+        font-size: 27px;
+        line-height: 31px;
+        padding-top: 67px;
+    }
+}
+
+.agro-nominations {
+    position: relative;
+    padding: 0 24px 0 24px;
+    margin-bottom: 103px;
+
+    @media @tablet {
+        padding: 0 90px 0 90px;
+        margin-bottom: 69px;
+    }
+
+    @media @laptop {
+        padding: 0 75px 0 78px;
+        margin-bottom: 65px;
+    }
+
+    @media @desktop {
+        padding: 0 109px 0 106px;
+        margin-bottom: 114px;
+    }
+
+    @media @wide {
+        padding: 0 29px 0 151px;
+        margin-bottom: 222px;
+    }
+}
+
+.agro-nominations-title {
+    font-family: 'TT Firs Neue';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 33px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: #FFFFFF;
+
+    margin-bottom: 39px;
+
+    @media @tablet {
+        font-size: 36px;
+        line-height: 40px;
+        margin-bottom: 35px;
+    }
+
+    @media @laptop {
+        font-size: 36px;
+        line-height: 40px;
+        margin-bottom: 0;
+    }
+
+    @media @desktop {
+        font-size: 48px;
+        line-height: 53px;
+    }
+
+    @media @wide {
+        font-size: 70px;
+        line-height: 110px;
+    }
+}
+
+.agro-nominations-wrapper {
+    display: none;
+
+    @media @tablet {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    @media @laptop {
+        width: 702px;
+    }
+
+    @media @desktop {
+        width: 936px;
+    }
+
+    @media @wide {
+        width: 1348px;
+    }
+}
+
+.agro-nominations-col {
+    @media @tablet {
+        width: calc(50% -  12px);
+    }
+
+    @media @desktop {
+        width: calc(50% -  15px);
+    }
+}
+
+.agro-nominations-col1 {
+    @media @tablet {
+        padding-top: 86px;
+    }
+
+    @media @laptop {
+        padding-top: 69px;
+    }
+
+    @media @desktop {
+        padding-top: 94px;
+    }
+
+    @media @wide {
+        padding-top: 161px;
+    }
+
+}
+
+.agro-nominations-wrapper-mobile {
+    @media @tablet {
+        display: none;
+    }
+}
+
+.agro-nominations-item {
+    position: relative;
+    padding-top: 150%;
+    border: 2px solid #FFFFFF;
+    border-radius: 4px;
+    background: #093d05;
+    background-size: cover;
+
+    margin-bottom: 24px;
+
+    &:after {
+        display: block;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 60%;
+        background-image: url(../../img/nomination-gadient.png);
+        background-size: cover;
+        opacity: 0;
+    }
+
+    &:hover {
+        &:after {
+            opacity: 1;
+            transition-property: opacity;
+            transition-duration: .6s;
+        }
+    }
+
+    @media @tablet {
+        margin-bottom: 24px;
+        padding-top: 141%;
+    }
+
+    @media @laptop {
+        margin-bottom: 26px;
+        padding-top: 125.5%;
+    }
+
+    @media @desktop {
+        margin-bottom: 30px;
+    }
+
+}
+
+.agro-nominations-item-header {
+    position: absolute;
+    top: 12.5px;
+    left: 12.5px;
+    padding-right: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+
+    @media @tablet {
+        top: 12px;
+        left: 12px;
+        padding-right: 12px;
+    }
+
+    @media @laptop {
+        top: 16px;
+        left: 16px;
+        padding-right: 16px;
+    }
+
+    @media @desktop {
+        top: 22px;
+        left: 22px;
+        padding-right: 22px;
+    }
+
+    @media @wide {
+        top: 30px;
+        left: 30px;
+        padding-right: 30px;
+    }
+}
+
+.agro-nominations-item-header__pic {
+    width: 54px;
+    height: 54px;
+
+    @media @tablet {
+        width: 50px;
+        height: 50px;
+    }
+
+    @media @laptop {
+        width: 70px;
+        height: 70px;
+    }
+
+    @media @desktop {
+        width: 92px;
+        height: 92px;
+    }
+
+    @media @wide {
+        width: 134px;
+        height: 134px;
+    }
+
+}
+
+.agro-nominations-item-header__title {
+    font-family: 'TT Firs Neue';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    color: #FFFFFF;
+    margin-left: 20.85px;
+
+    @media @tablet {
+        font-size: 20px;
+        line-height: 23px;
+        margin-left: 21px;
+    }
+
+    @media @laptop {
+        font-size: 20px;
+        line-height: 24px;
+        margin-left: 28px;
+    }
+
+    @media @desktop {
+        font-size: 30px;
+        line-height: 34px;
+        margin-left: 37px;
+    }
+
+    @media @wide {
+        font-size: 40px;
+        line-height: 46px;
+        margin-left: 53px;
+    }
+}
+
+.agro-nominations-item-header__text {
+    width: 248px;
+    font-family: 'Anonymous Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 15px;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+
+    margin-top: 18.74px;
+
+    @media @tablet {
+        width: 236px;
+        font-size: 13px;
+        line-height: 15px;
+        margin-top: 18.74px;
+    }
+
+    @media @laptop {
+        width: 299px;
+        font-size: 13px;
+        line-height: 15px;
+        margin-top: 28px;
+    }
+
+    @media @desktop {
+        width: 100%;
+        font-size: 16px;
+        line-height: 18px;
+        margin-top: 38px;
+    }
+
+    @media @wide {
+        width: 100%;
+        font-size: 24px;
+        line-height: 28px;
+        margin-top: 56px;
+    }
+}
+
+.agro-nominations-item-header__text_blue {
+    font-style: italic;
+    color: #4CED5B;
+}
+
+.agro-nominations-item-btn {
+    position: absolute;
+    bottom: 15px;
+    left: 13px;
+
+    font-family: 'Anonymous Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 29px;
+    text-align: center;
+    letter-spacing: 0.1em;
+
+    padding: 0 16px;
+    background: #4CED5B;
+    border-radius: 2px;
+
+    color: #000;
+
+    z-index: 5;
+
+    &:hover {
+        background: linear-gradient(89.96deg, rgba(76, 237, 91, 0.5) 0.04%, #2B6030 117.55%), #4CED5B;
+    }
+
+    @media @tablet {
+        bottom: 16px;
+        left: 16px;
+        padding: 0 16px;
+        font-size: 13px;
+        line-height: 29px;
+    }
+
+    @media @laptop {
+        bottom: 12px;
+        left: 13px;
+        padding: 0 16px;
+        font-size: 13px;
+        line-height: 29px;
+    }
+
+    @media @desktop {
+        bottom: 17px;
+        left: 19px;
+        padding: 0 24px;
+        font-size: 16px;
+        line-height: 38px;
+    }
+
+    @media @wide {
+        bottom: 24px;
+        left: 30px;
+        padding: 0 47px;
+        font-size: 20px;
+        line-height: 55px;
+    }
+
+    &:before {
+        position: absolute;
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+
+        z-index: -1;
+
+        background: linear-gradient(0deg, rgba(76, 237, 91, 0.4) 19.55%, rgba(76, 237, 91, 0.296753) 30.18%, rgba(76, 237, 91, 0) 77.12%);
+
+        top: -29px;
+        left: 0;
+
+        @media @desktop {
+            top: -38px;
+        }
+
+        @media @wide {
+            top: -55px;
+        }
+    }
+
+}
+
+.agro-nominations-item_machinery {
+    background-image: url(../../img/nomination-back-machinery.png);
+}
+
+.agro-nominations-item_digital {
+    background-image: url(../../img/nomination-back-digital.png);
+}
+
+.agro-nominations-item_future-food {
+    background-image: url(../../img/nomination-back-food.png);
+}
+
+.agro-nominations-item_made-in-russia {
+    background-image: url(../../img/nomination-back-made-in.png);
+}
+
+.agro-nominations-item_hero {
+    background-image: url(../../img/nomination-back-hero.png);
+}
+
+.agro-nominations-item_launch {
+    background-image: url(../../img/nomination-back-launch.png);
+}
+
+.agro-nominations-item_idea {
+    background-image: url(../../img/nomination-back-idea.png);
+}
+
+.agro-nominations-item_prize {
+    background-image: url(../../img/nomination-back-prize.png);
+    border: none;
+
+    &:hover {
+        &:after {
+            opacity: 0;
+        }
+    }
+}
+
+.agro-criteria {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 0 29px 0 24px;
+    margin-bottom: 82px;
+
+    @media @tablet {
+        padding: 0 90px 0 90px;
+        margin-bottom: 75px;
+        flex-direction: row;
+    }
+
+    @media @laptop {
+        padding: 0 75px 0 79px;
+        margin-bottom: 67px;
+    }
+
+    @media @desktop {
+        padding: 0 109px 0 106px;
+        margin-bottom: 90px;
+    }
+
+    @media @wide {
+        padding: 0 29px 0 151px;
+        margin-bottom: 168px;
+    }
+}
+
+.agro-criteria-title {
+    font-family: 'TT Firs Neue';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 33px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: #FFFFFF;
+
+    margin-bottom: 32px;
+
+    @media @tablet {
+        font-size: 36px;
+        line-height: 40px;
+    }
+
+    @media @laptop {
+        font-size: 36px;
+        line-height: 40px;
+    }
+
+    @media @desktop {
+        font-size: 48px;
+        line-height: 53px;
+    }
+
+    @media @wide {
+        font-size: 70px;
+        line-height: 77px;
+    }
+}
+
+.agro-criteria-list {
+    @media @tablet {
+        margin-left: 58px;
+    }
+
+    @media @laptop {
+        margin-left: 136px;
+    }
+
+    @media @desktop {
+        margin-left: 192px;
+    }
+
+    @media @wide {
+        margin-left: 285px;
+        width: 644px;
+    }
+
+}
+
+.agro-criteria-list-title {
+    font-family: 'TT Firs Neue';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    color: #4CED5B;
+
+    width: 207px;
+    margin-bottom: 21px;
+
+    @media @tablet {
+        font-size: 24px;
+        line-height: 28px;
+        width: 207px;
+        margin-bottom: 35px;
+    }
+
+    @media @laptop {
+        font-size: 24px;
+        line-height: 28px;
+        width: 269px;
+        margin-bottom: 33px;
+    }
+
+    @media @desktop {
+        font-size: 30px;
+        line-height: 34px;
+        width: 362px;
+        margin-bottom: 47px;
+    }
+
+    @media @wide {
+        font-size: 40px;
+        line-height: 46px;
+        width: 631px;
+        margin-bottom: 61px;
+    }
+
+}
+
+.agro-criteria-list__item {
+    position: relative;
+    font-family: 'Anonymous Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 17px;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+
+    padding-left: 72px;
+    margin-bottom: 16px;
+
+    &:after {
+        display: block;
+        position: absolute;
+        content: '';
+        width: 81px;
+        height: 10px;
+        background-image: url(../../img/criteria-dot.svg);
+        top: 3px;
+        left: 2px;
+
+        @media @tablet {
+            top: 5px;
+            left: -75px;
+        }
+
+        @media @laptop {
+            left: 0;
+        }
+
+        @media @wide {
+            width: 118px;
+            height: 16px;
+            background-image: url(../../img/criteria-dot-big.svg);
+        }
+    }
+
+    @media @tablet {
+        font-size: 15px;
+        line-height: 17px;
+        padding-left: 3px;
+    }
+
+    @media @laptop {
+        font-size: 15px;
+        line-height: 17px;
+        padding-left: 77px;
+    }
+
+    @media @desktop {
+        font-size: 20px;
+        line-height: 23px;
+        padding-left: 90px;
+        margin-bottom: 34px;
+    }
+
+    @media @wide {
+        font-size: 27px;
+        line-height: 31px;
+        padding-left: 111px;
+    }
+}
+
+.agro-stages {
+    padding: 0 29px 0 24px;
+    margin-bottom: 76px;
+
+    @media @tablet {
+        padding: 0 90px 0 90px;
+        margin-bottom: 53px;
+    }
+
+    @media @laptop {
+        padding: 0 75px 0 79px;
+        margin-bottom: 84px;
+    }
+
+    @media @desktop {
+        padding: 0 109px 0 106px;
+        margin-bottom: 193px;
+    }
+
+    @media @wide {
+        padding: 0 218px 0 151px;
+        margin-bottom: 305px;
+    }
+}
+
+.agro-stages-title {
+    font-family: 'TT Firs Neue';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 33px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: #FFFFFF;
+
+    margin-bottom: 29px;
+
+    @media @tablet {
+        font-size: 36px;
+        line-height: 40px;
+        margin-bottom: 29px;
+    }
+
+    @media @laptop {
+        font-size: 36px;
+        line-height: 40px;
+        margin-bottom: 30px;
+    }
+
+    @media @desktop {
+        font-size: 48px;
+        line-height: 53px;
+        margin-bottom: 64px;
+    }
+
+    @media @wide {
+        font-size: 70px;
+        line-height: 77px;
+        margin-bottom: 99px;
+    }
+}
+
+.agro-stages-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media @tablet {
+        width: 486px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+
+    @media @laptop {
+        // width: 772px;
+        width: auto;
+        flex-wrap: nowrap;
+        // justify-content: flex-start;
+    }
+
+    @media @desktop {
+        // width: 986px;
+        width: auto;
+    }
+
+    @media @wide {
+        // width: 1440px;
+        width: auto;
+
+    }
+}
+
+.agro-stages-item {
+    position: relative;
+    width: 160px;
+    height: 200px;
+
+    margin-bottom: 19px;
+
+    @media @tablet {
+        width: 202px;
+        height: 208px;
+        margin-bottom: 38px;
+    }
+}
+
+.agro-stages-item_1 {
+
+}
+
+.agro-stages-item_2 {
+
+    @media @tablet {
+        margin-left: 56px;
+
+        & .agro-stages-item-top__date {
+            width: 140px;
+        }
+    }
+
+    @media @laptop {
+        margin-left: 56px;
+
+        & .agro-stages-item-top__date {
+            left: 64px;
+        }
+
+        & .agro-stages-item-top__text {
+            left: 4px;
+        }
+    }
+
+    @media @desktop {
+        margin-left: 97px;
+
+        & .agro-stages-item-top__date {
+            width: 180px;
+            left: 74px;
+        }
+
+        & .agro-stages-item-top__text {
+            left: 0;
+        }
+
+        & .agro-stages-item-top__current1, .agro-stages-item-top__current2 {
+            left: 126px;
+        }
+    }
+
+    @media @wide {
+        margin-left: 218px;
+
+        & .agro-stages-item-top__date {
+            width: 250px;
+            left: 45px;
+        }
+
+        & .agro-stages-item-top__text {
+            left: 0;
+        }
+
+        & .agro-stages-item-top__current1, .agro-stages-item-top__current2 {
+            left: 155px;
+        }
+    }
+
+}
+
+.agro-stages-item_3 {
+
+    @media @laptop {
+        margin-left: 33px;
+
+        & .agro-stages-item-top__date {
+            left: 56px;
+        }
+
+        & .agro-stages-item-top__text {
+            left: 1px;
+        }
+    }
+
+    @media @desktop {
+        margin-left: 51px;
+
+        & .agro-stages-item-top__date {
+            left: 56px;
+        }
+
+        & .agro-stages-item-top__text {
+            left: 1px;
+        }
+    }
+
+    @media @wide {
+        margin-left: 181px;
+
+        & .agro-stages-item-top__date {
+            left: 56px;
+        }
+
+        & .agro-stages-item-top__text {
+            left: 1px;
+        }
+    }
+}
+
+.agro-stages-item_4 {
+
+    @media @laptop {
+        margin-left: 33px;
+
+        & .agro-stages-item-top__date {
+            left: 47px;
+        }
+
+        & .agro-stages-item-top__text {
+            left: -9px;
+        }
+    }
+
+    @media @desktop {
+        margin-left: 33px;
+
+        & .agro-stages-item-top__date {
+            left: 54px;
+        }
+
+        & .agro-stages-item-top__text {
+            left: 0;
+        }
+    }
+
+    @media @wide {
+        margin-left: 164px;
+
+        & .agro-stages-item-top__date {
+            left: 54px;
+        }
+
+        & .agro-stages-item-top__text {
+            width: 300px;
+            left: 0;
+        }
+    }
+}
+
+.agro-stages-item__active {
+    & .agro-stages-item-top__current1 {
+        display: block;
+    }
+
+    & .agro-stages-item-top__current2 {
+        display: block;
+    }
+
+    & path {
+        opacity: 1;
+    }
+}
+
+.agro-stages-item__number {
+    position: absolute;
+    top: 23px;
+    left: 16px;
+    height: auto;
+
+    @media @tablet {
+        left: 24px;
+        top: 23px;
+    }
+
+    @media @laptop {
+        left: -1px;
+        top: 26px;
+    }
+
+}
+
+.agro-stages-item__number-1 {
+    @media @tablet {
+        width: 46px;
+        height: auto;
+        left: 0;
+        top: 23px;
+    }
+
+    @media @laptop {
+
+    }
+
+    @media @desktop {
+        height: 158px;
+        width: auto;
+    }
+
+    @media @wide {
+        height: 201px;
+    }
+}
+
+.agro-stages-item__number-2 {
+    @media @tablet {
+
+    }
+
+    @media @laptop {
+
+    }
+
+    @media @desktop {
+        height: 158px;
+        width: auto;
+    }
+
+    @media @wide {
+        height: 201px;
+    }
+}
+
+.agro-stages-item__number-3 {
+    @media @tablet {
+
+    }
+
+    @media @laptop {
+
+    }
+
+    @media @desktop {
+        height: 158px;
+        width: auto;
+    }
+
+    @media @wide {
+        height: 201px;
+    }
+}
+
+.agro-stages-item__number-4 {
+    @media @tablet {
+
+    }
+
+    @media @laptop {
+
+    }
+
+    @media @desktop {
+        height: 158px;
+        width: auto;
+    }
+
+    @media @wide {
+        height: 201px;
+    }
+}
+
+
+.agro-stages-item-top__current1 {
+    display: none;
+    position: absolute;
+    font-family: 'Anonymous Pro';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 17px;
+    letter-spacing: 0.1em;
+    color: #4CED5B;
+
+    top: 30px;
+    left: 107px;
+
+    @media @tablet {
+        font-size: 15px;
+        line-height: 17px;
+        top: 28px;
+        left: 116px;
+    }
+
+    @media @laptop {
+        font-size: 15px;
+        line-height: 17px;
+        top: 32px;
+        left: 92px;
+
+    }
+
+    @media @desktop {
+        font-size: 20px;
+        line-height: 23px;
+        top: 51px;
+        left: 120px;
+    }
+
+    @media @wide {
+        font-size: 27px;
+        line-height: 31px;
+        top: 47px;
+        left: 155px;
+    }
+}
+
+.agro-stages-item-top__current2 {
+    display: none;
+    position: absolute;
+    font-family: 'Anonymous Pro';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 17px;
+    letter-spacing: 0.1em;
+    color: #4CED5B;
+
+    top: 47px;
+    left: 107px;
+
+    @media @tablet {
+        font-size: 15px;
+        line-height: 17px;
+        top: 44px;
+        left: 116px;
+    }
+
+    @media @laptop {
+        font-size: 15px;
+        line-height: 17px;
+        top: 49px;
+        left: 92px;
+    }
+
+    @media @desktop {
+        font-size: 20px;
+        line-height: 23px;
+        top: 74px;
+        left: 120px;
+    }
+
+    @media @wide {
+        font-size: 27px;
+        line-height: 31px;
+        top: 77px;
+        left: 155px;
+
+    }
+
+}
+
+.agro-stages-item-top__date {
+    position: absolute;
+    width: 130px;
+    font-family: 'TT Firs Neue';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    color: #FFFFFF;
+
+    top: 80px;
+    left: 87px;
+
+    @media @tablet {
+        width: 130px;
+        font-size: 24px;
+        line-height: 28px;
+        top: 77px;
+        left: 71px;
+    }
+
+    @media @laptop {
+        width: 100px;
+        font-size: 24px;
+        line-height: 28px;
+        top: 81px;
+        left: 65px;
+    }
+
+    @media @desktop {
+        width: 120px;
+        font-size: 30px;
+        line-height: 34px;
+        top: 110px;
+        left: 116px;
+    }
+
+    @media @wide {
+        font-size: 40px;
+        line-height: 46px;
+
+        top: 133px;
+        left: 137px;
+
+        width: 160px;
+    }
+
+}
+
+.agro-stages-item-top__text {
+    position: absolute;
+    font-family: 'Anonymous Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 17px;
+    letter-spacing: 0.05em;
+
+    color: #FFFFFF;
+
+    top: 159px;
+    left: 19px;
+
+    @media @tablet {
+        font-size: 15px;
+        line-height: 17px;
+        top: 165px;
+        left: 2px;
+    }
+
+    @media @laptop {
+        font-size: 15px;
+        line-height: 17px;
+        top: 169px;
+        left: 18px;
+    }
+
+    @media @desktop {
+        font-size: 20px;
+        line-height: 23px;
+        top: 222px;
+        left: 29px;
+    }
+
+    @media @wide {
+        top: 267px;
+        font-size: 27px;
+        line-height: 31px;
+        width: 250px;
+    }
+
+}
+
+.agro-jury {
+    position: relative;
+    padding: 64px 0 80px 0;
+    margin-bottom: 103px;
+    background-color:  #072105;;
+
+    @media @tablet {
+        padding: 65px 0 80px 0;
+        margin-bottom: 94px;
+    }
+
+    @media @laptop {
+        padding: 72px 0 80px 0;
+        margin-bottom: 0;
+
+        &:after {
+            position: absolute;
+            display: block;
+            content: '';
+            height: 100%;
+            width: 300px;
+            top: 0;
+            left: -300px;
+            background-color: #072105;;
+
+            z-index: -1;
+        }
+    }
+
+    @media @desktop {
+        padding: 102px 0 94px 0;
+    }
+
+    @media @wide {
+        padding: 175px 0 133px 0;
+    }
+}
+
+.agro-jury-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 42px;
+    padding-left: 24px;
+
+    @media @tablet {
+        margin-bottom: 44px;
+        padding-left: 90px;
+        padding-right: 90px;
+    }
+
+    @media @laptop {
+        margin-bottom: 36px;
+        padding-right: 109px;
+        padding-left: 79px;
+    }
+
+    @media @desktop {
+        margin-bottom: 71px;
+        padding-right: 137px;
+        padding-left: 106px;
+    }
+
+    @media @wide {
+        margin-bottom: 83px;
+        padding-right: 116px;
+        padding-left: 151px;
+    }
+
+
+}
+
+.agro-jury-header__title {
+    font-family: 'TT Firs Neue';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 33px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: #FFFFFF;
+
+    @media @tablet {
+        font-size: 36px;
+        line-height: 40px;
+    }
+
+    @media @laptop {
+        font-size: 36px;
+        line-height: 40px;
+    }
+
+    @media @desktop {
+        font-size: 48px;
+        line-height: 53px;
+    }
+
+    @media @wide {
+        font-size: 70px;
+        line-height: 77px;
+    }
+}
+
+.agro-jury-header-arrows {
+    display: none;
+
+    @media @tablet {
+        display: block;
+    }
+}
+
+.agro-jury-header-arrows__arrow {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+
+    @media @tablet {
+        width: 80px;
+        height: 80px;
+    }
+
+    @media @laptop {
+        width: 80px;
+        height: 80px;
+    }
+
+    @media @desktop {
+        width: 100px;
+        height: 100px;
+    }
+
+    @media @wide {
+        width: 139px;
+        height: 139px;
+    }
+
+    &:hover {
+        & path {
+            stroke: #4CED5B;
+        }
+    }
+
+}
+
+.agro-jury-header-arrows__arrow-right {
+    margin-left: 16px;
+
+    @media @tablet {
+        margin-left: 17px;
+    }
+
+    @media @laptop {
+        margin-left: 17px;
+    }
+
+    @media @desktop {
+        margin-left: 24px;
+    }
+
+    @media @wide {
+        margin-left: 30px;
+    }
+}
+
+.agro-jury-wrapper {
+    overflow: hidden;
+    width: 100%;
+}
+
+.agro-jury-item {
+    width: 204px;
+    opacity: .2;
+
+    margin-left: 30px;
+    display: inline-block;
+
+    @media @tablet {
+        width: 204px;
+        margin-left: 30px;
+    }
+
+    @media @laptop {
+        width: 204px;
+        margin-left: 30px;
+    }
+
+    @media @desktop {
+        width: 282px;
+        margin-left: 30px;
+    }
+
+    @media @wide {
+        width: 327px;
+        margin-left: 30px;
+    }
+
+}
+
+.agro-jury-item__pic {
+    display: block;
+    width: 100%;
+}
+
+.agro-jury-item-info {
+    // background-image: url('../../img/jury-back.png');
+    padding: 39px 18px 42px 17px;
+
+    @media @tablet {
+        padding: 36px 12px 44px 17px;
+    }
+
+    @media @laptop {
+        padding: 36px 12px 44px 17px;
+    }
+
+    @media @desktop {
+        padding: 51px 17px 63px 26px;
+    }
+
+    @media @wide {
+        padding: 58px 22px 60px 30px;
+    }
+}
+
+.agro-jury-item-info__name {
+    font-family: 'TT Firs Neue';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    color: #FFFFFF;
+    width: 50%;
+
+    margin-bottom: 10px;
+
+    @media @tablet {
+        font-size: 24px;
+        line-height: 27px;
+        margin-bottom: 10px;
+    }
+
+    @media @laptop {
+        font-size: 24px;
+        line-height: 27px;
+        margin-bottom: 10px;
+    }
+
+    @media @desktop {
+        font-size: 30px;
+        line-height: 34px;
+        margin-bottom: 16px;
+    }
+
+    @media @wide {
+        font-size: 40px;
+        line-height: 46px;
+        margin-bottom: 24px;
+    }
+}
+
+.agro-jury-item-info__job {
+    font-family: 'Anonymous Pro';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 15px;
+    letter-spacing: 0.1em;
+    color: #4CED5B;
+    margin-bottom: 10px;
+
+    @media @tablet {
+        font-size: 13px;
+        line-height: 15px;
+        margin-bottom: 10px;
+    }
+
+    @media @laptop {
+        font-size: 13px;
+        line-height: 15px;
+        margin-bottom: 10px;
+    }
+
+    @media @desktop {
+        font-size: 16px;
+        line-height: 18px;
+        margin-bottom: 16px;
+    }
+
+    @media @wide {
+        font-size: 24px;
+        line-height: 28px;
+        margin-bottom: 24px;
+    }
+
+}
+
+.agro-jury-item-info__text {
+    font-family: 'Anonymous Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 15px;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+
+    @media @tablet {
+        font-size: 13px;
+        line-height: 15px;
+    }
+
+    @media @laptop {
+        font-size: 13px;
+        line-height: 15px;
+    }
+
+    @media @desktop {
+        font-size: 16px;
+        line-height: 18px;
+    }
+
+    @media @wide {
+        font-size: 24px;
+        line-height: 28px;
+    }
+
+}
+
+.agro-ceremony {
+    padding: 0 24px 0 24px;
+    margin-bottom: 191px;
+
+    @media @tablet {
+        padding: 0 90px 0 90px;
+        margin-bottom: 178px;
+    }
+
+    @media @laptop {
+        padding: 0 124px 0 79px;
+        margin-bottom: 158px;
+    }
+
+    @media @desktop {
+        padding: 0 165px 0 106px;
+        margin-bottom: 188px;
+    }
+
+    @media @wide {
+        padding: 0 241px 0 151px;
+        margin-bottom: 310px;
+    }
+}
+
+.agro-ceremony-header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 39px;
+
+    @media @tablet {
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 58px;
+    }
+
+    @media @laptop {
+        margin-bottom: 58px;
+    }
+
+    @media @desktop {
+        margin-bottom: 75px;
+    }
+
+    @media @wide {
+        margin-bottom: 99px;
+    }
+}
+
+.agro-ceremony-title {
+    font-family: 'TT Firs Neue';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 33px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: #FFFFFF;
+
+    margin-bottom: 30px;
+
+    @media @tablet {
+        font-size: 36px;
+        line-height: 40px;
+        margin-bottom: 0;
+        width: 282px;
+    }
+
+    @media @laptop {
+        width: auto;
+        font-size: 36px;
+        line-height: 40px;
+    }
+
+    @media @desktop {
+        font-size: 48px;
+        line-height: 53px;
+    }
+
+    @media @wide {
+        font-size: 70px;
+        line-height: 77px;
+    }
+}
+
+.agro-ceremony-header-text {
+    width: 235px;
+    font-family: 'Anonymous Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 17px;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+
+    @media @laptop {
+        display: none;
+    }
+}
+
+.agro-ceremony-header-text-desktop {
+    display: none;
+
+    @media @laptop {
+        display: block;
+        width: 310px;
+        position: absolute;
+        top: 19px;
+        left: 28px;
+
+        font-family: 'Anonymous Pro';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 17px;
+        letter-spacing: 0.05em;
+        color: #FFFFFF;
+    }
+
+    @media @desktop {
+        width: 411px;
+        top: 33px;
+        left: 37px;
+        font-size: 20px;
+        line-height: 23px;
+    }
+
+    @media @wide {
+        width: 577px;
+        top: 51px;
+        left: 61px;
+        font-size: 27px;
+        line-height: 31px;
+    }
+}
+
+.agro-ceremony-banner {
+    position: relative;
+    padding: 27.17%;
+    background-image: url(../../img/ceremony-back.png);
+    background-size: cover;
+}
+
+.agro-ceremony-banner-inner {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    left: 3px;
+    bottom: -92px;
+    width: 271px;
+    margin: auto;
+    @media @tablet {
+        left: 0;
+        right: 0;
+        width: 398px;
+        bottom: -82px;
+    }
+
+    @media @laptop {
+        width: 360px;
+        right: 33px;
+        left: unset;
+        bottom: -104px;
+    }
+
+    @media @desktop {
+        width: 489px;
+        right: 60px;
+        left: unset;
+        bottom: -98px;
+    }
+
+    @media @wide {
+        width: 679px;
+        right: 60px;
+        left: unset;
+        bottom: -137px;
+    }
+
+}
+
+.agro-ceremony-banner-item {
+    width: 47%;
+
+    @media @tablet {
+        width: 42%;
+    }
+
+}
+
+.agro-ceremony-banner-item-top-text {
+    position: relative;
+    font-family: 'Anonymous Pro';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 17px;
+    letter-spacing: 0.1em;
+    color: #4CED5B;
+    margin-bottom: 14px;
+
+    &:after {
+        display: block;
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: linear-gradient(90deg, rgba(0, 240, 255, 0.322) 0.11%, rgba(0, 240, 255, 0) 77.14%);
+        filter: blur(1px);
+        border-radius: 2px;
+    }
+
+    @media @tablet {
+        font-size: 15px;
+        line-height: 17px;
+        margin-bottom: 30px;
+    }
+
+    @media @laptop {
+        font-size: 15px;
+        line-height: 17px;
+        margin-bottom: 30px;
+    }
+
+    @media @desktop {
+        font-size: 20px;
+        line-height: 23px;
+        margin-bottom: 30px;
+    }
+
+    @media @wide {
+        font-size: 27px;
+        line-height: 31px;
+        margin-bottom: 34px;
+    }
+
+}
+
+.agro-ceremony-banner-item-bottom-text-mobile-place {
+    @media (max-width: 719px) {
+        width: 116px;
+    }
+}
+
+.agro-ceremony-banner-item-middle-text {
+    font-family: 'TT Firs Neue';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+
+    margin-bottom: 13px;
+
+    @media @tablet {
+        font-size: 24px;
+        line-height: 28px;
+        margin-bottom: 12px;
+    }
+
+    @media @laptop {
+        font-size: 24px;
+        line-height: 28px;
+        margin-bottom: 12px;
+    }
+
+    @media @desktop {
+        font-size: 30px;
+        line-height: 34px;
+        margin-bottom: 8px;
+    }
+
+    @media @wide {
+        font-size: 40px;
+        line-height: 46px;
+        margin-bottom: 19px;
+    }
+
+}
+
+.agro-ceremony-banner-item-bottom-text {
+    font-family: 'Anonymous Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 17px;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+
+    @media @tablet {
+        font-size: 15px;
+        line-height: 17px;
+    }
+
+    @media @laptop {
+        font-size: 15px;
+        line-height: 17px;
+    }
+
+    @media @desktop {
+        font-size: 20px;
+        line-height: 23px;
+    }
+
+    @media @wide {
+        font-size: 27px;
+        line-height: 31px;
+    }
+
+}
+
+.agro-faq {
+    position: relative;
+    padding: 0 24px 0 24px;
+    margin-bottom: 103px;
+
+    @media @tablet {
+        padding: 0 90px 0 90px;
+        margin-bottom: 95px;
+    }
+
+    @media @laptop {
+        padding: 0 124px 0 79px;
+        margin-bottom: 94px;
+    }
+
+    @media @desktop {
+        padding: 0 166px 0 106px;
+        margin-bottom: 134px;
+    }
+
+    @media @wide {
+        padding: 0 241px 0 151px;
+        margin-bottom: 232px;
+    }
+}
+
+.agro-faq-title {
+    font-family: 'TT Firs Neue';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 33px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: #FFFFFF;
+
+    margin-bottom: 32px;
+
+    @media @tablet {
+        font-size: 36px;
+        line-height: 40px;
+        margin-bottom: 48px;
+    }
+
+    @media @laptop {
+        font-size: 36px;
+        line-height: 40px;
+        margin-bottom: 47px;
+    }
+
+    @media @desktop {
+        font-size: 48px;
+        line-height: 53px;
+        margin-bottom: 77px;
+    }
+
+    @media @wide {
+        font-size: 70px;
+        line-height: 59px;
+        margin-bottom: 81px;
+    }
+}
+
+.agro-faq-item {
+    padding-bottom: 17px;
+    margin-bottom: 32px;
+    border-bottom: 2px solid #FFFFFF;
+
+    @media @tablet {
+        padding-bottom: 24px;
+        margin-bottom: 30px;
+    }
+
+    @media @laptop {
+        padding-bottom: 23px;
+        margin-bottom: 32px;
+    }
+
+    @media @desktop {
+        padding-bottom: 39px;
+        margin-bottom: 52px;
+    }
+
+    @media @wide {
+        padding-bottom: 39px;
+        margin-bottom: 59px;
+    }
+
+    & img  {
+        display: block;
+        padding-bottom: 5px;
+    }
+}
+
+.agro-faq-item_open {
+    & .agro-faq-item-bottom {
+        display: block;
+    }
+
+    & img {
+        transform: rotate(270deg);
+    }
+}
+
+.agro-faq-item-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    cursor: pointer;
+}
+
+.agro-faq-item-bottom {
+    display: none;
+    font-family: 'Anonymous Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+    margin-top: 19px;
+
+    & * {
+        font-family: 'Anonymous Pro';
+        font-style: normal;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        color: #FFFFFF;
+    }
+
+    & p + ul,
+    & ul + p {
+        margin-top: 1em;
+    }
+
+    & ul {
+        list-style-type: decimal;
+    }
+
+    & li {
+        margin-left: 2em;
+    }
+
+    @media @tablet {
+        font-size: 15px;
+        line-height: 17px;
+        margin-top: 20px;
+    }
+
+    @media @laptop {
+        font-size: 15px;
+        line-height: 17px;
+        margin-top: 25px;
+    }
+
+    @media @desktop {
+        font-size: 24px;
+        line-height: 28px;
+        margin-top: 33px;
+    }
+
+
+    @media @wide {
+
+    }
+}
+
+.agro-faq-item__text {
+    max-width: 224px;
+    font-family: 'TT Firs Neue';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    color: #FFFFFF;
+
+    @media @tablet {
+        max-width: 385px;
+        font-size: 24px;
+        line-height: 28px;
+    }
+
+    @media @laptop {
+        max-width: 648px;
+        font-size: 24px;
+        line-height: 28px;
+    }
+
+    @media @desktop {
+        max-width: 750px;
+        font-size: 30px;
+        line-height: 34px;
+    }
+
+    @media @wide {
+        max-width: 70%;
+        font-size: 40px;
+        line-height: 46px;
+    }
+
+}
+
+.agro-partners {
+    padding: 0 24px 0 24px;
+    margin-bottom: 104px;
+
+    @media @tablet {
+        padding: 0 90px 0 94px;
+        margin-bottom: 95px;
+    }
+
+    @media @laptop {
+        padding: 0 124px 0 79px;
+        margin-bottom: 58px;
+    }
+
+    @media @desktop {
+        padding: 0 166px 0 106px;
+        margin-bottom: 107px;
+    }
+
+    @media @wide {
+        padding: 0 229px 0 151px;
+        margin-bottom: 130px;
+    }
+}
+
+.agro-partners-title {
+    font-family: 'TT Firs Neue';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 33px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: #FFFFFF;
+
+    margin-bottom: 31px;
+
+    @media @tablet {
+        font-size: 36px;
+        line-height: 40px;
+        margin-bottom: 49px;
+    }
+
+    @media @laptop {
+        font-size: 36px;
+        line-height: 40px;
+        margin-bottom: 50px;
+    }
+
+    @media @desktop {
+        font-size: 48px;
+        line-height: 53px;
+        margin-bottom: 79px;
+    }
+
+    @media @wide {
+        font-size: 70px;
+        line-height: 59px;
+        margin-bottom: 109px;
+    }
+}
+
+.agro-partners-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.agro-partners-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 130px;
+    margin-bottom: 8px;
+
+    @media @tablet {
+        width: 25%;
+        height: auto;
+        margin-bottom: 22px;
+        margin-right: 25%;
+    }
+
+    @media @laptop {
+        width: 33.3%;
+        margin-right: 0;
+        height: 160px;
+    }
+
+    @media @desktop {
+        margin-bottom: 45px;
+    }
+
+    @media @wide {
+        margin-bottom: 65px;
+    }
+
+}
+
+.agro-partners-item-pic {
+    display: block;
+    max-height: 70%;
+    max-width: 80%;
+    object-fit: contain;
+
+    @media @tablet {
+        max-width: 70%;
+        max-height: 80%;
+    }
+
+    @media @laptop {
+
+    }
+
+    @media @desktop {
+        max-height: 90%;
+    }
+
+    @media @wide {
+        max-width: 60%;
+    }
+
+}
+
+
+.agro-partners-item-dummy {
+    flex-grow: 1;
+}
+
+.agro-partners-item:nth-child(3n) {
+    @media (max-width: 719px) {
+        width: 100%;
+
+        & img {
+            max-width: 50%;
+        }
+    }
+}
+
+.agro-partners-item:nth-child(4n+3),.agro-partners-item:nth-child(4n+4){
+    @media (min-width: 720px) and (max-width: 1023px) {
+        margin-right: 0;
+        margin-left: 25%;
+    }
+}
+
+.agro-partners-item:nth-child(5n+4){
+    @media (min-width: 1024px) {
+        width: 33.3%;
+        margin-left: 10%;
+    }
+}
+
+.agro-partners-item:nth-child(5n+5){
+    @media (min-width: 1024px) {
+        width: 33.3%;
+        margin-right: 10%;
+    }
+}
+
+.agro-organizer {
+    padding: 0 24px 0 24px;
+    margin-bottom: 104px;
+
+    @media @tablet {
+        padding: 0 90px 0 90px;
+        margin-bottom: 95px;
+    }
+
+    @media @laptop {
+        padding: 0 124px 0 0;
+        margin-bottom: 94px;
+    }
+
+    @media @desktop {
+        padding: 0 90px 0 0;
+        margin-bottom: 134px;
+    }
+
+    @media @wide {
+        padding: 0 120px 0 0;
+        margin-bottom: 169px;
+    }
+}
+
+.agro-organizer-inner {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #FFFFFF;
+    border-radius: 4px;
+    padding: 77px 20px 42px 17px;
+
+    @media @tablet {
+        padding: 73px 0 36px 51px;
+    }
+
+    @media @laptop {
+        display: block;
+        padding: 73px 0 41px 78px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-left: none;
+    }
+
+    @media @desktop {
+        padding: 96px 0 62px 105px;
+    }
+
+    @media @wide {
+        padding: 145px 0 115px 151px;
+    }
+}
+
+.agro-organizer-title {
+    font-family: 'TT Firs Neue';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 28px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: #FFFFFF;
+
+    margin-bottom: 38px;
+    order: 1;
+
+    @media @tablet {
+        font-size: 36px;
+        line-height: 40px;
+        margin-bottom: 38px;
+        order: unset;
+    }
+
+    @media @laptop {
+        font-size: 36px;
+        line-height: 40px;
+        margin-bottom: 25px;
+    }
+
+    @media @desktop {
+        font-size: 48px;
+        line-height: 53px;
+        margin-bottom: 58px;
+    }
+
+    @media @wide {
+        font-size: 70px;
+        line-height: 59px;
+        margin-bottom: 94px;
+    }
+}
+
+.agro-organizer-item_org {
+    order: 3;
+
+    @media @laptop {
+        order: unset;
+    }
+}
+
+.agro-organizer-item_bank {
+    order: 2;
+
+    @media @laptop {
+        order: unset;
+    }
+}
+
+
+.agro-organizer-item {
+    margin-bottom: 32px;
+
+    @media @tablet {
+        width: 344px;
+        margin-bottom: 41px;
+    }
+
+    @media @laptop {
+        display: inline-block;
+        width: 281px;
+    }
+
+    @media @desktop {
+        width: 387px;
+    }
+
+    @media @wide {
+        width: 566px;
+    }
+}
+
+.agro-organizer-item:last-of-type {
+    @media @laptop {
+        margin-left: 75px;
+    }
+
+    @media @desktop {
+        margin-left: 108px;
+    }
+
+    @media @desktop {
+        margin-left: 148px;
+    }
+}
+
+.agro-organizer-item__hub {
+    width: 135px;
+    margin-bottom: 23px;
+
+    @media @tablet {
+        width: 135px;
+        margin-bottom: 27px;
+    }
+
+    @media @laptop {
+        width: 135px;
+        margin-bottom: 34px;
+    }
+
+    @media @desktop {
+        width: 200px;
+        margin-bottom: 40px;
+    }
+
+    @media @wide {
+        width: 292px;
+        margin-bottom: 58px;
+    }
+}
+
+.agro-organizer-item__ros {
+    width: 174px;
+    margin-bottom: 17px;
+
+    @media @tablet {
+        width: 202px;
+        margin-bottom: 27px;
+    }
+
+    @media @laptop {
+        width: 202px;
+        margin-bottom: 34px;
+    }
+
+    @media @desktop {
+        width: 268px;
+        margin-bottom: 40px;
+    }
+
+    @media @wide {
+        width: 409px;
+        margin-bottom: 58px;
+    }
+}
+
+.agro-organizer-item__bar {
+    height: 2px;
+    background-color: #fff;
+    margin-bottom: 16px;
+
+    @media @tablet {
+        margin-bottom: 16px;
+    }
+
+    @media @laptop {
+        margin-bottom: 16px;
+    }
+
+    @media @desktop {
+        margin-bottom: 16px;
+    }
+
+    @media @wide {
+        margin-bottom: 7px;
+    }
+}
+
+.agro-organizer-item__text {
+    font-family: 'Anonymous Pro';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 11px;
+    line-height: 11px;
+    letter-spacing: 0.1em;
+    color: #FFFFFF;
+
+    @media @tablet {
+        font-size: 13px;
+        line-height: 13px
+    }
+
+    @media @laptop {
+        font-size: 13px;
+        line-height: 13px
+    }
+
+    @media @desktop {
+        font-size: 16px;
+        line-height: 16px
+    }
+
+    @media @wide {
+        font-size: 24px;
+        line-height: 24px
+    }
+}
+
+.agro-other {
+    padding: 0 24px 0 24px;
+    margin-bottom: 104px;
+
+    @media @tablet {
+        padding: 0 90px 0 94px;
+        margin-bottom: 80px;
+    }
+
+    @media @laptop {
+        padding: 0 124px 0 79px;
+        margin-bottom: 81px;
+    }
+
+    @media @desktop {
+        padding: 0 162px 0 106px;
+        margin-bottom: 128px;
+    }
+
+    @media @wide {
+        padding: 0 242px 0 151px;
+        margin-bottom: 165px;
+    }
+}
+
+.agro-other-title {
+    font-family: 'TT Firs Neue';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 33px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: #FFFFFF;
+
+    margin-bottom: 36px;
+
+    @media @tablet {
+        font-size: 36px;
+        line-height: 40px;
+        margin-bottom: 69px;
+    }
+
+    @media @laptop {
+        font-size: 36px;
+        line-height: 40px;
+        margin-bottom: 45px;
+    }
+
+    @media @desktop {
+        font-size: 48px;
+        line-height: 53px;
+        margin-bottom: 89px;
+    }
+
+    @media @wide {
+        font-size: 70px;
+        line-height: 110px;
+        margin-bottom: 51px;
+    }
+}
+
+.agro-other-inner {
+
+}
+
+.agro-other-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 43px;
+
+    @media @tablet {
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 40px;
+    }
+
+    @media @laptop {
+        margin-bottom: 29px;
+    }
+
+    @media @desktop {
+        margin-bottom: 30px;
+    }
+
+    @media @wide {
+        margin-bottom: 30px;
+    }
+}
+
+.agro-other-item-pic {
+    display: block;
+    margin-bottom: 38px;
+    border: 2px solid #FFFFFF;
+    border-radius: 0px 0px 4px 4px;
+    // overflow: hidden;
+
+
+    @media @tablet {
+        width: 56%;
+        margin-bottom: 0;
+        order: 2;
+        height: intrinsic;
+    }
+
+    @media @laptop {
+        width: 62.5%;
+    }
+
+    @media @desktop {
+        width: 58.5%;
+    }
+
+    @media @wide {
+        width: 55.5%;
+    }
+
+    & img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+    }
+}
+
+.agro-other-item-info {
+    position: relative;
+    padding-bottom: 19px;
+    border-bottom: 2px solid #fff;
+
+    @media @tablet {
+        width: 38%;
+        padding-bottom: 35px;
+    }
+
+    @media @laptop {
+        width: 33.5%;
+        padding-bottom: 19px;
+        padding-top: 47px;
+    }
+
+    @media @desktop {
+        width: 38%;
+        padding-top: 33px;
+    }
+
+    @media @wide {
+        width: 42%;
+        padding-top: 72px;
+    }
+
+}
+
+.agro-other-item-info-title {
+    font-family: 'TT Firs Neue';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    color: #FFFFFF;
+    margin-bottom: 19px;
+
+    @media @tablet {
+        font-size: 24px;
+        line-height: 28px;
+        margin-bottom: 16px;
+    }
+
+    @media @laptop {
+        font-size: 24px;
+        line-height: 28px;
+        margin-bottom: 16px;
+    }
+
+    @media @desktop {
+        font-size: 30px;
+        line-height: 34px;
+        margin-bottom: 42px;
+    }
+
+    @media @wide {
+        font-size: 40px;
+        line-height: 46px;
+        margin-bottom: 26px;
+    }
+
+}
+
+.agro-other-item-info-text {
+    font-family: 'Anonymous Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 17px;
+    letter-spacing: 0.05em;
+
+    color: #FFFFFF;
+
+    margin-bottom: 26px;
+
+    @media @tablet {
+        font-size: 15px;
+        line-height: 17px;
+        margin-bottom: 12px;
+    }
+
+    @media @laptop {
+        font-size: 15px;
+        line-height: 17px;
+        margin-bottom: 74px;
+    }
+
+    @media @desktop {
+        font-size: 20px;
+        line-height: 23px;
+        margin-bottom: 63px;
+    }
+
+    @media @wide {
+        font-size: 27px;
+        line-height: 31px;
+        margin-bottom: 90px;
+        width: 460px;
+    }
+}
+
+.agro-other-item-info-link {
+    display: block;
+    position: absolute;
+    width: 100%;
+    font-family: 'Anonymous Pro';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 17px;
+    letter-spacing: 0.1em;
+    color: #4CED5B;
+    text-decoration: none;
+
+    bottom: 16px;
+
+    @media @tablet {
+        font-size: 15px;
+        line-height: 17px;
+        bottom: 16px;
+    }
+
+    @media @laptop {
+        font-size: 15px;
+        line-height: 17px;
+        bottom: 25px;
+    }
+
+    @media @desktop {
+        font-size: 20px;
+        line-height: 23px;
+        bottom: 42px;
+    }
+
+    @media @wide {
+        font-size: 27px;
+        line-height: 31px;
+    }
+
+}
+
+.agro-other-item-info-link__corner {
+    display: block;
+    position: absolute;
+    bottom: 3px;
+    right: 0;
+
+    @media @desktop {
+        width: 26px;
+        height: 26px;
+        bottom: 6px;
+    }
+
+    @media @desktop {
+        width: 33px;
+        height: 33px;
+        bottom: 6px;
+    }
+
+}
+
+.agro-footer {
+    border-top: 2px solid #fff;
+    padding: 75px 24px 59px 24px;
+
+    @media @tablet {
+        padding: 77px 90px 47px 90px;
+    }
+
+    @media @laptop {
+        padding: 77px 93px 55px 79px;
+    }
+
+    @media @desktop {
+        padding: 94px 109px 68px 106px;
+    }
+
+    @media @wide {
+        padding: 122px 90px 261px 151px;
+    }
+}
+
+.agro-footer-header {
+    margin-bottom: 23px;
+
+    @media @tablet {
+        margin-bottom: 57px;
+    }
+
+    @media @laptop {
+        margin-bottom: 16px;
+    }
+
+    @media @desktop {
+        margin-bottom: 8px;
+    }
+
+    @media @wide {
+
+    }
+
+}
+
+.agro-footer-title {
+    font-family: 'TT Firs Neue';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 33px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: #FFFFFF;
+
+    @media @tablet {
+        font-size: 36px;
+        line-height: 40px;
+    }
+
+    @media @laptop {
+        font-size: 36px;
+        line-height: 40px;
+    }
+
+    @media @desktop {
+        font-size: 48px;
+        line-height: 53px;
+    }
+
+    @media @wide {
+        font-size: 70px;
+        line-height: 110px;
+    }
+}
+
+.agro-footer-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    @media @laptop {
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    @media @desktop {
+        justify-content: flex-start
+    }
+
+    @media @wide {
+
+    }
+}
+
+.agro-footer-contacts {
+    margin-bottom: 54px;
+
+    @media @tablet {
+        display: none;
+    }
+
+    @media @laptop {
+        display: block;
+        padding-top: 12px;
+        margin-bottom: 0;
+    }
+
+    @media @desktop {
+        padding-top: 46px;
+    }
+
+    @media @wide {
+
+    }
+
+}
+
+.agro-footer-contacts__mailto {
+    display: block;
+
+    font-family: 'Anonymous Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 17px;
+    letter-spacing: 0.05em;
+
+    color: #FFFFFF;
+
+    margin-bottom: 18px;
+
+    @media @laptop {
+        margin-bottom: 32px;
+    }
+
+    @media @desktop {
+        margin-bottom: 38px;
+        font-size: 20px;
+        line-height: 23px;
+    }
+
+    @media @wide {
+        margin-bottom: 48px;
+        font-size: 27px;
+        line-height: 31px;
+    }
+}
+
+.agro-footer-contacts__tg {
+    position: relative;
+    display: block;
+    font-family: 'Anonymous Pro';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 17px;
+    letter-spacing: 0.1em;
+    color: #4CED5B;
+
+    @media @desktop {
+        font-size: 20px;
+        line-height: 23px;
+    }
+
+    @media @wide {
+        font-size: 27px;
+        line-height: 31px;
+    }
+
+    & > img {
+        position: absolute;
+        left: 142px;
+        bottom: -2px;
+
+        @media @desktop {
+            width: 32px;
+            height: 32px;
+            left: 196px;
+            bottom: -2px;
+        }
+
+        @media @wide {
+            width: 48px;
+            height: 48px;
+            left: 259px;
+            bottom: -12px;
+        }
+    }
+}
+
+.agro-footer-sponsors {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 7px;
+
+    @media @tablet {
+        flex-direction: row;
+        margin-bottom: 57px;
+    }
+
+    @media @laptop {
+        width: 480px;
+        margin-bottom: 39px;
+    }
+
+    @media @desktop {
+        width: auto;
+        margin-left: 220px;
+        margin-bottom: 55px;
+    }
+
+    @media @wide {
+        width: auto;
+        margin-left: 394px;
+        margin-bottom: 90px;
+    }
+
+}
+
+.agro-footer-sponsors-item {
+    margin-bottom: 48px;
+
+    @media @tablet {
+        margin-bottom: 0;
+        margin-right: 59px;
+    }
+
+    @media @laptop {
+        margin-right: 40px;
+    }
+
+    @media @desktop {
+        margin-right: 70px;
+    }
+
+    @media @wide {
+        margin-right: 111px;
+    }
+}
+
+.agro-footer-sponsors-item:last-of-type {
+    margin-right: 0;
+}
+
+.agro-footer-sponsors-item__ros-pic {
+    width: 220px;
+    margin-bottom: 23px;
+
+    @media @tablet {
+
+    }
+
+    @media @laptop {
+        width: 160px;
+    }
+
+    @media @desktop {
+        width: 320px;
+        margin-top: 3px;
+        margin-bottom: 26px;
+    }
+
+    @media @wide {
+        width: 356px;
+        margin-top: 7px;
+        margin-bottom: 26px;
+    }
+
+}
+
+.agro-footer-sponsors-item__hub-pic {
+    width: 166px;
+    margin-bottom: 22px;
+
+    @media @tablet {
+        width: 101px;
+        margin-top: 9px;
+    }
+
+    @media @laptop {
+
+    }
+
+    @media @desktop {
+        width: 160px;
+    }
+
+    @media @wide {
+        width: 228px;
+        margin-bottom: 16px;
+    }
+
+}
+
+.agro-footer-sponsors-item__spinon-pic {
+    width: 121px;
+    margin-bottom: 13px;
+
+    @media @tablet {
+        margin-top: 7px;
+        margin-bottom: 22px;
+    }
+
+    @media @laptop {
+        width: 139px;
+    }
+
+    @media @desktop {
+        width: 125px;
+        margin-top: 35px;
+        margin-bottom: 41px;
+    }
+
+    @media @wide {
+        width: 213px;
+        margin-bottom: 32px;
+    }
+
+}
+
+.agro-footer-sponsors-item__text {
+    font-family: 'Anonymous Pro';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 15px;
+    letter-spacing: 0.1em;
+
+    color: #FFFFFF;
+
+    @media @laptop {
+        font-size: 16px;
+        line-height: 18px;
+    }
+
+    @media @desktop {
+    }
+
+    @media @wide {
+        font-size: 24px;
+        line-height: 28px;
+    }
+}
+
+.agro-footer-links {
+    display: flex;
+    flex-direction: column;
+
+    @media @tablet {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    @media @laptop {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    @media @desktop {
+        justify-content: flex-start;
+    }
+
+    @media @wide {
+
+    }
+
+}
+
+.agro-footer-links__link {
+    display: block;
+    font-family: 'Anonymous Pro';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 17px;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+
+    color: #4CED5B;
+
+    margin-bottom: 16px;
+
+    @media @tablet {
+        margin-bottom: 21px;
+        font-size: 15px;
+        line-height: 17px;
+    }
+
+    @media @laptop {
+
+    }
+
+    @media @desktop {
+        font-size: 20px;
+        line-height: 23px;
+    }
+
+    @media @wide {
+        font-size: 27px;
+        line-height: 31px;
+    }
+}
+
+.agro-footer-links__link:nth-child(2) {
+    @media @tablet {
+        margin-left: 63px;
+    }
+
+    @media @laptop {
+        margin-left: 40px;
+    }
+
+    @media @desktop {
+        margin-left: 62px;
+    }
+
+    @media @wide {
+        margin-left: 100px;
+    }
+}
+
+.agro-footer-links__link:nth-child(3) {
+    @media @tablet {
+        margin-left: 217px;
+    }
+
+    @media @laptop {
+        margin-left: 0;
+    }
+
+    @media @desktop {
+        margin-left: 62px;
+    }
+}
+
+.agro-conf {
+    position: relative;
+    padding: 0 24px 0 24px;
+
+    @media @tablet {
+        padding: 0 90px 0 90px;
+    }
+
+    @media @laptop {
+        padding: 0 75px 0 0;
+    }
+
+    @media @desktop {
+        padding: 0 91px  0 0;
+    }
+
+    @media @wide {
+        padding: 0 121px 0 0;
+    }
+}
+
+.agro-conf-inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    border: 2px solid #FFFFFF;
+    border-radius: 4px;
+    padding: 76px 16px 61px;
+    background-image: url(../../img/conf-back.png);
+    background-position: top center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+    margin-bottom: 75px;
+
+
+    @media @tablet {
+        padding: 136px 87px 76px 51px;
+        margin-bottom: 94px;
+    }
+
+    @media @laptop {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 269px 21px 76px 78px;
+        margin-bottom: 94px;
+
+        background-image: none;
+        border: 0;
+
+        &:before {
+            display: block;
+            position: absolute;
+            content: '';
+            width: 320px;
+            height: 2px;
+            background: #fff;
+            bottom: 80px;
+            left: -0;
+            z-index: -1;
+        }
+
+
+        &:after {
+            display: block;
+            position: absolute;
+            content: '';
+            width: 100vw;
+            height: 62%;
+            background-image: url(../../img/conf-back.png);
+            background-size: cover;
+            top: 0;
+            left: -120px;
+            z-index: -1;
+
+        }
+
+    }
+
+    @media @desktop {
+        padding: 373px 19px 111px 106px;
+        margin-bottom: 133px;
+
+        &:before {
+            width: 430px;
+            bottom: 118px;
+        }
+
+        &:after {
+            display: block;
+            position: absolute;
+            content: '';
+            width: 100vw;
+            height: 62%;
+            background-image: url(../../img/conf-back.png);
+            background-size: cover;
+            top: 0;
+            left: -141px;
+            z-index: -1;
+
+        }
+    }
+
+    @media @wide {
+        padding: 622px 49px 182px 157px;
+        margin-bottom: 205px;
+
+        &:before {
+            width: 610px;
+            bottom: 185px;
+        }
+
+        &:after {
+            display: block;
+            position: absolute;
+            content: '';
+            width: 100vw;
+            height: 62%;
+            background-image: url(../../img/conf-back.png);
+            background-size: cover;
+            top: 0;
+            left: -159px;
+            z-index: -1;
+        }
+    }
+}
+
+.agro-conf__title {
+
+}
+
+.agro-conf__title-conf {
+    font-family: 'Anonymous Pro';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 17px;
+    letter-spacing: 0.1em;
+    color: #4CED5B;
+
+    margin-bottom: 14px;
+
+    @media @tablet {
+        font-size: 15px;
+        line-height: 17px;
+        margin-bottom: 30px;
+    }
+
+    @media @laptop {
+        font-size: 15px;
+        line-height: 17px;
+        margin-bottom: 30px;
+    }
+
+    @media @desktop {
+        font-size: 20px;
+        line-height: 23px;
+        margin-bottom: 28px;
+    }
+
+    @media @wide {
+        font-size: 27px;
+        line-height: 31px;
+        margin-bottom: 41px;
+    }
+}
+
+.agro-conf__title-name {
+    font-family: 'TT Firs Neue';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 33px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+
+    margin-bottom: 31px;
+
+
+    @media @tablet {
+        font-size: 36px;
+        line-height: 40px;
+        margin-bottom: 29px;
+    }
+
+    @media @laptop {
+        font-size: 36px;
+        line-height: 40px;
+        margin-bottom: 0;
+    }
+
+    @media @desktop {
+        font-size: 48px;
+        line-height: 53px;
+    }
+
+    @media @wide {
+        font-size: 70px;
+        line-height: 77px;
+    }
+}
+
+.agro-conf__text {
+    font-family: 'Anonymous Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 15px;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+
+    @media @tablet {
+        font-size: 15px;
+        line-height: 17px;
+    }
+
+    @media @laptop {
+        width: 401px;
+        padding-top: 45px;
+        font-size: 15px;
+        line-height: 17px;
+    }
+
+    @media @desktop {
+        width: 540px;
+        padding-top: 53px;
+        font-size: 20px;
+        line-height: 23px;
+    }
+
+    @media @wide {
+        width: 720px;
+        font-size: 27px;
+        line-height: 31px;
+        padding-top: 67px;
+    }
+}
+
+.agro-conf__text_green {
+    color: #4CED5B;
+}
+
+.agro-conf__btn {
+    display: block;
+    width: fit-content;
+    position: relative;
+    margin-top: 80px;
+    line-height: 32px;
+    padding: 0 20px;
+
+    font-family: 'Anonymous Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+    text-align: center;
+    letter-spacing: 0.1em;
+    color: #0E0E12;
+
+    background: #4CED5B;
+    border-radius: 4px;
+    margin-left: auto;
+
+    &:hover {
+        background: linear-gradient(89.96deg, rgba(76, 237, 91, 0.5) 0.04%, #2B6030 117.55%), #4CED5B;
+    }
+
+
+    &:after {
+        position: absolute;
+        display: block;
+        content: '';
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, rgba(76, 237, 91, 0.4) 19.55%, rgba(76, 237, 91, 0.296753) 30.18%, rgba(76, 237, 91, 0) 77.12%);
+        border-radius: 2px;
+        bottom: -28px;
+        left: 0;
+        z-index: -1;
+
+        @media @desktop {
+           bottom: -45px;
+        }
+    }
+
+    @media @laptop {
+        margin-left: 0;
+    }
+
+    @media @desktop {
+        margin-top: 80px;
+        line-height: 55px;
+        padding: 0 20px;
+        font-size: 20px;
+        margin-left: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+

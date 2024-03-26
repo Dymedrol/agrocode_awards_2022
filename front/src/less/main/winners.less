@@ -1,0 +1,678 @@
+.agro-winners {
+    background-color: rgba(4, 139, 58, 0.5);
+
+    position: relative;
+    padding: 74px 0 80px 0;
+    margin-bottom: 74px;
+
+    @media @tablet {
+        padding: 65px 0 80px 0;
+        margin-bottom: 94px;
+    }
+
+    @media @laptop {
+        padding: 93px 0 80px 0;
+        margin-bottom: 65px;
+    }
+
+    @media @desktop {
+        padding: 133px 0 94px 0;
+        margin-bottom: 133px;
+    }
+
+    @media @wide {
+        padding: 133px 0 94px 0;
+        margin-bottom: 133px;
+    }
+}
+
+.agro-winners-header {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-bottom: 57px;
+    padding: 0 24px 0 24px;
+
+    @media @tablet {
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 58px;
+        padding: 0 90px 0 90px;
+    }
+
+    @media @laptop {
+        margin-bottom: 40px;
+        padding: 0 124px 0 79px;
+    }
+
+    @media @desktop {
+        margin-bottom: 59px;
+        padding: 0 183px 0 107px;
+    }
+
+    @media @wide {
+        margin-bottom: 89px;
+        padding: 0 261px 0 151px;
+    }
+
+}
+
+.agro-winners-header-title {
+    font-family: 'TT Firs Neue';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 33px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: #FFFFFF;
+
+    margin-bottom: 58px;
+
+    @media @tablet {
+        font-size: 36px;
+        line-height: 40px;
+        margin-bottom: 0;
+    }
+
+    @media @laptop {
+        font-size: 36px;
+        line-height: 40px;
+    }
+
+    @media @desktop {
+        font-size: 48px;
+        line-height: 53px;
+    }
+
+    @media @wide {
+        font-size: 70px;
+        line-height: 77px;
+    }
+}
+
+.agro-winners-header-nav {
+    display: none;
+
+    @media @tablet {
+        display: flex;
+        justify-content: space-between;
+        width: 184px;
+        margin-bottom: 48px;
+    }
+
+    @media @laptop {
+        display: none;
+    }
+}
+
+.agro-winners-nominations {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    max-width: 272px;
+
+    @media @tablet {
+        width: fit-content;
+        max-width: unset;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+    }
+
+    @media @laptop {
+        margin-left: 20px;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    @media @desktop {
+        margin-left: 32px;
+        justify-content: flex-start;
+    }
+
+    @media @wide {
+        margin-left: 32px;
+        justify-content: flex-start;
+    }
+}
+
+.agro-winners-nominations-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 66px;
+    height: 66px;
+    background: rgba(209, 193, 255, 0.1);
+    border-radius: 4px;
+    margin-bottom: 2px;
+    margin-right: 2px;
+
+    cursor: pointer;
+
+    @media @tablet {
+        width: 76px;
+        height: 76px;
+    }
+
+    @media @laptop {
+        width: 48px;
+        height: 48px;
+    }
+
+    @media @desktop {
+        width: 58px;
+        height: 58px;
+    }
+
+    @media @wide {
+        width: 86px;
+        height: 86px;
+    }
+
+    & svg path {
+        fill: #B9AECE;
+        fill-opacity: .4;
+    }
+
+    &:hover {
+        & svg path {
+            fill: #fff;
+            fill-opacity: 1;
+        }
+    }
+}
+
+.agro-winners-nominations-item > p {
+    font-family: 'Anonymous Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 13px;
+    text-align: center;
+    letter-spacing: 0.1em;
+
+    color: #FFFFFF;
+
+    opacity: 0.5;
+    text-align: left;
+
+    @media @tablet {
+        font-size: 13px;
+        line-height: 13px;
+    }
+
+    @media @laptop {
+        font-size: 13px;
+        line-height: 13px;
+        max-width: 77px;
+    }
+
+    @media @desktop {
+        font-size: 16px;
+        line-height: 16px;
+        max-width: 95px;
+    }
+
+    @media @wide {
+        font-size: 20px;
+        line-height: 20px;
+    }
+}
+
+.agro-winners-nominations-item_active {
+    background: #4CED5B;
+
+    & > p {
+        color: #FFFFFF;
+        opacity: 1;
+    }
+
+    & svg path {
+        fill: #fff;
+        fill-opacity: 1;
+    }
+}
+
+.agro-winners-slider-wrapper {
+    position: relative;
+}
+
+.agro-winners-slider-inner {
+    display: none !important;
+
+    & .center {
+        & .agro-winners-slider-item {
+            opacity: 1;
+            transition-property: opacity;
+            transition-duration: .6s;
+        }
+    }
+}
+
+.agro-winners-slider-inner.open {
+    display: block !important;
+}
+
+.agro-winners-slider-nav-prev {
+    display: none;
+    z-index: 5;
+    cursor: pointer;
+
+    @media @laptop {
+        top: 160px;
+        left: 47px;
+        position: absolute;
+        display: block;
+    }
+
+    @media @desktop {
+        top: 192px;
+        left: 115px;
+    }
+
+    @media @wide {
+        top: 246px;
+        left: 151px;
+    }
+
+    & svg {
+
+        @media @laptop {
+            width: 80px;
+            height: 80px;
+
+        }
+
+        @media @desktop {
+            width: 100px;
+            height: 100px;
+        }
+
+        @media @wide {
+            width: 139px;
+            height: 139px;
+        }
+    }
+}
+
+.agro-winners-slider-nav-next {
+    display: none;
+    z-index: 5;
+    cursor: pointer;
+
+    @media @laptop {
+        top: 160px;
+        right: 92px;
+        position: absolute;
+        display: block;
+    }
+
+    @media @desktop {
+        top: 192px;
+        right: 185px;
+    }
+
+    @media @wide {
+        top: 246px;
+        right: 260px;
+    }
+
+    & svg {
+
+        @media @laptop {
+            width: 80px;
+            height: 80px;
+
+        }
+
+        @media @desktop {
+            width: 100px;
+            height: 100px;
+        }
+
+        @media @wide {
+            width: 139px;
+            height: 139px;
+        }
+    }
+}
+
+.agro-winners-slider-item {
+    position: relative;
+    width: 80vw;
+    min-height: 610px;
+    border: 2px solid #FFFFFF;
+    border-radius: 4px;
+    padding: 40px 20px 144px;
+    opacity: .1;
+    transition-property: opacity;
+    transition-duration: .6s;
+    margin-right: 24px;
+
+    @media @tablet {
+        width: 382px;
+        padding: 45px 20px 112px;
+        margin-right: 40px;
+        min-height: 409px;
+    }
+
+    @media @laptop {
+        width: 546px;
+        padding: 45px 42px 112px;
+        margin-right: 53px;
+        min-height: 399px;
+    }
+
+    @media @desktop {
+        width: 640px;
+        padding: 60px 33px 129px 62px;
+        margin-right: 67px;
+        min-height: 484px;
+    }
+
+    @media @wide {
+        width: 956px;
+        padding: 77px 72px 183px 62px;
+        margin-right: 98px;
+        min-height: 629px;
+    }
+}
+
+.agro-winners-slider-item-header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+
+    @media @tablet {
+        flex-direction: row;
+    }
+
+    @media @desktop {
+        margin-bottom: 24px;
+    }
+}
+
+.agro-winners-slider-item-pic {
+    width: 102px !important;
+    height: 102px !important;
+    margin-bottom: 24px;
+    object-fit: contain;
+
+    @media @tablet {
+        margin-bottom: 0;
+        margin-right: 18px;
+    }
+
+    @media @laptop {
+        width: 111px !important;
+        height: 111px !important;
+        margin-right: 30px;
+    }
+
+    @media @desktop {
+        width: 134px !important;
+        height: 134px !important;
+        margin-right: 40px;
+    }
+
+    @media @wide {
+        margin-right: 56px;
+    }
+
+}
+
+.agro-winners-slider-item-title {
+    font-family: 'TT Firs Neue';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    color: #FFFFFF;
+
+    margin-bottom: 16px;
+
+    @media @tablet {
+        font-size: 20px;
+        line-height: 23px;
+    }
+
+    @media @laptop {
+        font-size: 24px;
+        line-height: 28px;
+    }
+
+    @media @desktop {
+        font-size: 30px;
+        line-height: 34px;
+    }
+
+    @media @wide {
+        font-size: 40px;
+        line-height: 46px;
+    }
+}
+
+.agro-winners-slider-item-subtitle {
+    font-family: 'Anonymous Pro';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 15px;
+    letter-spacing: 0.1em;
+    color: #4CED5B;
+
+    margin-bottom: 16px;
+
+    @media @tablet {
+        font-size: 13px;
+        line-height: 15px;
+        margin-bottom: 16px;
+    }
+
+    @media @laptop {
+        font-size: 13px;
+        line-height: 15px;
+        margin-bottom: 16px;
+    }
+
+    @media @desktop {
+        font-size: 16px;
+        line-height: 18px;
+        margin-bottom: 24px;
+    }
+
+    @media @wide {
+        font-size: 24px;
+        line-height: 28px;
+        margin-bottom: 24px;
+    }
+}
+
+.agro-winners-slider-item-text {
+    font-family: 'Anonymous Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 15px;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+
+    @media @tablet {
+        font-size: 13px;
+        line-height: 15px;
+    }
+
+    @media @laptop {
+        font-size: 13px;
+        line-height: 15px;
+    }
+
+    @media @desktop {
+        font-size: 16px;
+        line-height: 18px;
+    }
+
+    @media @wide {
+        font-size: 24px;
+        line-height: 28px;
+    }
+}
+
+.agro-winners-slider-item-footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+
+    padding: 0 20px 0;
+
+    @media @tablet {
+        padding: 0 20px 0;
+    }
+
+    @media @laptop {
+        padding: 0 42px 0;
+        bottom: 38px;
+    }
+
+    @media @desktop {
+        padding: 0 33px 0 62px;
+        bottom: 45px;
+    }
+
+    @media @wide {
+        padding: 0 72px 0 62px;
+        bottom: 56px;
+    }
+}
+
+.agro-winners-slider-item-nomination {
+    font-family: 'Anonymous Pro';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 15px;
+    letter-spacing: 0.1em;
+    color: #4CED5B;
+    width: 100%;
+    margin-bottom: 33px;
+
+    @media @tablet {
+        width: fit-content;
+        font-size: 13px;
+        line-height: 15px;
+        margin-bottom: 0;
+        order: 2;
+    }
+
+    @media @laptop {
+        font-size: 13px;
+        line-height: 15px;
+    }
+
+    @media @desktop {
+        font-size: 16px;
+        line-height: 18px;
+    }
+
+    @media @wide {
+        font-size: 24px;
+        line-height: 28px;
+    }
+}
+
+.agro-winners-slider-item-btn {
+    position: relative;
+    display: block;
+    background: #4CED5B;
+    border-radius: 2px;
+    padding: 0 24px;
+
+    font-family: 'Anonymous Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 29px;
+    text-align: center;
+    letter-spacing: 0.1em;
+
+    color: #000;
+    cursor: pointer;
+
+    &:hover {
+        background: linear-gradient(89.96deg, rgba(76, 237, 91, 0.5) 0.04%, #2B6030 117.55%), #4CED5B;
+    }
+
+    &:after {
+        display: block;
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: -25px;
+        background: linear-gradient(0deg, rgba(76, 237, 91, 0.4) 19.55%, rgba(76, 237, 91, 0.296753) 30.18%, rgba(76, 237, 91, 0) 77.12%);
+        z-index: -1;
+
+            @media @wide {
+                top: -50px;
+            }
+    }
+
+    @media @tablet {
+        order: 1;
+    }
+
+    @media @laptop {
+        font-size: 13px;
+        line-height: 29px;
+        padding: 0 33px;
+    }
+
+    @media @desktop {
+        font-size: 16px;
+        line-height: 38px;
+        padding: 0 45px;
+    }
+
+    @media @wide {
+        font-size: 20px;
+        line-height: 55px;
+        padding: 0 74px;
+    }
+}
+
+.agro-winners-slider-item-count {
+    width: fit-content;
+    bottom: 30px;
+    font-family: 'Anonymous Pro';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 15px;
+    letter-spacing: 0.1em;
+    color: #676861;
+
+    @media @tablet {
+        order: 3;
+    }
+
+    @media @desktop {
+        font-size: 16px;
+        line-height: 18px;
+    }
+
+    @media @wide {
+        font-size: 24px;
+        line-height: 28px;
+    }
+
+    & span {
+        color: #fff;
+    }
+}

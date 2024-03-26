@@ -1,0 +1,432 @@
+.timer-popup-shadow {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(4, 139, 58, 0.5);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 140;
+}
+
+.timer-popup {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 320px;
+    height: fit-content;
+    background: #020312;
+    padding: 69px 24px 76px 24px;
+
+    @media @tablet {
+        width: 448px;
+        padding: 78px 68px 72px 72px;
+    }
+
+    @media @laptop {
+        width: 789px;
+        padding: 78px 85px 28px 90px;
+    }
+
+    @media @desktop {
+        width: 844px;
+        padding: 78px 75px 40px 90px;
+    }
+
+
+    @media @wide {
+        width: 970px;
+        padding: 103px 92px 64px 103px;
+    }
+}
+
+.timer-popup__close {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    right: 14px;
+    top: 14px;
+    cursor: pointer;
+
+    @media @tablet {
+        width: 40px;
+        height: 40px;
+        top: 0;
+        right: -39px;
+    }
+
+    @media @desktop {
+        width: 48px;
+        height: 48px;
+        top: 0;
+        right: -47px;
+    }
+
+
+    @media @wide {
+        width: 64px;
+        height: 64px;
+        top: 0;
+        right: -63px;
+    }
+}
+
+.timer-popup-form {
+    display: flex;
+    flex-wrap: wrap;
+
+    @media @laptop {
+        justify-content: space-between;
+    }
+}
+
+.timer-popup-dummy {
+    display: none;
+
+    @media @laptop {
+        display: block;
+        width: 30%;
+
+    }
+}
+
+.timer-popup__title {
+    font-family: 'TT Firs Neue';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 33px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: #FFFFFF;
+
+    margin-bottom: 14px;
+
+    @media @tablet {
+        font-size: 38px;
+        line-height: 42px;
+        margin-bottom: 20px;
+    }
+
+    @media @laptop {
+        font-size: 38px;
+        line-height: 42px;
+        margin-bottom: 41px;
+    }
+
+    @media @desktop {
+        font-size: 42px;
+        line-height: 46px;
+        margin-bottom: 48px;
+    }
+
+
+    @media @wide {
+        font-size: 48px;
+        line-height: 53px;
+        margin-bottom: 60px;
+    }
+}
+
+.timer-popup__text {
+    font-family: 'Anonymous Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 17px;
+    letter-spacing: 0.05em;
+
+    color: #FFFFFF;
+
+    margin-bottom: 41px;
+
+    @media @tablet {
+        font-size: 15px;
+        line-height: 17px;
+        width: 203px;
+        margin-bottom: 45px;
+    }
+
+    @media @laptop {
+        font-size: 15px;
+        line-height: 17px;
+        width: 203px;
+        margin-bottom: 45px;
+    }
+
+    @media @desktop {
+        font-size: 20px;
+        line-height: 23px;
+        width: 298px;
+        margin-bottom: 0;
+    }
+
+
+    @media @wide {
+        font-size: 24px;
+        line-height: 28px;
+        width: 353px;
+    }
+}
+
+.timer-popup-text-input-wrapper {
+    width: 100%;
+    margin-bottom: 11px;
+
+    @media @laptop {
+        width: 50%;
+    }
+}
+
+.timer-popup-text-input-wrapper-2 {
+    margin-bottom: 21px;
+
+    @media @tablet {
+        margin-bottom: 60px;
+    }
+
+    @media @laptop {
+        margin-bottom: 49px;
+    }
+
+    @media @desktop {
+        margin-bottom: 77px;
+    }
+
+
+    @media @wide {
+        margin-bottom: 111px;
+    }
+}
+
+.timer-popup-text-input {
+    width: 100%;
+    border: 2.5px solid #353541;
+    border-radius: 2px;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    background: transparent;
+    font-family: 'Anonymous Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 40px;
+    letter-spacing: 0.05em;
+
+    color: #FFFFFF;
+
+    @media @desktop {
+        font-size: 18px;
+        line-height: 60px;
+    }
+
+
+    @media @wide {
+        font-size: 22px;
+        line-height: 70px;
+    }
+}
+
+.timer-popup-text-input:focus-visible {
+    border: 2.5px solid #ffffff;
+    outline: none;
+    box-shadow: none;
+}
+
+.timer-popup-text-input-label {
+    font-family: 'Anonymous Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.1em;
+    color: #FFFFFF;
+    opacity: 0.4;
+
+    @media @wide {
+        font-size: 19px;
+        line-height: 22px;
+    }
+}
+
+.timer-popup-agreement {
+    display: flex;
+    margin-bottom: 31px;
+
+    @media @tablet {
+        margin-bottom: 38px;
+    }
+
+    @media @laptop {
+        width: 283px;
+    }
+
+    @media @wide {
+        width: 369px
+    }
+}
+
+.timer-popup-agreemen-label {
+    display: block;
+    position: relative;
+    width: 16px;
+    height: 16px;
+    background: #2b2941;
+    border-radius: 2px;
+    flex-shrink: 0;
+
+    @media @tablet {
+        width: 24px;
+        height: 24px;
+    }
+
+    @media @laptop {
+
+    }
+
+    @media @desktop {
+        width: 32px;
+        height: 32px;
+    }
+
+
+    & svg {
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+
+        @media @tablet {
+            width: 14px;
+            height: auto;
+        }
+
+        @media @desktop {
+            width: 19px;
+        }
+    }
+}
+
+.timer-popup-agreemen-input:checked {
+    & ~ svg {
+        display: block !important;
+    }
+}
+
+.timer-popup-agreement-text {
+    font-family: 'Anonymous Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 11px;
+    letter-spacing: 0.1em;
+    color: #FFFFFF;
+
+    margin-left: 14px;
+
+    @media @tablet {
+        font-size: 14px;
+        line-height: 16px;
+        margin-left: 19px;
+    }
+
+    @media @desktop {
+        margin-left: 24px;
+    }
+
+
+    @media @wide {
+        font-size: 16px;
+        line-height: 17px;
+    }
+}
+
+.timer-popup-submit {
+    position: relative;
+    padding: 0 42px;
+    background: #4CED5B;
+    border-radius: 4px;
+    font-family: 'Anonymous Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 32px;
+    text-align: center;
+    letter-spacing: 0.1em;
+    border: 0;
+    outline: none;
+
+    color: #000;
+    box-shadow: none;
+
+    &:hover {
+        background: linear-gradient(89.96deg, rgba(76, 237, 91, 0.5) 0.04%, #2B6030 117.55%), #4CED5B;
+    }
+
+    @media @laptop {
+        margin-top: 10px;
+        line-height: 36px;
+        padding: 0 48px;
+    }
+
+    @media @desktop {
+        margin-top: 3px;
+        line-height: 44px;
+        padding: 0px 66px;
+    }
+
+
+    @media @wide {
+        line-height: 55px;
+        padding: 0px 72px;
+        font-size: 20px;
+        margin-top: -12px;
+    }
+
+    &:after {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+        content: '';
+        background: linear-gradient(180deg, rgba(76, 237, 91, 0.4) 19.55%, rgba(76, 237, 91, 0.296753) 30.18%, rgba(76, 237, 91, 0) 77.12%);
+        border-radius: 2px;
+
+        bottom: -30px;
+        left: 0;
+
+        @media @laptop {
+            bottom: 29px;
+            left: 0;
+            background: linear-gradient(0deg, rgba(76, 237, 91, 0.4) 19.55%, rgba(76, 237, 91, 0.296753) 30.18%, rgba(76, 237, 91, 0) 77.12%);
+        }
+
+        @media @desktop {
+            bottom: 33px;
+            left: 0;
+            background: linear-gradient(0deg, rgba(76, 237, 91, 0.4) 19.55%, rgba(76, 237, 91, 0.296753) 30.18%, rgba(76, 237, 91, 0) 77.12%);
+        }
+
+        @media @wide {
+            bottom: 44px;
+            left: 0;
+            background: linear-gradient(0deg, rgba(76, 237, 91, 0.4) 19.55%, rgba(76, 237, 91, 0.296753) 30.18%, rgba(76, 237, 91, 0) 77.12%);
+        }
+
+    }
+}
+
+.timer-popup-submit-wrapper {
+    @media @laptop {
+        width: 50%;
+    }
+}

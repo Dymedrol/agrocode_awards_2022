@@ -1,0 +1,16 @@
+venv
+.DS_Store
+db.sqlite3
+/tmp
+/var
+/public
+__pycache__
+*.pyc
+local_settings.py
+node_modules/
+docker-compose.override.yml
+.env
+.idea/
+hermione/reports/
+hermione/images/
+front/public/static/build/

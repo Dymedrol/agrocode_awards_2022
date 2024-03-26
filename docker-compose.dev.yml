@@ -1,0 +1,23 @@
+version: '2.4'
+
+services:
+
+  mysql:
+    extends:
+      file: docker-compose.common.yml
+      service: mysql
+    volumes:
+      - ./var/mysql:/var/lib/mysql
+      - .:/mnt
+
+  django:
+    image: ${CONTAINER_TEST_IMAGE}
+    extends:
+      file: docker-compose.common.yml
+      service: django
+    command: uwsgi --ini /mnt/conf/uwsgi/dev.ini --uid www-data --gid www-data
+    links:
+      - "mysql:mysql"
+    depends_on:
+      mysql:
+        condition: service_healthy

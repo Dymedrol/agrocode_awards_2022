@@ -1,0 +1,1004 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load thumbnail %}
+
+{% block content %}
+
+    <div class="agro-indicator" id="indicator">
+        <div class="agro-indicator-item"></div>
+        <div class="agro-indicator-item"></div>
+        <div class="agro-indicator-item"></div>
+        <div class="agro-indicator-item"></div>
+        <div class="agro-indicator-item"></div>
+    </div>
+
+    {% if winners %}
+        <div class="agro-shortlist-popup-shadow" data-currnet-nomination="">
+            <div class="agro-shortlist-popup">
+                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" class="agro-shortlist-popup-close">
+                    <rect width="64" height="64" rx="4" fill="#17162A"/>
+                    <path d="M18 16L48 46" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M18 46L48 16" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <div class="agro-shortlist-popup-inner">
+                    <div class="agro-shortlist-popup-header">
+                        <p class="agro-shortlist-popup-header-title">ШОРТ-ЛИСТ</p>
+                        <div class="agro-shortlist-popup-header-nav">
+                            <div class="agro-shortlist-popup-header-nominations">
+
+                                {% if nominees_digital %}
+                                    <div class="agro-shortlist-popup-header-nominations-item" id="short-list-popup-agro_digital" data-nomination-title="Цифровизация года">
+                                        <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M28.5828 8.53271V6.86893H25.4283V3.34058H21.9V0.186035H20.2362V3.34058H18.5585V0.186035H16.8947V3.34058H15.2171V0.186035H13.5533V3.34058H11.8756V0.186035H10.2118V3.34058H8.53418V0.186035H6.87039V3.34058H3.34205V6.86893H0.1875V8.53271H3.34205V10.2104H0.1875V11.8742H3.34205V13.5518H0.1875V15.2156H3.34205V16.8933H0.1875V18.5571H3.34205V20.2347H0.1875V21.8985H3.34205V25.4268H6.87039V28.5814H8.53418V25.4268H10.2118V28.5814H11.8756V25.4268H13.5533V28.5814H15.2171V25.4268H16.8947V28.5814H18.5585V25.4268H20.2362V28.5814H21.9V25.4268H25.4283V21.8985H28.5828V20.2347H25.4283V18.5571H28.5828V16.8933H25.4283V15.2156H28.5828V13.5518H25.4283V11.8742H28.5828V10.2104H25.4283V8.53271H28.5828ZM22.2307 22.2292H6.53968V6.53822H22.2307V22.2292ZM8.20305 8.20199H20.5665V20.5654H8.20305V8.20199ZM10.4927 18.2868C12.2328 19.098 15.3243 19.4463 16.9931 17.6884C19.6343 14.915 18.9192 11.1149 18.7531 10.2322C18.7358 10.1405 18.7245 10.0802 18.7235 10.056L18.661 10.0443C17.6247 9.8502 13.8842 9.14964 11.091 11.7863C8.85597 14.1439 10.1461 17.4063 10.4429 18.1568C10.4666 18.2167 10.4839 18.2606 10.4927 18.2868ZM11.5564 16.0467C11.3399 14.9336 11.5735 13.587 12.2674 12.9628C13.3658 11.8645 14.9169 11.5523 16.1065 11.4965L11.5564 16.0467ZM17.2888 12.6681C17.235 13.8557 16.9235 15.4061 15.818 16.5117C14.9619 17.3678 13.6866 17.3776 12.7344 17.2225L17.2888 12.6681Z" fill="#B9AECE"/>
+                                        </svg>
+                                    </div>
+                                {% endif %}
+
+                                {% if nominees_food %}
+                                    <div class="agro-shortlist-popup-header-nominations-item" id="short-list-popup-future_food" data-nomination-title="Еда будущего">
+                                        <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M27.5647 1.20416C26.8859 0.525393 25.9943 0.186035 25.1027 0.186035C24.2111 0.186035 23.3194 0.525393 22.6407 1.20416C21.7492 2.09568 20.1571 6.02266 18.8486 9.82869C18.4181 9.39921 17.9698 8.99984 17.5072 8.63387C18.1468 6.80619 19.0139 4.48277 19.8736 2.66203C19.4527 2.29638 18.9033 2.07477 18.3021 2.07477C16.9778 2.07477 15.9043 3.14824 15.9043 4.47251C15.9043 5.2292 16.689 7.07589 17.3616 8.52017C14.6178 6.40522 11.3874 5.46673 8.38238 6.42779L14.7708 12.8156L13.5978 13.9886L6.75996 7.15032C6.289 7.4234 5.82741 7.75006 5.37858 8.13373L11.238 13.9931L10.0656 15.1661L4.23272 9.33321C3.92703 9.74833 3.66837 10.2027 3.45058 10.6886L10.1745 17.4125L9.00153 18.5849L2.86015 12.4437C2.68657 13.1573 2.57271 13.9085 2.50471 14.6796L6.52836 18.7033L5.35539 19.8757L2.42568 16.946C2.43894 18.1328 2.52795 19.324 2.64957 20.4594C2.79604 21.7562 2.55723 23.0564 1.95805 24.2188L0.487362 27.0734C0.30872 27.4202 0.374656 27.8426 0.650465 28.1184V28.1184C0.926259 28.3942 1.34867 28.4602 1.69541 28.2816L2.83198 27.6961L4.55056 26.8108C5.7125 26.2116 7.01264 25.9728 8.30945 26.1193C12.4602 26.5565 17.3849 26.593 20.0719 23.9994C23.8057 20.2559 23.3255 15.3884 20.2524 11.409C21.6962 12.0812 23.5403 12.8645 24.2964 12.8645C25.6206 12.8645 26.6941 11.7911 26.6941 10.4668C26.6941 9.8654 26.4724 9.31602 26.1067 8.89519C24.2866 9.75448 21.9642 10.6213 20.1368 11.2609C19.7718 10.8006 19.372 10.3527 18.9399 9.92025C22.7465 8.61146 26.6735 7.01938 27.5647 6.1282C28.9222 4.77066 28.9222 2.56176 27.5647 1.20416ZM7.71132 22.2305L6.53835 21.0575L7.71132 19.8851L8.88373 21.0575L7.71132 22.2305ZM11.3566 20.9399L10.184 19.7673L11.3566 18.5947L12.5291 19.7673L11.3566 20.9399ZM12.4204 17.5209L11.248 16.3485L12.4204 15.1755L13.0069 15.762L13.5934 16.3485L12.4204 17.5209ZM15.953 16.3434L14.7804 15.1708L15.953 13.9982L17.1256 15.1708L15.953 16.3434Z" fill="#B9AECE" fill-opacity="0.4"/>
+                                        </svg>
+                                    </div>
+                                {% endif %}
+
+                                {% if nominees_russia %}
+                                    <div class="agro-shortlist-popup-header-nominations-item" id="short-list-popup-made_in_russia" data-nomination-title="Своя технология">
+                                        <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_502_3885)"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.37341 6.4976L8.53825 6.83567L7.70309 6.4976V0.186035H8.53825H9.37341V6.4976ZM3.52734 22.4639L7.70309 24.1542V28.5814H8.53825H9.37341V24.1542L8.53825 24.4923L7.70313 24.1543V21.2366L3.52734 19.5663V22.4639ZM3.52734 17.7673L7.70313 19.4376V16.5551L3.52734 14.8848V17.7673ZM13.5492 13.0859L9.37343 14.7563V12.05L13.5492 10.3796V13.0859ZM9.37343 19.4376L13.5492 17.7673V14.8848L9.37343 16.5551V19.4376ZM3.52734 10.3796L7.70313 12.05V14.7563L3.52734 13.0859V10.3796ZM13.5492 8.58056V4.80726V1.85637H11.8789V5.48341L9.37343 6.49762V10.2509L13.5492 8.58056ZM13.5492 22.4639L9.37343 24.1543V21.2366L13.5492 19.5663V22.4639ZM5.19766 5.48341L7.70313 6.49762V10.2509L3.52734 8.58056V4.80726V1.85637H5.19766V5.48341ZM20.2305 6.83567L21.0657 6.4976V0.186035H20.2305H19.3954V6.4976L20.2305 6.83567ZM19.3954 24.1542L20.2305 24.4923L21.0657 24.1542V28.5814H20.2305H19.3954V24.1542ZM15.2195 17.7673L19.3953 19.4376V16.5551L15.2195 14.8848V17.7673ZM21.0657 14.7563V12.05L25.2415 10.3796V13.0859L21.0657 14.7563ZM21.0657 19.4376L25.2415 17.7673V14.8848L21.0657 16.5551V19.4376ZM15.2195 10.3796L19.3953 12.05V14.7563L15.2195 13.0859V10.3796ZM25.2415 8.58056V4.80726V1.85637H23.5712V5.48341L21.0657 6.49762V10.2509L25.2415 8.58056ZM25.2415 22.4639L21.0657 24.1543V21.2366L25.2415 19.5663V22.4639ZM19.3953 21.2366L15.2195 19.5663V22.4639L19.3953 24.1543V21.2366ZM16.8898 5.48341L19.3953 6.49762V10.2509L15.2195 8.58056V4.80726V1.85637H16.8898V5.48341Z" fill="#B9AECE" fill-opacity="0.4"/>
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_502_3885">
+                                                    <rect width="28.3953" height="28.3953" fill="white" transform="translate(0.1875 0.186035)"/>
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                    </div>
+                                {% endif %}
+
+
+                                {% if nominees_hero %}
+                                    <div class="agro-shortlist-popup-header-nominations-item" id="short-list-popup-agro_hero" data-nomination-title="Лидер года">
+                                        <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_502_3909)">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M13.2507 0.186035C14.7514 0.186035 16.2817 0.972653 17.4496 2.34463C17.7753 2.727 18.0597 3.13775 18.2995 3.56539H8.20196C8.44156 3.13775 8.72601 2.727 9.05162 2.34441C10.2197 0.972653 11.7503 0.186035 13.2507 0.186035ZM11.8064 19.1264C11.806 18.9521 11.8058 18.7805 11.8055 18.6126L11.8055 18.606L11.8042 17.7728H16.9371V15.6151H16.8989L16.4252 14.2916C17.9819 13.2882 19.05 11.5709 19.1765 9.60053H7.32175C7.40299 11.0704 8.0124 12.4402 9.05877 13.4879C9.40604 13.8354 9.78841 14.1346 10.1979 14.382L9.79144 15.585V19.1264H11.8064ZM5.08842 25.5352H11.8127C11.8131 26.756 11.8129 27.8182 11.8116 28.5346H2.12891V21.046C2.12891 18.0514 4.55418 15.6151 7.53514 15.6151H8.12743V20.7977H11.8086C11.8099 21.809 11.811 22.8584 11.8118 23.8638H6.75221V21.2626H5.08842V25.5352ZM19.1485 15.6151C20.8795 15.6151 22.4592 16.4524 23.4583 17.7728H18.6009V15.6151H19.1485ZM23.1969 7.92893V6.47983H19.1801C19.1574 6.06756 19.0898 5.65053 18.9806 5.23675H7.52062C7.41122 5.65053 7.34363 6.06756 7.32088 6.47983H3.44845V7.92893H23.1969ZM13.4745 28.5814C13.4782 27.4044 13.4786 24.8853 13.4706 19.4366H26.6174V28.5814H13.4745ZM19.1284 23.7943C19.1485 24.2471 19.4938 24.6301 19.9603 24.6301C20.3953 24.6301 20.8123 24.2456 20.7922 23.7943C20.772 23.3415 20.4267 22.9587 19.9603 22.9587C19.525 22.9587 19.1082 23.343 19.1284 23.7943Z" fill="#B9AECE" fill-opacity="0.4"/>
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_502_3909">
+                                                    <rect width="28.3953" height="28.3953" fill="white" transform="translate(0.1875 0.186035)"/>
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                    </div>
+                                {% endif %}
+
+
+                                {% if nominees_launch %}
+                                    <div class="agro-shortlist-popup-header-nominations-item" id="short-list-popup-agro_launch" data-nomination-title="Запуск года">
+                                        <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_502_3919)">
+                                                <path d="M15.3242 18.4362C16.8655 18.0794 18.0813 16.8635 18.4382 15.3223C16.8969 15.6791 15.681 16.8949 15.3242 18.4362Z" fill="#B9AECE" fill-opacity="0.4"/>
+                                                <path d="M14.3855 6.89648C10.2571 6.89648 6.89844 10.2552 6.89844 14.3835C6.89844 18.2307 9.81528 21.4089 13.5536 21.8241V20.1471C10.7354 19.7422 8.56223 17.3121 8.56223 14.3835V13.5516H9.39412C11.51 13.5516 13.3657 14.6861 14.3855 16.3785C15.4053 14.6861 17.261 13.5516 19.3769 13.5516H20.2088V14.3835C20.2088 17.312 18.0356 19.7422 15.2174 20.1471V21.8241C18.9557 21.4089 21.8725 18.2307 21.8725 14.3835C21.8725 10.2552 18.5139 6.89648 14.3855 6.89648ZM10.856 12.0306L9.67957 10.8541L10.856 9.67762L12.0325 10.8541L10.856 12.0306ZM15.2174 10.2241H13.5536V8.56027H15.2174V10.2241ZM17.9149 12.0306L16.7385 10.8541L17.9149 9.67762L19.0914 10.8541L17.9149 12.0306Z" fill="#B9AECE" fill-opacity="0.4"/>
+                                                <path d="M10.332 15.3223C10.6889 16.8635 11.9047 18.0794 13.446 18.4362C13.0892 16.8949 11.8733 15.6791 10.332 15.3223Z" fill="#B9AECE" fill-opacity="0.4"/>
+                                                <path d="M28.5828 17.2841V11.4833L26.4128 11.0493C26.1415 10.0683 25.7509 9.12647 25.2468 8.23811L26.4754 6.3953L22.3736 2.29356L20.5308 3.52205C19.6424 3.01803 18.7006 2.62737 17.7196 2.35601L17.2855 0.186035H11.4848L11.0508 2.35606C10.0697 2.62743 9.12788 3.01808 8.23958 3.5221L6.39676 2.29356L2.29502 6.3953L3.52351 8.23811C3.01949 9.12647 2.62883 10.0683 2.35747 11.0493L0.1875 11.4833V17.2841L2.35753 17.7181C2.62883 18.6991 3.0196 19.6411 3.52357 20.5293L2.29502 22.3721L6.39676 26.4739L8.23958 25.2454C9.12793 25.7494 10.0698 26.1401 11.0508 26.4114L11.4848 28.5814H17.2855L17.7196 26.4114C18.7005 26.14 19.6424 25.7494 20.5308 25.2454L22.3736 26.4739L26.4753 22.3721L25.2468 20.5293C25.7508 19.641 26.1415 18.699 26.4128 17.7181L28.5828 17.2841ZM14.3852 23.5346C9.3394 23.5346 5.23433 19.4295 5.23433 14.3837C5.23433 9.33793 9.3394 5.23286 14.3852 5.23286C19.431 5.23286 23.536 9.33793 23.536 14.3837C23.536 19.4295 19.431 23.5346 14.3852 23.5346Z" fill="#B9AECE" fill-opacity="0.4"/>
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_502_3919">
+                                                    <rect width="28.3953" height="28.3953" fill="white" transform="translate(0.1875 0.186035)"/>
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                    </div>
+                                {% endif %}
+
+
+                                {% if nominees_idea %}
+                                    <div class="agro-shortlist-popup-header-nominations-item" id="short-list-popup-agro_idea" data-nomination-title="Идея года">
+                                        <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M13.5502 0.186035V16.054H17.726V6.03214H20.2315V4.36182H21.9018V6.03214H24.4072V16.054H28.583V0.186035H13.5502ZM19.3958 11.043H22.7364V12.7134H19.3958V11.043ZM22.7364 14.3837H19.3958V16.054H22.7364V14.3837ZM13.55 17.7245V22.7354H20.1613C19.7625 25.1023 17.6988 26.9112 15.2203 26.9112H11.8797C9.11667 26.9112 6.86876 24.6633 6.86876 21.9003V16.8893H8.03798C10.1563 16.8893 11.8797 15.1659 11.8797 13.0476V11.0432H9.04017C8.2348 11.0432 7.48689 11.2928 6.86876 11.718V9.541C9.80395 7.46942 9.5843 2.91135 6.45196 1.13363L6.0336 0.891605L5.61524 1.13369C2.48196 2.91207 2.26409 7.4702 5.19844 9.54105V11.718C4.58026 11.2928 3.83241 11.0432 3.02703 11.0432H0.1875V13.0476C0.1875 15.1659 1.91087 16.8893 4.02922 16.8893H5.19844V21.9003C5.19844 25.5843 8.1956 28.5815 11.8797 28.5815H15.2203C18.6216 28.5815 21.4372 26.0267 21.8495 22.7354H28.5828V17.7245H13.55ZM22.7364 7.70236H19.3958V9.37268H22.7364V7.70236Z" fill="#B9AECE" fill-opacity="0.4"/>
+                                        </svg>
+                                    </div>
+                                {% endif %}
+
+                            </div>
+                            <p class="agro-shortlist-popup-header-nomination">Номинация: <span id="short-list-popup-header-title"></span></p>
+                        </div>
+                    </div>
+
+                    {% if nominees_machinery %}
+                        <div class="agro-shortlist-popup-body" id="agro-shortlist-popup-container-agro_machinery">
+                            {% for nominee in  nominees_machinery %}
+                                <div class="agro-shortlist-popup-nominee">
+                                    <div class="agro-shortlist-popup-nominee-header">
+                                        <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg" class="agro-shortlist-popup-nominee-corner">
+                                            <path d="M0 1H23C24.6569 1 26 2.34315 26 4V27" stroke="#4CED5B" stroke-width="2"/>
+                                        </svg>
+
+                                        <p class="agro-shortlist-popup-nominee-title">{{ nominee.project_name }}</p>
+                                    </div>
+                                    <div class="agro-shortlist-popup-body-wrapper">
+                                        <div class="agro-shortlist-popup-nominee-body">
+                                            {% if nominee.photo %}
+                                                {% thumbnail nominee.photo 180x180 crop=smart  quality=90 as img %}
+                                                <img src="{{ img.url }}" alt="{{ nominee.project_name }}" class="agro-shortlist-popup-nominee-body-pic">
+                                            {% endif %}
+                                            <p class="agro-shortlist-popup-nominee-body-founder">{{ nominee.founder }}</p>
+                                            <p class="agro-shortlist-popup-nominee-body-description">{{ nominee.description }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+
+                    {% if nominees_digital %}
+                        <div class="agro-shortlist-popup-body" id="agro-shortlist-popup-container-agro_digital">
+                            {% for nominee in  nominees_digital %}
+                                <div class="agro-shortlist-popup-nominee">
+                                    <div class="agro-shortlist-popup-nominee-header">
+                                        <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg" class="agro-shortlist-popup-nominee-corner">
+                                            <path d="M0 1H23C24.6569 1 26 2.34315 26 4V27" stroke="#4CED5B" stroke-width="2"/>
+                                        </svg>
+
+                                        <p class="agro-shortlist-popup-nominee-title">{{ nominee.project_name }}</p>
+                                    </div>
+                                    <div class="agro-shortlist-popup-body-wrapper">
+                                        <div class="agro-shortlist-popup-nominee-body">
+                                            {% if nominee.photo %}
+                                                {% thumbnail nominee.photo 180x180 crop=smart  quality=90 as img %}
+                                                <img src="{{ img.url }}" alt="{{ nominee.project_name }}" class="agro-shortlist-popup-nominee-body-pic">
+                                            {% endif %}
+                                            <p class="agro-shortlist-popup-nominee-body-founder">{{ nominee.founder }}</p>
+                                            <p class="agro-shortlist-popup-nominee-body-description">{{ nominee.description }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+
+                        </div>
+                    {% endif %}
+
+                    {% if nominees_food %}
+                        <div class="agro-shortlist-popup-body" id="agro-shortlist-popup-container-future_food">
+                            {% for nominee in  nominees_food %}
+                                <div class="agro-shortlist-popup-nominee">
+                                    <div class="agro-shortlist-popup-nominee-header">
+                                        <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg" class="agro-shortlist-popup-nominee-corner">
+                                            <path d="M0 1H23C24.6569 1 26 2.34315 26 4V27" stroke="#4CED5B" stroke-width="2"/>
+                                        </svg>
+
+                                        <p class="agro-shortlist-popup-nominee-title">{{ nominee.project_name }}</p>
+                                    </div>
+                                    <div class="agro-shortlist-popup-body-wrapper">
+                                        <div class="agro-shortlist-popup-nominee-body">
+                                            {% if nominee.photo %}
+                                                {% thumbnail nominee.photo 180x180 crop=smart  quality=90 as img %}
+                                                <img src="{{ img.url }}" alt="{{ nominee.project_name }}" class="agro-shortlist-popup-nominee-body-pic">
+                                            {% endif %}
+                                            <p class="agro-shortlist-popup-nominee-body-founder">{{ nominee.founder }}</p>
+                                            <p class="agro-shortlist-popup-nominee-body-description">{{ nominee.description }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+
+                        </div>
+                    {% endif %}
+
+                    {% if nominees_russia %}
+                        <div class="agro-shortlist-popup-body" id="agro-shortlist-popup-container-made_in_russia">
+                            {% for nominee in  nominees_russia %}
+                                <div class="agro-shortlist-popup-nominee">
+                                    <div class="agro-shortlist-popup-nominee-header">
+                                        <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg" class="agro-shortlist-popup-nominee-corner">
+                                            <path d="M0 1H23C24.6569 1 26 2.34315 26 4V27" stroke="#4CED5B" stroke-width="2"/>
+                                        </svg>
+
+                                        <p class="agro-shortlist-popup-nominee-title">{{ nominee.project_name }}</p>
+                                    </div>
+                                    <div class="agro-shortlist-popup-body-wrapper">
+                                        <div class="agro-shortlist-popup-nominee-body">
+                                            {% if nominee.photo %}
+                                                {% thumbnail nominee.photo 180x180 crop=smart  quality=90 as img %}
+                                                <img src="{{ img.url }}" alt="{{ nominee.project_name }}" class="agro-shortlist-popup-nominee-body-pic">
+                                            {% endif %}
+                                            <p class="agro-shortlist-popup-nominee-body-founder">{{ nominee.founder }}</p>
+                                            <p class="agro-shortlist-popup-nominee-body-description">{{ nominee.description }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+
+                        </div>
+                    {% endif %}
+
+                    {% if nominees_hero %}
+                        <div class="agro-shortlist-popup-body" id="agro-shortlist-popup-container-agro_hero">
+                            {% for nominee in  nominees_hero %}
+                                <div class="agro-shortlist-popup-nominee">
+                                    <div class="agro-shortlist-popup-nominee-header">
+                                        <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg" class="agro-shortlist-popup-nominee-corner">
+                                            <path d="M0 1H23C24.6569 1 26 2.34315 26 4V27" stroke="#4CED5B" stroke-width="2"/>
+                                        </svg>
+
+                                        <p class="agro-shortlist-popup-nominee-title">{{ nominee.project_name }}</p>
+                                    </div>
+                                    <div class="agro-shortlist-popup-body-wrapper">
+                                        <div class="agro-shortlist-popup-nominee-body">
+                                            {% if nominee.photo %}
+                                                {% thumbnail nominee.photo 180x180 crop=smart  quality=90 as img %}
+                                                <img src="{{ img.url }}" alt="{{ nominee.project_name }}" class="agro-shortlist-popup-nominee-body-pic">
+                                            {% endif %}
+                                            <p class="agro-shortlist-popup-nominee-body-founder">{{ nominee.founder }}</p>
+                                            <p class="agro-shortlist-popup-nominee-body-description">{{ nominee.description }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+
+                        </div>
+                    {% endif %}
+
+                    {% if nominees_launch %}
+                        <div class="agro-shortlist-popup-body" id="agro-shortlist-popup-container-agro_launch">
+                            {% for nominee in  nominees_launch %}
+                                <div class="agro-shortlist-popup-nominee">
+                                    <div class="agro-shortlist-popup-nominee-header">
+                                        <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg" class="agro-shortlist-popup-nominee-corner">
+                                            <path d="M0 1H23C24.6569 1 26 2.34315 26 4V27" stroke="#4CED5B" stroke-width="2"/>
+                                        </svg>
+
+                                        <p class="agro-shortlist-popup-nominee-title">{{ nominee.project_name }}</p>
+                                    </div>
+                                    <div class="agro-shortlist-popup-body-wrapper">
+                                        <div class="agro-shortlist-popup-nominee-body">
+                                            {% if nominee.photo %}
+                                                {% thumbnail nominee.photo 180x180 crop=smart  quality=90 as img %}
+                                                <img src="{{ img.url }}" alt="{{ nominee.project_name }}" class="agro-shortlist-popup-nominee-body-pic">
+                                            {% endif %}
+                                            <p class="agro-shortlist-popup-nominee-body-founder">{{ nominee.founder }}</p>
+                                            <p class="agro-shortlist-popup-nominee-body-description">{{ nominee.description }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+
+                        </div>
+                    {% endif %}
+
+                    {% if nominees_idea %}
+                        <div class="agro-shortlist-popup-body" id="agro-shortlist-popup-container-agro_idea">
+                            {% for nominee in  nominees_idea %}
+                                <div class="agro-shortlist-popup-nominee">
+                                    <div class="agro-shortlist-popup-nominee-header">
+                                        <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg" class="agro-shortlist-popup-nominee-corner">
+                                            <path d="M0 1H23C24.6569 1 26 2.34315 26 4V27" stroke="#4CED5B" stroke-width="2"/>
+                                        </svg>
+
+                                        <p class="agro-shortlist-popup-nominee-title">{{ nominee.project_name }}</p>
+                                    </div>
+                                    <div class="agro-shortlist-popup-body-wrapper">
+                                        <div class="agro-shortlist-popup-nominee-body">
+                                            {% if nominee.photo %}
+                                                {% thumbnail nominee.photo 180x180 crop=smart  quality=90 as img %}
+                                                <img src="{{ img.url }}" alt="{{ nominee.project_name }}" class="agro-shortlist-popup-nominee-body-pic">
+                                            {% endif %}
+                                            <p class="agro-shortlist-popup-nominee-body-founder">{{ nominee.founder }}</p>
+                                            <p class="agro-shortlist-popup-nominee-body-description">{{ nominee.description }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+    <div class="timer-popup-shadow" id="popup-timer">
+        <div class="timer-popup">
+            <form action="" class="timer-popup-form">
+                <img src="{% static 'build/img/timer-popup-close.svg' %}" alt="" class="timer-popup__close">
+                <p class="timer-popup__title">нет времени заполнять?</p>
+                <p class="timer-popup__text">Оставьте свой контакт, и&nbsp;мы вам напомним</p>
+                <div class="timer-popup-text-input-wrapper">
+                    <input type="email" class="timer-popup-text-input" required name="email">
+                    <label for="" class="timer-popup-text-input-label">Ваш e-mail</label>
+                </div>
+                <div class="timer-popup-dummy"></div>
+                <div class="timer-popup-text-input-wrapper timer-popup-text-input-wrapper-2">
+                    <input type="text" class="timer-popup-text-input" required name="telegram">
+                    <label for="" class="timer-popup-text-input-label">Ник в Telegram</label>
+                </div>
+                <div class="timer-popup-agreement">
+                    <label class="timer-popup-agreemen-label">
+                        <input required type="checkbox" class="timer-popup-agreemen-input visually-hidden" name="agree_processing">
+                        <svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.42899 0.666504L3.67352 4.98444L1.6624 2.88384L0.332031 4.10398L3.5811 7.49763L9.66536 1.97823L8.42899 0.666504Z" fill="white"/>
+                        </svg>
+                    </label>
+                    <p class="timer-popup-agreement-text">Я согласен с правилами обработки персональных данных</p>
+                </div>
+                <div class="timer-popup-submit-wrapper">
+                    <button class="timer-popup-submit">Отправить</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <section class="agro-intro">
+        <h1 class="agro-intro__title">AgroCode<br>Awards</h1>
+        <div class="agro-intro-sponsor__text-wrapper">
+            <p class="agro-intro__text">Главная агротех-премия страны</p>
+            <a href="{% url 'apply_form' %}" class="agro-intro__text-btn {% if is_stop_date %}visually-hidden-2{% endif %}">Подать заявку</a>
+        </div>
+        <div class="agro-intro-wrapper">
+            <div class="agro-intro-sponsor">
+                <p class="agro-intro-sponsor__text">Генеральный спонсор</p>
+                <img src="{% static 'build/img/rosselhoz-logo.svg' %}" alt="Генеральный спонсор" class="agro-intro-sponsor__logo">
+                <div class="agro-intro-sponsor__bar"></div>
+            </div>
+            <div class="agro-intro-info">
+                <div class="agro-intro-info-space">
+                    {% if cover.place %}
+                        <p class="agro-intro-info-space__title">Место</p>
+                        <p class="agro-intro-info-space__text">{{ cover.place|linebreaksbr }}</p>
+                    {% endif %}
+                </div>
+                <div class="agro-intro-info-date">
+                    {% if cover.time %}
+                        <p class="agro-intro-info-date__title">Дата</p>
+                        <p class="agro-intro-info-date__text">{{ cover.time|linebreaksbr }}</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="agro-intro-back">
+            <div class="agro-intro-back-star agro-intro-back-star1"></div>
+            <div class="agro-intro-back-star agro-intro-back-star2"></div>
+            <div class="agro-intro-back-star agro-intro-back-star3"></div>
+            <div class="agro-intro-back-star agro-intro-back-star4"></div>
+            <div class="agro-intro-back-star agro-intro-back-star5"></div>
+            <div class="agro-intro-back-star agro-intro-back-star6"></div>
+            <div class="agro-intro-back-star agro-intro-back-star7"></div>
+            <div class="agro-intro-back-star agro-intro-back-star8"></div>
+            <div class="agro-intro-back-star agro-intro-back-star9"></div>
+            <div class="agro-intro-back-inner" id="particles-js"></div>
+            <div class="agro-intro-back-inner2" id="particles-js2"></div>
+        </div>
+    </section>
+
+    <section class="agro-about">
+        <div id="about"></div>
+        <div class="agro-about-inner">
+            <div class="agro-about__title">
+                <p class="agro-about__title-about">О премии</p>
+                <h2 class="agro-about__title-name">AgroCode<br>Awards</h2>
+            </div>
+            <p class="agro-about__text">— всероссийская AgroTech-премия, которая проходит второй год подряд. Присуждается в нескольких номинациях за разработку самых эффективных прикладных решений в области AgroTech.<br><br>Претенденты, прошедшие в шорт-лист, попадут на закрытую церемонию вручения премии, где соберутся представители AgroTech-компаний. Победителей определит жюри в нескольких номинациях.
+            </p>
+        </div>
+    </section>
+
+    <section class="agro-nominations">
+        <div id="nominations"></div>
+        <h2 class="agro-nominations-title">номинации</h2>
+
+        <div class="agro-nominations-wrapper-mobile">
+            <div class="agro-nominations-item agro-nominations-item_digital">
+                <div class="agro-nominations-item-header">
+                    <img src="{% static 'build/img/nomination-digital.svg' %}" alt="" class="agro-nominations-item-header__pic">
+                    <p class="agro-nominations-item-header__title">Цифровизация<br>года</p>
+                    <p class="agro-nominations-item-header__text">Кейсы цифровизации процессов в сельском хозяйстве</p>
+                    <p class="agro-nominations-item-header__text"><span class="agro-nominations-item-header__text_blue">Что оцениваем:</span> софт, программный продукт, цифровую технологию или digital-инструмент (например, маркетплейс)</p>
+                </div>
+                <a href="{% url 'apply_form' %}" class="agro-nominations-item-btn {% if is_stop_date %}visually-hidden-2{% endif %}">Подать заявку</a>
+            </div>
+
+            <div class="agro-nominations-item agro-nominations-item_made-in-russia">
+                <div class="agro-nominations-item-header">
+                    <img src="{% static 'build/img/nomination-made-in.svg' %}" alt="" class="agro-nominations-item-header__pic">
+                    <p class="agro-nominations-item-header__title">Своя<br>технология</p>
+                    <p class="agro-nominations-item-header__text">Кейс импортозамещения в сельском хозяйстве</p>
+                    <p class="agro-nominations-item-header__text"><span class="agro-nominations-item-header__text_blue">Что оцениваем:</span> технологию, оборудование или цифровой продукт, который позволил фермерам перейти на российские аналоги зарубежных решений без потерь в качестве</p>
+                    <p class="agro-nominations-item-header__text"><span class="agro-nominations-item-header__text_blue">Специальный приз</span> от экосистемы «Своё» Россельхозбанка  («Своё фермерство», «Своё родное» и др.)</p>
+                </div>
+                <a href="{% url 'apply_form' %}" class="agro-nominations-item-btn {% if is_stop_date %}visually-hidden-2{% endif %}">Подать заявку</a>
+            </div>
+
+            <div class="agro-nominations-item agro-nominations-item_launch">
+                <div class="agro-nominations-item-header">
+                    <img src="{% static 'build/img/nomination-launch.svg' %}" alt="" class="agro-nominations-item-header__pic">
+                    <p class="agro-nominations-item-header__title">Запуск года</p>
+                    <p class="agro-nominations-item-header__text">Прорывная технология</p>
+                    <p class="agro-nominations-item-header__text"><span class="agro-nominations-item-header__text_blue">Что оцениваем:</span> стартап или технологический продукт в сельском хозяйстве, который был запущен в 2022 году и совершил прорыв на рынке</p>
+                </div>
+                <a href="{% url 'apply_form' %}" class="agro-nominations-item-btn {% if is_stop_date %}visually-hidden-2{% endif %}">Подать заявку</a>
+            </div>
+
+            <div class="agro-nominations-item agro-nominations-item_future-food">
+                <div class="agro-nominations-item-header">
+                    <img src="{% static 'build/img/nomination-future-food.svg' %}" alt="" class="agro-nominations-item-header__pic">
+                    <p class="agro-nominations-item-header__title">Еда будущего</p>
+                    <p class="agro-nominations-item-header__text">Кейс серийного производства инновационных (альтернативных) продуктов питания</p>
+                    <p class="agro-nominations-item-header__text"><span class="agro-nominations-item-header__text_blue">Что оцениваем:</span> инновационную технологию или подход в производстве продуктов питания</p>
+                </div>
+                <a href="{% url 'apply_form' %}" class="agro-nominations-item-btn {% if is_stop_date %}visually-hidden-2{% endif %}">Подать заявку</a>
+            </div>
+
+            <div class="agro-nominations-item agro-nominations-item_hero">
+                <div class="agro-nominations-item-header">
+                    <img src="{% static 'build/img/nomination-hero.svg' %}" alt="" class="agro-nominations-item-header__pic">
+                    <p class="agro-nominations-item-header__title">Лидер года</p>
+                    <p class="agro-nominations-item-header__text">Человек года в российском AgroTech-сегменте</p>
+                    <p class="agro-nominations-item-header__text"><span class="agro-nominations-item-header__text_blue">Кого оцениваем:</span> российских предпринимателей, топ-менеджеров и общественных деятелей, которые помогают улучшать агросферу, продвигают российские сельскохозяйственные технологии и влияют на общество в целом</p>
+                </div>
+                <a href="{% url 'apply_form' %}" class="agro-nominations-item-btn {% if is_stop_date %}visually-hidden-2{% endif %}">Подать заявку</a>
+            </div>
+
+            <div class="agro-nominations-item agro-nominations-item_idea">
+                <div class="agro-nominations-item-header">
+                    <img src="{% static 'build/img/nomination-idea.svg' %}" alt="" class="agro-nominations-item-header__pic">
+                    <p class="agro-nominations-item-header__title">Идея года</p>
+                    <p class="agro-nominations-item-header__text">Специальная номинация для исследователей и ученых</p>
+                    <p class="agro-nominations-item-header__text"><span class="agro-nominations-item-header__text_blue">Что оцениваем:</span> прорывные исследования и новые технологические решения для сельского хозяйства на уровне MVP (без готового продуктов и серийного внедрения)</p>
+                </div>
+                <a href="{% url 'apply_form' %}" class="agro-nominations-item-btn {% if is_stop_date %}visually-hidden-2{% endif %}">Подать заявку</a>
+            </div>
+
+        </div>
+
+        <div class="agro-nominations-wrapper">
+            <div class="agro-nominations-col agro-nominations-col1">
+
+                <div class="agro-nominations-item agro-nominations-item_digital">
+                    <div class="agro-nominations-item-header">
+                        <img src="{% static 'build/img/nomination-digital.svg' %}" alt="" class="agro-nominations-item-header__pic">
+                        <p class="agro-nominations-item-header__title">Цифровизация<br>года</p>
+                        <p class="agro-nominations-item-header__text">Кейсы цифровизации процессов в сельском хозяйстве</p>
+                        <p class="agro-nominations-item-header__text"><span class="agro-nominations-item-header__text_blue">Что оцениваем:</span> софт, программный продукт, цифровую технологию или digital-инструмент (например, маркетплейс)</p>
+                    </div>
+                    <a href="{% url 'apply_form' %}" class="agro-nominations-item-btn {% if is_stop_date %}visually-hidden-2{% endif %}">Подать заявку</a>
+                </div>
+
+                <div class="agro-nominations-item agro-nominations-item_made-in-russia">
+                    <div class="agro-nominations-item-header">
+                        <img src="{% static 'build/img/nomination-made-in.svg' %}" alt="" class="agro-nominations-item-header__pic">
+                        <p class="agro-nominations-item-header__title">Своя<br>технология</p>
+                        <p class="agro-nominations-item-header__text">Кейс импортозамещения в сельском хозяйстве</p>
+                        <p class="agro-nominations-item-header__text"><span class="agro-nominations-item-header__text_blue">Что оцениваем:</span> технологию, оборудование или цифровой продукт, который позволил фермерам перейти на российские аналоги зарубежных решений без потерь в качестве</p>
+                        <p class="agro-nominations-item-header__text"><span class="agro-nominations-item-header__text_blue">Специальный приз</span> от экосистемы «Своё» Россельхозбанка  («Своё фермерство», «Своё родное» и др.)</p>
+                    </div>
+                    <a href="{% url 'apply_form' %}" class="agro-nominations-item-btn {% if is_stop_date %}visually-hidden-2{% endif %}">Подать заявку</a>
+                </div>
+
+                <div class="agro-nominations-item agro-nominations-item_launch">
+                    <div class="agro-nominations-item-header">
+                        <img src="{% static 'build/img/nomination-launch.svg' %}" alt="" class="agro-nominations-item-header__pic">
+                        <p class="agro-nominations-item-header__title">Запуск года</p>
+                        <p class="agro-nominations-item-header__text">Прорывная технология</p>
+                        <p class="agro-nominations-item-header__text"><span class="agro-nominations-item-header__text_blue">Что оцениваем:</span> стартап или технологический продукт в сельском хозяйстве, который был запущен в 2022 году и совершил прорыв на рынке</p>
+                    </div>
+                    <a href="{% url 'apply_form' %}" class="agro-nominations-item-btn {% if is_stop_date %}visually-hidden-2{% endif %}">Подать заявку</a>
+                </div>
+
+            </div>
+            <div class="agro-nominations-col">
+
+                <div class="agro-nominations-item agro-nominations-item_future-food">
+                    <div class="agro-nominations-item-header">
+                        <img src="{% static 'build/img/nomination-future-food.svg' %}" alt="" class="agro-nominations-item-header__pic">
+                        <p class="agro-nominations-item-header__title">Еда будущего</p>
+                        <p class="agro-nominations-item-header__text">Кейс серийного производства инновационных (альтернативных) продуктов питания</p>
+                        <p class="agro-nominations-item-header__text"><span class="agro-nominations-item-header__text_blue">Что оцениваем:</span> инновационную технологию или подход в производстве продуктов питания</p>
+                    </div>
+                    <a href="{% url 'apply_form' %}" class="agro-nominations-item-btn {% if is_stop_date %}visually-hidden-2{% endif %}">Подать заявку</a>
+                </div>
+
+                <div class="agro-nominations-item agro-nominations-item_hero">
+                    <div class="agro-nominations-item-header">
+                        <img src="{% static 'build/img/nomination-hero.svg' %}" alt="" class="agro-nominations-item-header__pic">
+                        <p class="agro-nominations-item-header__title">Лидер года</p>
+                        <p class="agro-nominations-item-header__text">Человек года в российском AgroTech-сегменте</p>
+                        <p class="agro-nominations-item-header__text"><span class="agro-nominations-item-header__text_blue">Кого оцениваем:</span> российских предпринимателей, топ-менеджеров и общественных деятелей, которые помогают улучшать агросферу, продвигают российские сельскохозяйственные технологии и влияют на общество в целом.</p>
+                    </div>
+                    <a href="{% url 'apply_form' %}" class="agro-nominations-item-btn {% if is_stop_date %}visually-hidden-2{% endif %}">Подать заявку</a>
+                </div>
+
+                <div class="agro-nominations-item agro-nominations-item_idea">
+                    <div class="agro-nominations-item-header">
+                        <img src="{% static 'build/img/nomination-idea.svg' %}" alt="" class="agro-nominations-item-header__pic">
+                        <p class="agro-nominations-item-header__title">Идея года</p>
+                        <p class="agro-nominations-item-header__text">Специальная номинация для исследователей и ученых</p>
+                        <p class="agro-nominations-item-header__text"><span class="agro-nominations-item-header__text_blue">Что оцениваем:</span> прорывные исследования и новые технологические решения для сельского хозяйства на уровне MVP (без готового продуктов и серийного внедрения)</p>
+                    </div>
+                    <a href="{% url 'apply_form' %}" class="agro-nominations-item-btn {% if is_stop_date %}visually-hidden-2{% endif %}">Подать заявку</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    {% if nominees and not winners %}
+        <section class="agro-short-list">
+            <div class="agro-short-list-header">
+                <h2 class="agro-short-list-header-title">Шорт-лист</h2>
+                <div class="agro-short-list-header-nav">
+                    <svg width="80" class="js-agro-short-list-prev" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle r="39" transform="matrix(-1 0 0 1 40 40.0005)" stroke="white" stroke-width="2"/>
+                        <path d="M43.5486 53.3352L32.24 42.0266C31.0684 40.855 31.0684 38.9555 32.24 37.784L43.5486 26.4753" stroke="#4CED5B" stroke-width="2"/>
+                    </svg>
+
+                    <svg class="js-agro-short-list-next" width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="40" cy="40" r="39" stroke="white" stroke-width="2"/>
+                        <path d="M36.4514 53.3342L47.76 42.0256C48.9316 40.854 48.9316 38.9545 47.76 37.783L36.4514 26.4744" stroke="#4CED5B" stroke-width="2"/>
+                    </svg>
+                </div>
+                <div class="agro-short-list-nominations">
+                    {% if nominees_digital %}
+                        <div class="agro-short-list-nominations-item agro-short-list-nominations-item_active" id="short-list-digital"><p>Цифровизация года</p></div>
+                    {% endif %}
+                    {% if nominees_food %}
+                        <div class="agro-short-list-nominations-item" id="short-list-food"><p>Еда будущего</p></div>
+                    {% endif %}
+                    {% if nominees_russia %}
+                        <div class="agro-short-list-nominations-item" id="short-list-russia"><p>Своя технология</p></div>
+                    {% endif %}
+                    {% if nominees_hero %}
+                        <div class="agro-short-list-nominations-item" id="short-list-hero"><p>Лидер года</p></div>
+                    {% endif %}
+                    {% if nominees_launch %}
+                        <div class="agro-short-list-nominations-item" id="short-list-launch"><p>Запуск года</p></div>
+                    {% endif %}
+                    {% if nominees_idea %}
+                        <div class="agro-short-list-nominations-item" id="short-list-idea"><p>Идея года</p></div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="agro-short-list-slider-wrapper">
+
+                {% if nominees_digital %}
+                    <div class="agro-short-list-slider-inner owl-carousel open" id="short-list-digital-slider">
+                        {% for nominee in  nominees_digital %}
+                            <div class="agro-short-list-slider-item">
+                                <p class="agro-short-list-slider-item-title">{{ nominee.project_name }}</p>
+                                <p class="agro-short-list-slider-item-subtitle">{{ nominee.founder }}</p>
+                                <p class="agro-short-list-slider-item-text">{{ nominee.description }}</p>
+                                <p class="agro-short-list-slider-item-count"><span>{{ forloop.counter }}</span> / {{ nominees_digital.count }}</p>
+                            </div>
+                        {% endfor%}
+                    </div>
+                {% endif %}
+
+                {% if nominees_food %}
+                    <div class="agro-short-list-slider-inner owl-carousel" id="short-list-food-slider">
+                        {% for nominee in  nominees_food %}
+                            <div class="agro-short-list-slider-item">
+                                <p class="agro-short-list-slider-item-title">{{ nominee.project_name }}</p>
+                                <p class="agro-short-list-slider-item-subtitle">{{ nominee.founder }}</p>
+                                <p class="agro-short-list-slider-item-text">{{ nominee.description }}</p>
+                                <p class="agro-short-list-slider-item-count"><span>{{ forloop.counter }}</span> / {{ nominees_food.count }}</p>
+                            </div>
+                        {% endfor%}
+                    </div>
+                {% endif %}
+
+                {% if nominees_russia %}
+                    <div class="agro-short-list-slider-inner owl-carousel" id="short-list-russia-slider">
+                        {% for nominee in  nominees_russia %}
+                            <div class="agro-short-list-slider-item">
+                                <p class="agro-short-list-slider-item-title">{{ nominee.project_name }}</p>
+                                <p class="agro-short-list-slider-item-subtitle">{{ nominee.founder }}</p>
+                                <p class="agro-short-list-slider-item-text">{{ nominee.description }}</p>
+                                <p class="agro-short-list-slider-item-count"><span>{{ forloop.counter }}</span> / {{ nominees_russia.count }}</p>
+                            </div>
+                        {% endfor%}
+                    </div>
+                {% endif %}
+
+                {% if nominees_hero %}
+                    <div class="agro-short-list-slider-inner owl-carousel" id="short-list-hero-slider">
+                        {% for nominee in  nominees_hero %}
+                            <div class="agro-short-list-slider-item">
+                                <p class="agro-short-list-slider-item-title">{{ nominee.project_name }}</p>
+                                <p class="agro-short-list-slider-item-subtitle">{{ nominee.founder }}</p>
+                                <p class="agro-short-list-slider-item-text">{{ nominee.description }}</p>
+                                <p class="agro-short-list-slider-item-count"><span>{{ forloop.counter }}</span> / {{ nominees_hero.count }}</p>
+                            </div>
+                        {% endfor%}
+                    </div>
+                {% endif %}
+
+                {% if nominees_launch %}
+                    <div class="agro-short-list-slider-inner owl-carousel" id="short-list-launch-slider">
+                        {% for nominee in  nominees_launch %}
+                            <div class="agro-short-list-slider-item">
+                                <p class="agro-short-list-slider-item-title">{{ nominee.project_name }}</p>
+                                <p class="agro-short-list-slider-item-subtitle">{{ nominee.founder }}</p>
+                                <p class="agro-short-list-slider-item-text">{{ nominee.description }}</p>
+                                <p class="agro-short-list-slider-item-count"><span>{{ forloop.counter }}</span> / {{ nominees_launch.count }}</p>
+                            </div>
+                        {% endfor%}
+                    </div>
+                {% endif %}
+
+                {% if nominees_idea %}
+                    <div class="agro-short-list-slider-inner owl-carousel" id="short-list-idea-slider">
+                        {% for nominee in  nominees_idea %}
+                            <div class="agro-short-list-slider-item">
+                                <p class="agro-short-list-slider-item-title">{{ nominee.project_name }}</p>
+                                <p class="agro-short-list-slider-item-subtitle">{{ nominee.founder }}</p>
+                                <p class="agro-short-list-slider-item-text">{{ nominee.description }}</p>
+                                <p class="agro-short-list-slider-item-count"><span>{{ forloop.counter }}</span> / {{ nominees_idea.count }}</p>
+                            </div>
+                        {% endfor%}
+                    </div>
+                {% endif %}
+            </div>
+        </section>
+    {% endif %}
+
+    {% if winners %}
+        <section class="agro-winners">
+            <div class="agro-winners-header">
+                <h2 class="agro-winners-header-title">Победители</h2>
+                <div class="agro-winners-header-nav">
+                    <svg width="80" class="js-agro-winners-prev" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle r="39" transform="matrix(-1 0 0 1 40 40.0005)" stroke="white" stroke-width="2"/>
+                        <path d="M43.5486 53.3352L32.24 42.0266C31.0684 40.855 31.0684 38.9555 32.24 37.784L43.5486 26.4753" stroke="#4CED5B" stroke-width="2"/>
+                    </svg>
+
+                    <svg class="js-agro-winners-next" width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="40" cy="40" r="39" stroke="white" stroke-width="2"/>
+                        <path d="M36.4514 53.3342L47.76 42.0256C48.9316 40.854 48.9316 38.9545 47.76 37.783L36.4514 26.4744" stroke="#4CED5B" stroke-width="2"/>
+                    </svg>
+                </div>
+
+                <div class="agro-winners-nominations">
+                    {% for winner in  winners %}
+                        {% if winner.nomination == 'agro_machinery' %}
+                            <div class="agro-winners-nominations-item" id="winners-agro_machinery">
+                                <svg width="28" height="29" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M25.2954 2.08249H27.8136V0.418701H21.0985V2.08249H23.6166V5.41007H21.9379V4.57818C21.9379 3.19984 20.8104 2.08249 19.4197 2.08249H9.34702C7.95626 2.08249 6.82885 3.19984 6.82885 4.57818V5.41007H5.15007V2.08249H7.66824V0.418701H0.953125V2.08249H3.47129V7.07386H5.41219C4.55853 8.02039 3.95277 9.16558 3.66598 10.4014H1.79251V12.0652H6.82885V10.4014H5.42808C5.78711 9.22315 6.49024 8.15732 7.50019 7.40612L7.94737 7.07386H11.8652V7.90576C11.8652 9.28193 12.9948 10.4014 14.3834 10.4014C15.7719 10.4014 16.9015 9.28193 16.9015 7.90576V7.07386H20.8193L21.2665 7.40612C22.2765 8.15727 22.9796 9.22315 23.3386 10.4014H21.9379V12.0652H26.9742V10.4014H25.1007C24.8139 9.16558 24.2082 8.02039 23.3545 7.07386H25.2954V2.08249ZM16.0606 18.7204C15.5975 18.7204 15.2212 19.0933 15.2212 19.5523V20.3842H16.0606C16.5238 20.3842 16.9 20.0113 16.9 19.5523V18.7204H16.0606ZM14.3834 12.0652C15.3197 12.0652 16.1767 11.7491 16.8757 11.2333L23.7216 19.376L22.2632 23.7118H15.2228V22.048H16.0622C17.4508 22.048 18.5804 20.9285 18.5804 19.5523V17.0566H16.0622C15.4149 17.0566 14.83 17.3066 14.3834 17.7057C13.9369 17.3066 13.3519 17.0566 12.7046 17.0566H10.1865V19.5523C10.1865 20.9285 11.3161 22.048 12.7046 22.048H13.544V23.7118H6.50367L5.04515 19.376L11.8912 11.2333C12.5902 11.7491 13.4471 12.0652 14.3834 12.0652ZM8.8284 25.3756L10.5072 28.8141H18.26L19.9388 25.3756H8.8284ZM11.8667 18.7204H12.7061C13.1692 18.7204 13.5455 19.0933 13.5455 19.5523V20.3842H12.7061C12.243 20.3842 11.8667 20.0113 11.8667 19.5523V18.7204Z" fill="#B9AECE"/>
+                                </svg>
+                            </div>
+                        {% endif %}
+
+                        {% if winner.nomination == 'agro_digital' %}
+                            <div class="agro-winners-nominations-item" id="winners-agro_digital">
+                                <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M28.5828 8.53271V6.86893H25.4283V3.34058H21.9V0.186035H20.2362V3.34058H18.5585V0.186035H16.8947V3.34058H15.2171V0.186035H13.5533V3.34058H11.8756V0.186035H10.2118V3.34058H8.53418V0.186035H6.87039V3.34058H3.34205V6.86893H0.1875V8.53271H3.34205V10.2104H0.1875V11.8742H3.34205V13.5518H0.1875V15.2156H3.34205V16.8933H0.1875V18.5571H3.34205V20.2347H0.1875V21.8985H3.34205V25.4268H6.87039V28.5814H8.53418V25.4268H10.2118V28.5814H11.8756V25.4268H13.5533V28.5814H15.2171V25.4268H16.8947V28.5814H18.5585V25.4268H20.2362V28.5814H21.9V25.4268H25.4283V21.8985H28.5828V20.2347H25.4283V18.5571H28.5828V16.8933H25.4283V15.2156H28.5828V13.5518H25.4283V11.8742H28.5828V10.2104H25.4283V8.53271H28.5828ZM22.2307 22.2292H6.53968V6.53822H22.2307V22.2292ZM8.20305 8.20199H20.5665V20.5654H8.20305V8.20199ZM10.4927 18.2868C12.2328 19.098 15.3243 19.4463 16.9931 17.6884C19.6343 14.915 18.9192 11.1149 18.7531 10.2322C18.7358 10.1405 18.7245 10.0802 18.7235 10.056L18.661 10.0443C17.6247 9.8502 13.8842 9.14964 11.091 11.7863C8.85597 14.1439 10.1461 17.4063 10.4429 18.1568C10.4666 18.2167 10.4839 18.2606 10.4927 18.2868ZM11.5564 16.0467C11.3399 14.9336 11.5735 13.587 12.2674 12.9628C13.3658 11.8645 14.9169 11.5523 16.1065 11.4965L11.5564 16.0467ZM17.2888 12.6681C17.235 13.8557 16.9235 15.4061 15.818 16.5117C14.9619 17.3678 13.6866 17.3776 12.7344 17.2225L17.2888 12.6681Z" fill="#B9AECE"/>
+                                </svg>
+                            </div>
+                        {% endif %}
+
+                        {% if winner.nomination == 'future_food' %}
+                            <div class="agro-winners-nominations-item" id="winners-future_food">
+                                <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M27.5647 1.20416C26.8859 0.525393 25.9943 0.186035 25.1027 0.186035C24.2111 0.186035 23.3194 0.525393 22.6407 1.20416C21.7492 2.09568 20.1571 6.02266 18.8486 9.82869C18.4181 9.39921 17.9698 8.99984 17.5072 8.63387C18.1468 6.80619 19.0139 4.48277 19.8736 2.66203C19.4527 2.29638 18.9033 2.07477 18.3021 2.07477C16.9778 2.07477 15.9043 3.14824 15.9043 4.47251C15.9043 5.2292 16.689 7.07589 17.3616 8.52017C14.6178 6.40522 11.3874 5.46673 8.38238 6.42779L14.7708 12.8156L13.5978 13.9886L6.75996 7.15032C6.289 7.4234 5.82741 7.75006 5.37858 8.13373L11.238 13.9931L10.0656 15.1661L4.23272 9.33321C3.92703 9.74833 3.66837 10.2027 3.45058 10.6886L10.1745 17.4125L9.00153 18.5849L2.86015 12.4437C2.68657 13.1573 2.57271 13.9085 2.50471 14.6796L6.52836 18.7033L5.35539 19.8757L2.42568 16.946C2.43894 18.1328 2.52795 19.324 2.64957 20.4594C2.79604 21.7562 2.55723 23.0564 1.95805 24.2188L0.487362 27.0734C0.30872 27.4202 0.374656 27.8426 0.650465 28.1184V28.1184C0.926259 28.3942 1.34867 28.4602 1.69541 28.2816L2.83198 27.6961L4.55056 26.8108C5.7125 26.2116 7.01264 25.9728 8.30945 26.1193C12.4602 26.5565 17.3849 26.593 20.0719 23.9994C23.8057 20.2559 23.3255 15.3884 20.2524 11.409C21.6962 12.0812 23.5403 12.8645 24.2964 12.8645C25.6206 12.8645 26.6941 11.7911 26.6941 10.4668C26.6941 9.8654 26.4724 9.31602 26.1067 8.89519C24.2866 9.75448 21.9642 10.6213 20.1368 11.2609C19.7718 10.8006 19.372 10.3527 18.9399 9.92025C22.7465 8.61146 26.6735 7.01938 27.5647 6.1282C28.9222 4.77066 28.9222 2.56176 27.5647 1.20416ZM7.71132 22.2305L6.53835 21.0575L7.71132 19.8851L8.88373 21.0575L7.71132 22.2305ZM11.3566 20.9399L10.184 19.7673L11.3566 18.5947L12.5291 19.7673L11.3566 20.9399ZM12.4204 17.5209L11.248 16.3485L12.4204 15.1755L13.0069 15.762L13.5934 16.3485L12.4204 17.5209ZM15.953 16.3434L14.7804 15.1708L15.953 13.9982L17.1256 15.1708L15.953 16.3434Z" fill="#B9AECE" fill-opacity="0.4"/>
+                                </svg>
+                            </div>
+                        {% endif %}
+
+                        {% if winner.nomination == 'made_in_russia' %}
+                            <div class="agro-winners-nominations-item" id="winners-made_in_russia">
+                                <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_502_3885)"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.37341 6.4976L8.53825 6.83567L7.70309 6.4976V0.186035H8.53825H9.37341V6.4976ZM3.52734 22.4639L7.70309 24.1542V28.5814H8.53825H9.37341V24.1542L8.53825 24.4923L7.70313 24.1543V21.2366L3.52734 19.5663V22.4639ZM3.52734 17.7673L7.70313 19.4376V16.5551L3.52734 14.8848V17.7673ZM13.5492 13.0859L9.37343 14.7563V12.05L13.5492 10.3796V13.0859ZM9.37343 19.4376L13.5492 17.7673V14.8848L9.37343 16.5551V19.4376ZM3.52734 10.3796L7.70313 12.05V14.7563L3.52734 13.0859V10.3796ZM13.5492 8.58056V4.80726V1.85637H11.8789V5.48341L9.37343 6.49762V10.2509L13.5492 8.58056ZM13.5492 22.4639L9.37343 24.1543V21.2366L13.5492 19.5663V22.4639ZM5.19766 5.48341L7.70313 6.49762V10.2509L3.52734 8.58056V4.80726V1.85637H5.19766V5.48341ZM20.2305 6.83567L21.0657 6.4976V0.186035H20.2305H19.3954V6.4976L20.2305 6.83567ZM19.3954 24.1542L20.2305 24.4923L21.0657 24.1542V28.5814H20.2305H19.3954V24.1542ZM15.2195 17.7673L19.3953 19.4376V16.5551L15.2195 14.8848V17.7673ZM21.0657 14.7563V12.05L25.2415 10.3796V13.0859L21.0657 14.7563ZM21.0657 19.4376L25.2415 17.7673V14.8848L21.0657 16.5551V19.4376ZM15.2195 10.3796L19.3953 12.05V14.7563L15.2195 13.0859V10.3796ZM25.2415 8.58056V4.80726V1.85637H23.5712V5.48341L21.0657 6.49762V10.2509L25.2415 8.58056ZM25.2415 22.4639L21.0657 24.1543V21.2366L25.2415 19.5663V22.4639ZM19.3953 21.2366L15.2195 19.5663V22.4639L19.3953 24.1543V21.2366ZM16.8898 5.48341L19.3953 6.49762V10.2509L15.2195 8.58056V4.80726V1.85637H16.8898V5.48341Z" fill="#B9AECE" fill-opacity="0.4"/>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_502_3885">
+                                            <rect width="28.3953" height="28.3953" fill="white" transform="translate(0.1875 0.186035)"/>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </div>
+                        {% endif %}
+
+                        {% if winner.nomination == 'agro_hero' %}
+                            <div class="agro-winners-nominations-item" id="winners-agro_hero">
+                                <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_502_3909)">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M13.2507 0.186035C14.7514 0.186035 16.2817 0.972653 17.4496 2.34463C17.7753 2.727 18.0597 3.13775 18.2995 3.56539H8.20196C8.44156 3.13775 8.72601 2.727 9.05162 2.34441C10.2197 0.972653 11.7503 0.186035 13.2507 0.186035ZM11.8064 19.1264C11.806 18.9521 11.8058 18.7805 11.8055 18.6126L11.8055 18.606L11.8042 17.7728H16.9371V15.6151H16.8989L16.4252 14.2916C17.9819 13.2882 19.05 11.5709 19.1765 9.60053H7.32175C7.40299 11.0704 8.0124 12.4402 9.05877 13.4879C9.40604 13.8354 9.78841 14.1346 10.1979 14.382L9.79144 15.585V19.1264H11.8064ZM5.08842 25.5352H11.8127C11.8131 26.756 11.8129 27.8182 11.8116 28.5346H2.12891V21.046C2.12891 18.0514 4.55418 15.6151 7.53514 15.6151H8.12743V20.7977H11.8086C11.8099 21.809 11.811 22.8584 11.8118 23.8638H6.75221V21.2626H5.08842V25.5352ZM19.1485 15.6151C20.8795 15.6151 22.4592 16.4524 23.4583 17.7728H18.6009V15.6151H19.1485ZM23.1969 7.92893V6.47983H19.1801C19.1574 6.06756 19.0898 5.65053 18.9806 5.23675H7.52062C7.41122 5.65053 7.34363 6.06756 7.32088 6.47983H3.44845V7.92893H23.1969ZM13.4745 28.5814C13.4782 27.4044 13.4786 24.8853 13.4706 19.4366H26.6174V28.5814H13.4745ZM19.1284 23.7943C19.1485 24.2471 19.4938 24.6301 19.9603 24.6301C20.3953 24.6301 20.8123 24.2456 20.7922 23.7943C20.772 23.3415 20.4267 22.9587 19.9603 22.9587C19.525 22.9587 19.1082 23.343 19.1284 23.7943Z" fill="#B9AECE" fill-opacity="0.4"/>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_502_3909">
+                                            <rect width="28.3953" height="28.3953" fill="white" transform="translate(0.1875 0.186035)"/>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </div>
+                        {% endif %}
+
+                        {% if winner.nomination == 'agro_launch' %}
+                            <div class="agro-winners-nominations-item" id="winners-agro_launch">
+                                <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_502_3919)">
+                                        <path d="M15.3242 18.4362C16.8655 18.0794 18.0813 16.8635 18.4382 15.3223C16.8969 15.6791 15.681 16.8949 15.3242 18.4362Z" fill="#B9AECE" fill-opacity="0.4"/>
+                                        <path d="M14.3855 6.89648C10.2571 6.89648 6.89844 10.2552 6.89844 14.3835C6.89844 18.2307 9.81528 21.4089 13.5536 21.8241V20.1471C10.7354 19.7422 8.56223 17.3121 8.56223 14.3835V13.5516H9.39412C11.51 13.5516 13.3657 14.6861 14.3855 16.3785C15.4053 14.6861 17.261 13.5516 19.3769 13.5516H20.2088V14.3835C20.2088 17.312 18.0356 19.7422 15.2174 20.1471V21.8241C18.9557 21.4089 21.8725 18.2307 21.8725 14.3835C21.8725 10.2552 18.5139 6.89648 14.3855 6.89648ZM10.856 12.0306L9.67957 10.8541L10.856 9.67762L12.0325 10.8541L10.856 12.0306ZM15.2174 10.2241H13.5536V8.56027H15.2174V10.2241ZM17.9149 12.0306L16.7385 10.8541L17.9149 9.67762L19.0914 10.8541L17.9149 12.0306Z" fill="#B9AECE" fill-opacity="0.4"/>
+                                        <path d="M10.332 15.3223C10.6889 16.8635 11.9047 18.0794 13.446 18.4362C13.0892 16.8949 11.8733 15.6791 10.332 15.3223Z" fill="#B9AECE" fill-opacity="0.4"/>
+                                        <path d="M28.5828 17.2841V11.4833L26.4128 11.0493C26.1415 10.0683 25.7509 9.12647 25.2468 8.23811L26.4754 6.3953L22.3736 2.29356L20.5308 3.52205C19.6424 3.01803 18.7006 2.62737 17.7196 2.35601L17.2855 0.186035H11.4848L11.0508 2.35606C10.0697 2.62743 9.12788 3.01808 8.23958 3.5221L6.39676 2.29356L2.29502 6.3953L3.52351 8.23811C3.01949 9.12647 2.62883 10.0683 2.35747 11.0493L0.1875 11.4833V17.2841L2.35753 17.7181C2.62883 18.6991 3.0196 19.6411 3.52357 20.5293L2.29502 22.3721L6.39676 26.4739L8.23958 25.2454C9.12793 25.7494 10.0698 26.1401 11.0508 26.4114L11.4848 28.5814H17.2855L17.7196 26.4114C18.7005 26.14 19.6424 25.7494 20.5308 25.2454L22.3736 26.4739L26.4753 22.3721L25.2468 20.5293C25.7508 19.641 26.1415 18.699 26.4128 17.7181L28.5828 17.2841ZM14.3852 23.5346C9.3394 23.5346 5.23433 19.4295 5.23433 14.3837C5.23433 9.33793 9.3394 5.23286 14.3852 5.23286C19.431 5.23286 23.536 9.33793 23.536 14.3837C23.536 19.4295 19.431 23.5346 14.3852 23.5346Z" fill="#B9AECE" fill-opacity="0.4"/>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_502_3919">
+                                            <rect width="28.3953" height="28.3953" fill="white" transform="translate(0.1875 0.186035)"/>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </div>
+                        {% endif %}
+
+                        {% if winner.nomination == 'agro_idea' %}
+                            <div class="agro-winners-nominations-item" id="winners-agro_idea">
+                                <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.5502 0.186035V16.054H17.726V6.03214H20.2315V4.36182H21.9018V6.03214H24.4072V16.054H28.583V0.186035H13.5502ZM19.3958 11.043H22.7364V12.7134H19.3958V11.043ZM22.7364 14.3837H19.3958V16.054H22.7364V14.3837ZM13.55 17.7245V22.7354H20.1613C19.7625 25.1023 17.6988 26.9112 15.2203 26.9112H11.8797C9.11667 26.9112 6.86876 24.6633 6.86876 21.9003V16.8893H8.03798C10.1563 16.8893 11.8797 15.1659 11.8797 13.0476V11.0432H9.04017C8.2348 11.0432 7.48689 11.2928 6.86876 11.718V9.541C9.80395 7.46942 9.5843 2.91135 6.45196 1.13363L6.0336 0.891605L5.61524 1.13369C2.48196 2.91207 2.26409 7.4702 5.19844 9.54105V11.718C4.58026 11.2928 3.83241 11.0432 3.02703 11.0432H0.1875V13.0476C0.1875 15.1659 1.91087 16.8893 4.02922 16.8893H5.19844V21.9003C5.19844 25.5843 8.1956 28.5815 11.8797 28.5815H15.2203C18.6216 28.5815 21.4372 26.0267 21.8495 22.7354H28.5828V17.7245H13.55ZM22.7364 7.70236H19.3958V9.37268H22.7364V7.70236Z" fill="#B9AECE" fill-opacity="0.4"/>
+                                </svg>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="agro-winners-slider-wrapper">
+                <div class="agro-winners-slider-inner open owl-carousel" id="winners-slider">
+                    {% for winner in  winners %}
+                        <div class="agro-winners-slider-item" data-nomination="{{ winner.nomination }}">
+                            <div class="agro-winners-slider-item-header">
+                                {% if winner.photo %}
+                                    {% thumbnail winner.photo 134x134 crop=smart  quality=90 as img %}
+                                    <img src="{{ img.url }}" alt="" class="agro-winners-slider-item-pic">
+                                {% endif %}
+                                <p class="agro-winners-slider-item-title">{{ winner.project_name }}</p>
+                            </div>
+                            <p class="agro-winners-slider-item-subtitle">{{ winner.founder }}</p>
+                            <p class="agro-winners-slider-item-text">{{ winner.description }}</p>
+                            <div class="agro-winners-slider-item-footer">
+                                <p class="agro-winners-slider-item-nomination">Номинация:<br>{{ winner.get_nomination_display }}</p>
+                                <div class="agro-winners-slider-item-btn">Шорт-лист</div>
+                                <p class="agro-winners-slider-item-count"><span>{{ forloop.counter }}</span> / {{ winners.count }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+
+            </div>
+        </section>
+    {% endif %}
+
+    <section class="agro-criteria">
+        <div id="criteria"></div>
+        <h2 class="agro-criteria-title">Критерии<br>отбора</h2>
+        <div class="agro-criteria-list">
+            <p class="agro-criteria-list-title">Какие проекты могут участвовать:</p>
+            <p class="agro-criteria-list__item">У проекта есть качественные / количественные результаты за 2021-2022 гг;</p>
+            <p class="agro-criteria-list__item">Проект подходит под одну из номинаций
+            </p>
+        </div>
+    </section>
+
+    <section class="agro-stages" id="stages">
+        <h2 class="agro-stages-title">Этапы проведения</h2>
+        <div class="agro-stages-wrapper">
+
+            <div class="agro-stages-item agro-stages-item_1 {% if stages.1.is_active %}agro-stages-item__active{% endif %}">
+                <svg class="agro-stages-item__number agro-stages-item__number-1" width="44" height="111" viewBox="0 0 44 111" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path opacity="0.2" d="M0.74 42.27V16.2L22.07 0.399992H43.4V111H19.7V28.05L0.74 42.27Z" fill="#4CED5B"/>
+                </svg>
+                <p class="agro-stages-item-top__current1">Текущий</p>
+                <p class="agro-stages-item-top__current2">этап</p>
+                <p class="agro-stages-item-top__date">{% if stages.1.start_date %}{{ stages.1.start_date|date:"j E" }} - {% else %}до {% endif %}{% if stages.1.stop_date %}{{ stages.1.stop_date|date:"j E" }}{% endif %}</p>
+                <p class="agro-stages-item-top__text">Прием заявок<br>на премию</p>
+            </div>
+
+
+            <div class="agro-stages-item agro-stages-item_2 {% if stages.2.is_active %}agro-stages-item__active{% endif %}">
+                <svg class="agro-stages-item__number agro-stages-item__number-2" width="88" height="114" viewBox="0 0 88 114" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path opacity="0.2" d="M1.53 114V91.88L38.66 67.39C47.508 61.4913 53.67 56.488 57.146 52.38C60.622 48.1667 62.36 43.4267 62.36 38.16C62.36 33.3147 60.8327 29.47 57.778 26.626C54.7233 23.782 50.4573 22.36 44.98 22.36C37.712 22.36 32.2873 24.9933 28.706 30.26C27.126 32.6827 26.02 35.316 25.388 38.16H0.74C1.79333 31.208 4.11067 24.888 7.692 19.2C15.6973 6.56 28.1267 0.239995 44.98 0.239995C57.7253 0.239995 67.9953 3.82133 75.79 10.984C83.69 18.0413 87.64 26.8367 87.64 37.37C87.64 43.9007 86.4287 49.6413 84.006 54.592C81.6887 59.4373 78.5287 63.7033 74.526 67.39C70.6287 70.9713 64.888 75.3427 57.304 80.504L44.98 88.72L37.08 91.88V92.67L47.35 91.88H87.64V114H1.53Z" fill="#4CED5B"/>
+                </svg>
+
+                <p class="agro-stages-item-top__current1">Текущий</p>
+                <p class="agro-stages-item-top__current2">этап</p>
+                {% if stages.2.start_date|date:"n" ==  stages.2.stop_date|date:"n" %}
+                    <p class="agro-stages-item-top__date">{% if stages.2.start_date %}{{ stages.2.start_date|date:"j" }} - {% endif %}{% if stages.2.stop_date %}{{ stages.2.stop_date|date:"j E" }}{% endif %}</p>
+                {% else %}
+                    <p class="agro-stages-item-top__date">{% if stages.2.start_date %}{{ stages.2.start_date|date:"j E" }} - {% endif %}{% if stages.2.stop_date %}{{ stages.2.stop_date|date:"j E" }}{% endif %}</p>
+                {% endif %}
+                <p class="agro-stages-item-top__text">Отбор&nbsp;номинантов<br>в шорт-лист</p>
+            </div>
+
+            <div class="agro-stages-item agro-stages-item_3 {% if stages.3.is_active %}agro-stages-item__active{% endif %}">
+                <svg class="agro-stages-item__number agro-stages-item__number-3" width="92" height="115" viewBox="0 0 92 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path opacity="0.2" d="M0.95 77.82H25.44C26.2827 80.5587 27.5467 82.9287 29.232 84.93C33.1293 89.67 38.9753 92.04 46.77 92.04C53.3007 92.04 58.3567 90.5653 61.938 87.616C65.5193 84.6667 67.31 80.8747 67.31 76.24C67.31 71.3947 65.6773 67.55 62.412 64.706C59.252 61.862 54.5647 60.44 48.35 60.44H21.49V43.06L50.72 23.31V22.52H6.48V0.399992H84.69V22.52L55.46 40.69L53.88 41.322V42.27H57.83C67.31 42.27 75.3153 45.588 81.846 52.224C88.482 58.7547 91.8 66.76 91.8 76.24C91.8 86.8787 87.6393 95.8847 79.318 103.258C71.102 110.526 60.2527 114.16 46.77 114.16C29.2847 114.16 16.4867 108.103 8.376 95.99C4.68933 90.7233 2.214 84.6667 0.95 77.82Z" fill="#4CED5B"/>
+                </svg>
+
+
+                <p class="agro-stages-item-top__current1">Текущий</p>
+                <p class="agro-stages-item-top__current2">этап</p>
+                <p class="agro-stages-item-top__date">{% if stages.3.start_date %}{{ stages.3.start_date|date:"j E" }} - {% endif %}{% if stages.3.stop_date %}{{ stages.3.stop_date|date:"j E" }}{% endif %}</p>
+                <p class="agro-stages-item-top__text">Публикация<br> шорт-листа</p>
+            </div>
+
+            <div class="agro-stages-item agro-stages-item_4 {% if stages.4.is_active %}agro-stages-item__active{% endif %}">
+                <svg class="agro-stages-item__number agro-stages-item__number-4" width="96" height="111" viewBox="0 0 96 111" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path opacity="0.2" d="M0.16 90.46V69.13L37.29 0.399992H63.36L26.23 68.34H57.04V43.06H58.62H80.74V68.34H95.75V90.46H80.74V111H57.04V90.46H0.16Z" fill="#4CED5B"/>
+                </svg>
+
+
+
+                <p class="agro-stages-item-top__current1">Текущий</p>
+                <p class="agro-stages-item-top__current2">этап</p>
+                <p class="agro-stages-item-top__date">{% if stages.4.start_date %}{{ stages.4.start_date|date:"j E" }} - {% endif %}{% if stages.4.stop_date %}{{ stages.4.stop_date|date:"j E" }}{% endif %}</p>
+                <p class="agro-stages-item-top__text">Питчи шорт-листа и проведение церемонии вручения</p>
+            </div>
+
+        </div>
+    </section>
+
+
+    {% if juries %}
+        <section class="agro-jury">
+            <div id="jury"></div>
+            <div class="agro-jury-header">
+                <h2 class="agro-jury-header__title">жюри</h2>
+                <div class="agro-jury-header-arrows">
+                    <svg id="prev-btn" class="agro-jury-header-arrows__arrow" width="139" height="139" viewBox="0 0 139 139" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle r="68.5" transform="matrix(-1 0 0 1 69.5 69.501)" stroke="white" stroke-width="2"/>
+                        <path d="M75.6655 92.67L54.4523 71.4568C53.2807 70.2852 53.2807 68.3857 54.4523 67.2141L75.6655 46.0009" stroke="#ffffff" stroke-width="2"/>
+                    </svg>
+                    <svg id="next-btn" class="agro-jury-header-arrows__arrow agro-jury-header-arrows__arrow-right" width="139" height="139" viewBox="0 0 139 139" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="69.5" cy="69.5" r="68.5" stroke="white" stroke-width="2"/>
+                        <path d="M63.3345 92.669L84.5477 71.4558C85.7193 70.2842 85.7193 68.3847 84.5477 67.2132L63.3345 45.9999" stroke="white" stroke-width="2"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="agro-jury-wrapper owl-carousel">
+                {% for jury in juries %}
+                    <div class="agro-jury-item">
+                        {% if jury.photo %}
+                            {% thumbnail jury.photo 327x327 crop quality=90 as img %}
+                            {% thumbnail jury.photo 10x10 crop quality=90 as preview_img %}
+                            <img data-src="{{ img.url }}" src="{{ preview_img.url }}" alt="" class="agro-jury-item__pic lazy">
+                        {% endif %}
+                        <div class="agro-jury-item-info">
+                            <p class="agro-jury-item-info__name">{{ jury.name }} {{ jury.surname }}</p>
+                            <p class="agro-jury-item-info__job">{{ jury.company }}</p>
+                            <p class="agro-jury-item-info__text">{{ jury.role }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+    {% endif %}
+
+    <section class="agro-conf">
+        <div id="conf"></div>
+        <div class="agro-conf-inner">
+            <div class="agro-conf__title">
+                <p class="agro-conf__title-conf">О конференции</p>
+                <h2 class="agro-conf__title-name">AgroCode<br>Conf</h2>
+            </div>
+            <div>
+                <p class="agro-conf__text">Онлайн-конференция, которая включает выступления лучших проектов, номинированных на премию <span class="agro-conf__text_green">AgroCode Awards 2022</span>, и победителей студенческого конкурса <span class="agro-conf__text_green">«Агролидеры России»</span>.<br><br>Программа конференции будет доступна <span class="agro-conf__text_green">8&nbsp;декабря</span>. Регистрируйтесь и сможете послушать выступления лучших из лучших в агроиндустрии.
+                </p>
+                <a href="http://conf.agro-code.ru/" class="agro-conf__btn" target="_blank">Регистрация на конференцию</a>
+            </div>
+        </div>
+    </section>
+
+    {% if award_ceremony %}
+        <section class="agro-ceremony" id="ceremony">
+            <div class="agro-ceremony-header">
+                <h2 class="agro-ceremony-title">Церемония вручения</h2>
+                <p class="agro-ceremony-header-text">На церемонии вручения мы&nbsp;соберем лучших людей агроиндустрии, чтобы наградить их за прорывные кейсы и технологии в сфере агротеха</p>
+            </div>
+            <div class="agro-ceremony-banner">
+                <p class="agro-ceremony-header-text-desktop">На церемонии вручения мы&nbsp;соберем лучших людей агроиндустрии, чтобы наградить их за прорывные кейсы и технологии в сфере агротеха</p>
+                <div class="agro-ceremony-banner-inner">
+                    {% if award_ceremony.place %}
+                        <div class="agro-ceremony-banner-item">
+                            <p class="agro-ceremony-banner-item-top-text">Место</p>
+                            <p class="agro-ceremony-banner-item-middle-text">{{  award_ceremony.place }}</p>
+                            <p class="agro-ceremony-banner-item-bottom-text agro-ceremony-banner-item-bottom-text-mobile-place">{{  award_ceremony.address }}</p>
+                        </div>
+                    {% endif %}
+                    {% if award_ceremony.date %}
+                        <div class="agro-ceremony-banner-item">
+                            <p class="agro-ceremony-banner-item-top-text">Время</p>
+                            <p class="agro-ceremony-banner-item-middle-text">{{ award_ceremony.date }}</p>
+                            <p class="agro-ceremony-banner-item-bottom-text">{{  award_ceremony.about_date }}</p>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </section>
+    {% endif %}
+
+    <section class="agro-faq">
+        <div id="faq"></div>
+        <h2 class="agro-faq-title">FAQ</h2>
+
+        {% for faq in faqs %}
+            <div class="agro-faq-item">
+                <div class="agro-faq-item-top">
+                    <p class="agro-faq-item__text">{{ faq.question }}</p>
+                    <img src="{% static 'build/img/faq-corner.svg' %}" alt="">
+                </div>
+                <div class="agro-faq-item-bottom">{{ faq.answer|safe }}</div>
+            </div>
+        {% endfor %}
+    </section>
+
+    {% if partners %}
+        <section class="agro-partners" id="partners">
+            <h2 class="agro-partners-title">Информационные партнеры</h2>
+            <div class="agro-partners-inner">
+                {% for partner in partners %}
+                    <a href="{{ partner.url }}" class="agro-partners-item" target="_blank">
+                        {% thumbnail partner.logo 327x327 quality=90 as img %}
+                        {% thumbnail partner.logo 10x10 quality=90 as preview_img %}
+                        <img data-src="{{ img.url }}" src="{{ preview_img.url }}" alt="{{ partner.name }}" class="agro-partners-item-pic lazy">
+                    </a>
+                {% endfor %}
+                <div class="agro-partners-item-dummy"></div>
+            </div>
+        </section>
+    {% endif %}
+
+    <section class="agro-organizer" id="organizer">
+        <div class="agro-organizer-inner">
+            <h2 class="agro-organizer-title">Организаторы</h2>
+            <div class="agro-organizer-item agro-organizer-item_org">
+                <a href="https://agro-code.ru/" target="_blank"><img src="{% static 'build/img/org-hub.svg' %}" alt="Организатор" class="agro-organizer-item__hub"></a>
+                <div class="agro-organizer-item__bar"></div>
+                <p class="agro-organizer-item__text">Организатор</p>
+            </div>
+            <div class="agro-organizer-item agro-organizer-item_bank">
+                <a href="https://www.rshb.ru/" target="_blank"><img src="{% static 'build/img/org-ros.svg' %}" alt="Генеральный спонсор" class="agro-organizer-item__ros"></a>
+                <div class="agro-organizer-item__bar"></div>
+                <p class="agro-organizer-item__text">Генеральный спонсор</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="agro-other" id="other">
+        <h2 class="agro-other-title">Другие проекты</h2>
+        <div class="agro-other-inner">
+
+            <div class="agro-other-item">
+                <a target="_blank" href="https://agro-code.ru/" class="agro-other-item-pic">
+                    <img data-src="{% static 'build/img/agrocode-hub.png' %}" alt="" class=" lazy">
+                </a>
+                <div class="agro-other-item-info">
+                    <p class="agro-other-item-info-title">AgroСode Hub</p>
+                    <p class="agro-other-item-info-text">AgroСode Hub объединяет всех,&nbsp;кому интересны современные технологии.</p>
+                    <a target="_blank" href="https://agro-code.ru/" class="agro-other-item-info-link">Перейти на сайт <img src="{% static 'build/img/other-corner.svg' %}" alt="" class="agro-other-item-info-link__corner"></a>
+                </div>
+            </div>
+
+            <div class="agro-other-item">
+                <a target="_blank" href="https://agro-code.ru/hack/" class="agro-other-item-pic">
+                    <img data-src="{% static 'build/img/agrocode-hack.png' %}" alt="" class="lazy">
+                </a>
+                <div class="agro-other-item-info">
+                    <p class="agro-other-item-info-title">AgroCode Hack 2022</p>
+                    <p class="agro-other-item-info-text">Третий онлайн-хакатон от АО «Россельхозбанк». В 2022 году финалисты приняли участие в решении трех технологических задач агроиндустрии.</p>
+                    <a target="_blank" href="https://hack.rshbdigital.ru/" class="agro-other-item-info-link">Перейти на сайт <img src="{% static 'build/img/other-corner.svg' %}" alt="" class="agro-other-item-info-link__corner"></a>
+                </div>
+            </div>
+
+            <div class="agro-other-item">
+                <a target="_blank" href="https://digitalagro.agro-code.ru/" class="agro-other-item-pic">
+                    <img data-src="{% static 'build/img/agrocode-conf.png' %}" alt="" class="lazy">
+                </a>
+                <div class="agro-other-item-info">
+                    <p class="agro-other-item-info-title">Цифровое агро: Прыжок в технологическое будущее</p>
+                    <p class="agro-other-item-info-text">Конференция  от АО «Россельхозбанк» в рамках российской агропромышленной выставки «Золотая осень 2022».</p>
+                    <a target="_blank" href="https://digitalagro.agro-code.ru/" class="agro-other-item-info-link">Перейти на сайт <img src="{% static 'build/img/other-corner.svg' %}" alt="" class="agro-other-item-info-link__corner"></a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+{% endblock %}
